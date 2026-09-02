@@ -1,0 +1,2197 @@
+# ⚒️ AETHERIA — BLACKSMITH & EQUIPMENT CRAFTING SYSTEM
+
+## 1. OVERVIEW
+
+Blacksmith System adalah fasilitas di **Town Square** yang digunakan untuk membuat Equipment.
+
+Blacksmith terhubung langsung dengan:
+
+```text
+Town Square
+      ↓
+Blacksmith Facility
+      ↓
+Inventory System
+      ↓
+Resource & Currency System
+      ↓
+Equipment Database
+      ↓
+Equipment Instance
+```
+
+Blacksmith memiliki 5 Level Crafting:
+
+```text
+BLACKSMITH LV.1
+      ↓
+IRON
+
+BLACKSMITH LV.2
+      ↓
+STEEL
+
+BLACKSMITH LV.3
+      ↓
+DAMASCUS
+
+BLACKSMITH LV.4
+      ↓
+MITHRIL
+
+BLACKSMITH LV.5
+      ↓
+EPIC
+```
+
+Equipment:
+
+```text
+IRON
+  ↓
+STEEL
+  ↓
+DAMASCUS
+  ↓
+MITHRIL
+  ↓
+EPIC
+  ↓
+LEGEND
+  ↓
+MYTHICAL
+```
+
+Namun:
+
+```text
+BLACKSMITH NORMAL CRAFT
+IRON → STEEL → DAMASCUS → MITHRIL → EPIC
+```
+
+Sedangkan:
+
+```text
+LEGEND
+MYTHICAL
+```
+
+tidak dapat dibuat melalui normal crafting.
+
+---
+
+# 2. BLACKSMITH FACILITY
+
+## 2.1 Blacksmith Level
+
+| Level | Tier Craft | Status               |
+| ----: | ---------- | -------------------- |
+|     1 | IRON       | Basic                |
+|     2 | STEEL      | Unlocked             |
+|     3 | DAMASCUS   | Unlocked             |
+|     4 | MITHRIL    | Unlocked             |
+|     5 | EPIC       | Maximum Normal Craft |
+|    6+ | Reserved   | Future               |
+
+Database:
+
+```text
+Facility_ID : FAC-BLACKSMITH
+Facility_Name : Blacksmith
+Facility_Level : 1-5
+```
+
+---
+
+# 3. BLACKSMITH LEVEL REQUIREMENT
+
+## Level 1 — IRON
+
+```text
+Facility:
+Blacksmith
+
+Level:
+1
+
+Craft Tier:
+IRON
+
+Required Master:
+Unlocked with Blacksmith
+
+Available:
+Basic Equipment
+```
+
+Dapat membuat:
+
+```text
+EQP-WPN-IRON-001
+EQP-WPN-IRON-002
+EQP-WPN-IRON-003
+EQP-WPN-IRON-004
+EQP-WPN-IRON-005
+EQP-WPN-IRON-006
+
+EQP-ARM-IRON-001
+EQP-ARM-IRON-002
+EQP-ARM-IRON-003
+
+EQP-ACC-IRON-001
+```
+
+---
+
+# 4. LEVEL 2 — STEEL
+
+Blacksmith Level 2 membuka:
+
+```text
+STEEL EQUIPMENT
+```
+
+Requirement:
+
+```text
+Blacksmith Level >= 2
+```
+
+Dapat membuat:
+
+```text
+EQP-WPN-STEEL-001
+EQP-WPN-STEEL-002
+EQP-WPN-STEEL-003
+EQP-WPN-STEEL-004
+EQP-WPN-STEEL-005
+EQP-WPN-STEEL-006
+
+EQP-ARM-STEEL-001
+EQP-ARM-STEEL-002
+EQP-ARM-STEEL-003
+
+EQP-ACC-STEEL-001
+```
+
+---
+
+# 5. LEVEL 3 — DAMASCUS
+
+Blacksmith Level 3 membuka:
+
+```text
+DAMASCUS EQUIPMENT
+```
+
+Requirement:
+
+```text
+Blacksmith Level >= 3
+```
+
+Dapat membuat:
+
+```text
+EQP-WPN-DAMASCUS-001
+EQP-WPN-DAMASCUS-002
+EQP-WPN-DAMASCUS-003
+EQP-WPN-DAMASCUS-004
+EQP-WPN-DAMASCUS-005
+EQP-WPN-DAMASCUS-006
+
+EQP-ARM-DAMASCUS-001
+EQP-ARM-DAMASCUS-002
+EQP-ARM-DAMASCUS-003
+
+EQP-ACC-DAMASCUS-001
+```
+
+---
+
+# 6. LEVEL 4 — MITHRIL
+
+Blacksmith Level 4 membuka:
+
+```text
+MITHRIL EQUIPMENT
+```
+
+Requirement:
+
+```text
+Blacksmith Level >= 4
+```
+
+Dapat membuat:
+
+```text
+EQP-WPN-MITHRIL-001
+EQP-WPN-MITHRIL-002
+EQP-WPN-MITHRIL-003
+EQP-WPN-MITHRIL-004
+EQP-WPN-MITHRIL-005
+EQP-WPN-MITHRIL-006
+
+EQP-ARM-MITHRIL-001
+EQP-ARM-MITHRIL-002
+EQP-ARM-MITHRIL-003
+
+EQP-ACC-MITHRIL-001
+```
+
+---
+
+# 7. LEVEL 5 — EPIC
+
+Blacksmith Level 5 adalah level tertinggi untuk normal crafting.
+
+Membuka:
+
+```text
+EPIC EQUIPMENT
+```
+
+Requirement:
+
+```text
+Blacksmith Level >= 5
+```
+
+Dapat membuat:
+
+```text
+EQP-WPN-EPIC-001
+EQP-WPN-EPIC-002
+EQP-WPN-EPIC-003
+EQP-WPN-EPIC-004
+EQP-WPN-EPIC-005
+EQP-WPN-EPIC-006
+
+EQP-ARM-EPIC-001
+EQP-ARM-EPIC-002
+EQP-ARM-EPIC-003
+
+EQP-ACC-EPIC-001
+```
+
+---
+
+# 8. CRAFTING TIER TABLE
+
+| Blacksmith | Craft Tier | Rank |
+| ---------: | ---------- | ---: |
+|       Lv.1 | IRON       |    1 |
+|       Lv.2 | STEEL      |    2 |
+|       Lv.3 | DAMASCUS   |    3 |
+|       Lv.4 | MITHRIL    |    4 |
+|       Lv.5 | EPIC       |    5 |
+
+Tidak diperbolehkan:
+
+```text
+Lv.1 → Steel
+Lv.2 → Damascus
+Lv.3 → Mithril
+Lv.4 → Epic
+Lv.5 → Legend
+```
+
+Sistem harus melakukan validasi:
+
+```text
+if equipmentTierRank > blacksmithLevel
+    CRAFT DENIED
+```
+
+---
+
+# 9. CRAFTING MATERIAL DATABASE
+
+Material utama:
+
+```text
+IRON_ORE
+COAL
+STEEL_ORE
+DAMASCUS_STEEL
+MITHRIL_ORE
+EPIC_CORE
+MAGIC_CRYSTAL
+GOLD
+```
+
+Material dapat berasal dari:
+
+```text
+Dungeon
+Mining
+Loot
+Quest
+World Exploration
+Boss
+Event
+Reward
+```
+
+---
+
+# 10. MATERIAL TIER
+
+```text
+IRON MATERIAL
+      ↓
+STEEL MATERIAL
+      ↓
+DAMASCUS MATERIAL
+      ↓
+MITHRIL MATERIAL
+      ↓
+EPIC MATERIAL
+```
+
+Contoh:
+
+```text
+Iron Ore
+   ↓
+Iron Ingot
+```
+
+```text
+Steel Ore
+   ↓
+Steel Ingot
+```
+
+```text
+Damascus Steel
+   ↓
+Damascus Ingot
+```
+
+```text
+Mithril Ore
+   ↓
+Mithril Ingot
+```
+
+```text
+Epic Core
+   +
+Magic Crystal
+   ↓
+Epic Material
+```
+
+---
+
+# 11. BASIC MATERIAL ID
+
+Format:
+
+```text
+MAT-[TYPE]-[TIER]-[NUMBER]
+```
+
+Contoh:
+
+```text
+MAT-ORE-IRON-001
+MAT-INGOT-IRON-001
+
+MAT-ORE-STEEL-001
+MAT-INGOT-STEEL-001
+
+MAT-STEEL-DAMASCUS-001
+
+MAT-ORE-MITHRIL-001
+MAT-INGOT-MITHRIL-001
+
+MAT-CORE-EPIC-001
+MAT-CRYSTAL-MAGIC-001
+```
+
+---
+
+# 12. IRON CRAFTING COST
+
+## Blacksmith Lv.1
+
+Iron adalah material dasar, tetapi biaya Gold dibuat cukup tinggi agar equipment tidak terlalu mudah diproduksi secara massal.
+
+### Weapon
+
+```text
+IRON WEAPON
+
+Iron Ore      : 25
+Coal          : 12
+Gold          : 2,500
+```
+
+### Armor
+
+```text
+IRON ARMOR
+
+Iron Ore      : 40
+Coal          : 20
+Gold          : 4,000
+```
+
+### Accessory
+
+```text
+IRON ACCESSORY
+
+Iron Ore      : 12
+Coal          : 6
+Gold          : 1,750
+```
+
+---
+
+# 13. STEEL CRAFTING COST
+
+## Blacksmith Lv.2
+
+Steel membutuhkan Iron sebagai material pendukung dan biaya forging yang lebih tinggi.
+
+### Weapon
+
+```text
+STEEL WEAPON
+
+Iron Ingot    : 12
+Steel Ore     : 25
+Coal          : 18
+Gold          : 7,500
+```
+
+### Armor
+
+```text
+STEEL ARMOR
+
+Iron Ingot    : 20
+Steel Ore     : 40
+Coal          : 28
+Gold          : 12,000
+```
+
+### Accessory
+
+```text
+STEEL ACCESSORY
+
+Iron Ingot    : 8
+Steel Ore     : 12
+Coal          : 10
+Gold          : 5,000
+```
+
+---
+
+# 14. DAMASCUS CRAFTING COST
+
+## Blacksmith Lv.3
+
+Damascus merupakan material forged tingkat menengah dan membutuhkan proses tempering berulang.
+
+### Weapon
+
+```text
+DAMASCUS WEAPON
+
+Steel Ingot       : 20
+Damascus Steel    : 25
+Coal              : 30
+Gold              : 20,000
+```
+
+### Armor
+
+```text
+DAMASCUS ARMOR
+
+Steel Ingot       : 32
+Damascus Steel    : 40
+Coal              : 45
+Gold              : 32,000
+```
+
+### Accessory
+
+```text
+DAMASCUS ACCESSORY
+
+Steel Ingot       : 12
+Damascus Steel    : 18
+Coal              : 16
+Gold              : 14,000
+```
+
+---
+
+# 15. MITHRIL CRAFTING COST
+
+## Blacksmith Lv.4
+
+Mithril merupakan material langka yang membutuhkan suhu forging khusus dan energi magis.
+
+### Weapon
+
+```text
+MITHRIL WEAPON
+
+Damascus Ingot    : 25
+Mithril Ore       : 30
+Magic Crystal     : 8
+Gold              : 60,000
+```
+
+### Armor
+
+```text
+MITHRIL ARMOR
+
+Damascus Ingot    : 40
+Mithril Ore       : 50
+Magic Crystal     : 12
+Gold              : 90,000
+```
+
+### Accessory
+
+```text
+MITHRIL ACCESSORY
+
+Damascus Ingot    : 16
+Mithril Ore       : 20
+Magic Crystal     : 5
+Gold              : 40,000
+```
+
+---
+
+# 16. EPIC CRAFTING COST
+
+## Blacksmith Lv.5
+
+Epic equipment membutuhkan material khusus, inti energi, dan biaya forging yang sangat tinggi.
+
+### Weapon
+
+```text
+EPIC WEAPON
+
+Mithril Ingot      : 35
+Epic Core          : 8
+Magic Crystal      : 25
+Gold               : 250,000
+```
+
+### Armor
+
+```text
+EPIC ARMOR
+
+Mithril Ingot      : 50
+Epic Core          : 12
+Magic Crystal      : 35
+Gold               : 375,000
+```
+
+### Accessory
+
+```text
+EPIC ACCESSORY
+
+Mithril Ingot      : 20
+Epic Core          : 5
+Magic Crystal      : 15
+Gold               : 175,000
+```
+
+---
+
+# 17. CRAFTING COST SUMMARY
+
+| Tier     | Weapon Gold | Armor Gold | Accessory Gold |
+| -------- | ----------: | ---------: | -------------: |
+| IRON     |       2,500 |      4,000 |          1,750 |
+| STEEL    |       7,500 |     12,000 |          5,000 |
+| DAMASCUS |      20,000 |     32,000 |         14,000 |
+| MITHRIL  |      60,000 |     90,000 |         40,000 |
+| EPIC     |     250,000 |    375,000 |        175,000 |
+
+---
+
+# 18. MATERIAL SUMMARY
+
+## IRON
+
+```text
+Weapon:
+Iron Ore x25
+Coal x12
+
+Armor:
+Iron Ore x40
+Coal x20
+
+Accessory:
+Iron Ore x12
+Coal x6
+```
+
+---
+
+## STEEL
+
+```text
+Weapon:
+Iron Ingot x12
+Steel Ore x25
+Coal x18
+
+Armor:
+Iron Ingot x20
+Steel Ore x40
+Coal x28
+
+Accessory:
+Iron Ingot x8
+Steel Ore x12
+Coal x10
+```
+
+---
+
+## DAMASCUS
+
+```text
+Weapon:
+Steel Ingot x20
+Damascus Steel x25
+Coal x30
+
+Armor:
+Steel Ingot x32
+Damascus Steel x40
+Coal x45
+
+Accessory:
+Steel Ingot x12
+Damascus Steel x18
+Coal x16
+```
+
+---
+
+## MITHRIL
+
+```text
+Weapon:
+Damascus Ingot x25
+Mithril Ore x30
+Magic Crystal x8
+
+Armor:
+Damascus Ingot x40
+Mithril Ore x50
+Magic Crystal x12
+
+Accessory:
+Damascus Ingot x16
+Mithril Ore x20
+Magic Crystal x5
+```
+
+---
+
+## EPIC
+
+```text
+Weapon:
+Mithril Ingot x35
+Epic Core x8
+Magic Crystal x25
+
+Armor:
+Mithril Ingot x50
+Epic Core x12
+Magic Crystal x35
+
+Accessory:
+Mithril Ingot x20
+Epic Core x5
+Magic Crystal x15
+```
+
+---
+
+# 19. CRAFTING RECIPE DATABASE
+
+Setiap equipment mempunyai Recipe ID.
+
+Format:
+
+```text
+REC-[EQUIPMENT_ID]
+```
+
+Contoh:
+
+```text
+REC-EQP-WPN-IRON-001
+REC-EQP-WPN-STEEL-001
+REC-EQP-WPN-DAMASCUS-001
+REC-EQP-WPN-MITHRIL-001
+REC-EQP-WPN-EPIC-001
+```
+
+Database:
+
+```text
+Recipe_ID
+Equipment_Template_ID
+Blacksmith_Level
+Required_Gold
+Required_Materials
+Success_Rate
+```
+
+---
+
+# 20. CONTOH RECIPE
+
+## Iron Longsword
+
+```text
+Recipe_ID:
+REC-EQP-WPN-IRON-001
+
+Equipment:
+EQP-WPN-IRON-001
+
+Required Facility:
+FAC-BLACKSMITH
+
+Required Level:
+1
+
+Materials:
+Iron Ore x25
+Coal x12
+
+Gold:
+2,500
+```
+
+---
+
+## Steel Longsword
+
+```text
+Recipe_ID:
+REC-EQP-WPN-STEEL-001
+
+Equipment:
+EQP-WPN-STEEL-001
+
+Required Facility:
+FAC-BLACKSMITH
+
+Required Level:
+2
+
+Materials:
+Iron Ingot x12
+Steel Ore x25
+Coal x18
+
+Gold:
+7,500
+```
+
+---
+
+## Damascus Blade
+
+```text
+Recipe_ID:
+REC-EQP-WPN-DAMASCUS-001
+
+Equipment:
+EQP-WPN-DAMASCUS-001
+
+Required Facility:
+FAC-BLACKSMITH
+
+Required Level:
+3
+
+Materials:
+Steel Ingot x20
+Damascus Steel x25
+Coal x30
+
+Gold:
+20,000
+```
+
+---
+
+## Mithril Sword
+
+```text
+Recipe_ID:
+REC-EQP-WPN-MITHRIL-001
+
+Equipment:
+EQP-WPN-MITHRIL-001
+
+Required Facility:
+FAC-BLACKSMITH
+
+Required Level:
+4
+
+Materials:
+Damascus Ingot x25
+Mithril Ore x30
+Magic Crystal x8
+
+Gold:
+60,000
+```
+
+---
+
+## Epic Flame Sword
+
+```text
+Recipe_ID:
+REC-EQP-WPN-EPIC-001
+
+Equipment:
+EQP-WPN-EPIC-001
+
+Required Facility:
+FAC-BLACKSMITH
+
+Required Level:
+5
+
+Materials:
+Mithril Ingot x35
+Epic Core x8
+Magic Crystal x25
+
+Gold:
+250,000
+```
+
+---
+
+# 21. CRAFTING SUCCESS SYSTEM
+
+Crafting normal memiliki:
+
+```text
+SUCCESS
+FAIL
+```
+
+Default:
+
+```text
+IRON      : 100%
+STEEL     : 100%
+DAMASCUS  : 100%
+MITHRIL   : 95%
+EPIC      : 90%
+```
+
+Jika gagal:
+
+```text
+Material  → Consumed
+Gold      → Consumed
+Equipment → Not Created
+```
+
+Tidak ada equipment rusak karena equipment belum berhasil dibuat.
+
+---
+
+# 22. CRAFTING RNG
+
+Untuk tier tinggi, sistem dapat menggunakan RNG.
+
+Contoh:
+
+```text
+Craft Epic Weapon
+
+Success Rate:
+90%
+
+RNG:
+0–89 = SUCCESS
+90–99 = FAIL
+```
+
+Jika:
+
+```text
+RNG = 45
+```
+
+maka:
+
+```text
+SUCCESS
+```
+
+Jika:
+
+```text
+RNG = 97
+```
+
+maka:
+
+```text
+FAIL
+```
+
+---
+
+# 23. CRAFTING QUEUE
+
+Blacksmith dapat memiliki crafting queue.
+
+Level 1:
+
+```text
+Queue Slot = 1
+```
+
+Level 2:
+
+```text
+Queue Slot = 1
+```
+
+Level 3:
+
+```text
+Queue Slot = 2
+```
+
+Level 4:
+
+```text
+Queue Slot = 2
+```
+
+Level 5:
+
+```text
+Queue Slot = 3
+```
+
+Contoh:
+
+```text
+BLACKSMITH LV.5
+
+Queue 1 → Epic Flame Sword
+Queue 2 → Epic Knight Armor
+Queue 3 → Epic Soul Ring
+```
+
+Crafting berjalan otomatis.
+
+---
+
+# 24. CRAFTING AUTOMATION
+
+Blacksmith bekerja secara otomatis setelah Master membuat order.
+
+Flow:
+
+```text
+MASTER
+  ↓
+SELECT EQUIPMENT
+  ↓
+CHECK RECIPE
+  ↓
+CHECK BLACKSMITH LEVEL
+  ↓
+CHECK MATERIAL
+  ↓
+CHECK GOLD
+  ↓
+CONFIRM CRAFT
+  ↓
+MATERIAL CONSUMED
+  ↓
+GOLD CONSUMED
+  ↓
+CRAFTING QUEUE
+  ↓
+RNG
+  ↓
+SUCCESS / FAIL
+```
+
+---
+
+# 25. INVENTORY CHECK
+
+Sebelum crafting:
+
+```text
+Inventory System
+        ↓
+Check Material
+        ↓
+Check Gold
+```
+
+Contoh:
+
+```text
+Required:
+
+Iron Ore x25
+Coal x12
+Gold 2,500
+```
+
+Inventory:
+
+```text
+Iron Ore = 40
+Coal = 20
+Gold = 50,000
+```
+
+Maka:
+
+```text
+CRAFT AVAILABLE
+```
+
+Setelah crafting:
+
+```text
+Iron Ore:
+40 → 15
+
+Coal:
+20 → 8
+
+Gold:
+50000 → 47500
+```
+
+---
+
+# 26. INSUFFICIENT MATERIAL
+
+Jika material tidak mencukupi:
+
+```text
+CRAFT DENIED
+```
+
+Contoh:
+
+```text
+Required:
+Mithril Ore x30
+
+Inventory:
+Mithril Ore x18
+```
+
+System:
+
+```text
+CRAFT DENIED
+
+Reason:
+Insufficient Mithril Ore
+
+Required: 30
+Available: 18
+Missing: 12
+```
+
+Tidak ada material atau Gold yang dikonsumsi jika validasi gagal.
+
+---
+
+# 27. BLACKSMITH LEADER
+
+Blacksmith adalah fasilitas Town Square.
+
+Fasilitas membutuhkan Hero Leader.
+
+```text
+Blacksmith
+      ↓
+Assigned Hero
+      ↓
+Blacksmith Leader
+```
+
+Contoh:
+
+```text
+Facility_ID:
+FAC-BLACKSMITH
+
+Leader_Hero_ID:
+HERO-00025
+
+Status:
+ACTIVE
+```
+
+Jika tidak ada leader:
+
+```text
+Leader_Hero_ID = NULL
+
+Status:
+INACTIVE
+```
+
+Maka:
+
+```text
+CRAFTING DISABLED
+```
+
+---
+
+# 28. BLACKSMITH STAFF
+
+Blacksmith dapat menggunakan Hero tambahan sebagai staff.
+
+```text
+Blacksmith Lv.1
+Staff Required: 1
+
+Blacksmith Lv.2
+Staff Required: 1
+
+Blacksmith Lv.3
+Staff Required: 2
+
+Blacksmith Lv.4
+Staff Required: 2
+
+Blacksmith Lv.5
+Staff Required: 3
+```
+
+Staff dapat memberikan bonus:
+
+```text
+Success Rate
+Material Efficiency
+Queue Efficiency
+```
+
+---
+
+# 29. STAFF BONUS
+
+Contoh:
+
+```text
+Hero Blacksmith Skill:
+
+Success Rate +10%
+```
+
+Bonus ini diterapkan pada peluang keberhasilan crafting sesuai aturan sistem.
+
+---
+
+# 30. MATERIAL EFFICIENCY
+
+Hero tertentu dapat memiliki:
+
+```text
+Material Efficiency
+```
+
+Contoh:
+
+```text
+Material Efficiency:
+10%
+```
+
+Recipe:
+
+```text
+Mithril Ore x30
+```
+
+System dapat menghitung:
+
+```text
+30 × 90% = 27
+```
+
+Sistem menggunakan pembulatan sesuai aturan material:
+
+```text
+Required = 27
+```
+
+Namun bonus ini hanya berlaku jika Hero memiliki skill crafting yang sesuai.
+
+---
+
+# 31. EQUIPMENT GENERATION
+
+Setelah crafting berhasil:
+
+```text
+Equipment Template
+        ↓
+Generate Equipment Instance
+```
+
+Contoh:
+
+```text
+Template:
+EQP-WPN-EPIC-001
+
+Name:
+Epic Flame Sword
+```
+
+Generate:
+
+```text
+Instance:
+EQI-00000125
+```
+
+Database:
+
+```text
+Equipment_ID:
+EQI-00000125
+
+Template_ID:
+EQP-WPN-EPIC-001
+
+Tier:
+EPIC
+
+Status:
+STORED
+
+Owner_Hero_ID:
+NULL
+```
+
+---
+
+# 32. CRAFTED EQUIPMENT STATUS
+
+Setelah crafting berhasil:
+
+```text
+CRAFTED
+   ↓
+STORED
+   ↓
+INVENTORY
+```
+
+Default:
+
+```text
+Owner Hero ID = NULL
+Status = STORED
+```
+
+Master kemudian menentukan:
+
+```text
+Equip
+Sell
+Store
+Recycle
+```
+
+---
+
+# 33. MASTER CONTROL
+
+Blacksmith tidak menentukan sendiri Hero yang menggunakan equipment.
+
+AI Fairy hanya memberikan rekomendasi.
+
+Contoh:
+
+```text
+FAIRY REPORT
+
+Crafting completed.
+
+Equipment:
+Epic Flame Sword
+
+ATK:
++200
+
+Recommended Hero:
+HERO-00025
+
+Reason:
+High Physical ATK compatibility.
+
+Equip to Hero-00025?
+
+YES / NO
+```
+
+Keputusan akhir:
+
+```text
+MASTER
+```
+
+---
+
+# 34. LEGEND CRAFTING
+
+Legend tidak tersedia pada normal Blacksmith.
+
+```text
+Blacksmith Lv.5
+        ↓
+EPIC
+        X
+LEGEND
+```
+
+Legend membutuhkan:
+
+```text
+Special Craft
+Boss Material
+Legendary Core
+Rare Dungeon Material
+Special Recipe
+```
+
+Sumber recipe:
+
+```text
+Boss
+Raid
+Special Dungeon
+Event
+Floor Reward
+World Exploration
+```
+
+Contoh:
+
+```text
+Legend Holy Sword
+```
+
+tidak dapat dibuat hanya dengan:
+
+```text
+Blacksmith Lv.5
+```
+
+Harus memenuhi:
+
+```text
+Special Recipe Unlocked
++
+Legendary Core
++
+Boss Material
++
+Required Facility
+```
+
+---
+
+# 35. MYTHICAL CRAFTING
+
+Mythical berada di luar normal Blacksmith.
+
+```text
+EPIC
+ ↓
+LEGEND
+ ↓
+MYTHICAL
+```
+
+Mythical hanya dapat dibuat melalui:
+
+```text
+Special Craft
+Ancient Recipe
+Boss Core
+World Core
+Nythar Material
+Floor 100 Content
+Special Event
+```
+
+Contoh:
+
+```text
+Aetheria's Legacy
+```
+
+memerlukan:
+
+```text
+Mythical Recipe
++
+World Core
++
+Aether Material
++
+Nythar-related Material
++
+Special Event Requirement
+```
+
+---
+
+# 36. NORMAL VS SPECIAL CRAFT
+
+| Tier     | Normal Blacksmith | Special Craft |
+| -------- | ----------------- | ------------- |
+| IRON     | YES               | YES           |
+| STEEL    | YES               | YES           |
+| DAMASCUS | YES               | YES           |
+| MITHRIL  | YES               | YES           |
+| EPIC     | YES               | YES           |
+| LEGEND   | NO                | YES           |
+| MYTHICAL | NO                | YES           |
+
+---
+
+# 37. CRAFTING DATABASE STRUCTURE
+
+```text
+CraftingRecipe
+│
+├── Recipe_ID
+├── Equipment_Template_ID
+├── Required_Facility_ID
+├── Required_Facility_Level
+├── Required_Gold
+├── Required_Materials
+├── Success_Rate
+├── Craft_Type
+├── Unlock_Status
+└── Special_Requirement
+```
+
+---
+
+# 38. MATERIAL DATABASE
+
+```text
+Material
+│
+├── Material_ID
+├── Name
+├── Tier
+├── Category
+├── Quantity
+├── Source
+├── Sell_Value
+└── Craft_Value
+```
+
+Contoh:
+
+```text
+Material_ID:
+MAT-ORE-IRON-001
+
+Name:
+Iron Ore
+
+Tier:
+IRON
+
+Category:
+ORE
+```
+
+---
+
+# 39. CRAFTING ORDER DATABASE
+
+```text
+CraftingOrder
+│
+├── Crafting_Order_ID
+├── Recipe_ID
+├── Facility_ID
+├── Hero_Staff_ID
+├── Status
+├── Material_Cost
+├── Gold_Cost
+├── Success_Rate
+└── Result_Equipment_ID
+```
+
+Status:
+
+```text
+QUEUED
+CRAFTING
+COMPLETED
+FAILED
+CANCELLED
+```
+
+---
+
+# 40. COMPLETE CRAFTING FLOW
+
+```text
+                MASTER
+                   │
+                   ▼
+            BLACKSMITH
+                   │
+                   ▼
+          SELECT EQUIPMENT
+                   │
+                   ▼
+            CHECK RECIPE
+                   │
+                   ▼
+      CHECK BLACKSMITH LEVEL
+                   │
+          ┌────────┴────────┐
+          │                 │
+        PASS               FAIL
+          │                 │
+          ▼                 ▼
+   CHECK MATERIAL       CRAFT DENIED
+          │
+          ▼
+      CHECK GOLD
+          │
+     ┌────┴────┐
+     │         │
+   PASS       FAIL
+     │         │
+     ▼         ▼
+CONSUME      DENIED
+RESOURCE
+     │
+     ▼
+CRAFTING QUEUE
+     │
+     ▼
+    RNG
+     │
+  ┌──┴───┐
+  │      │
+PASS    FAIL
+  │      │
+  ▼      ▼
+CREATE   NO ITEM
+INSTANCE
+  │
+  ▼
+INVENTORY
+  │
+  ▼
+MASTER
+  │
+  ▼
+EQUIP / STORE / SELL / RECYCLE
+```
+
+---
+
+# 41. CRAFTING VALIDATION LOGIC
+
+Pseudo-code:
+
+```text
+function canCraft(recipe, blacksmith, inventory):
+
+    if blacksmith.status != ACTIVE:
+        return false
+
+    if blacksmith.level < recipe.requiredFacilityLevel:
+        return false
+
+    if inventory.gold < recipe.requiredGold:
+        return false
+
+    for material in recipe.requiredMaterials:
+
+        if inventory[material.id] < material.quantity:
+            return false
+
+    return true
+```
+
+---
+
+# 42. CRAFTING EXECUTION LOGIC
+
+```text
+function craft(recipe):
+
+    if !canCraft(recipe):
+        return CRAFT_DENIED
+
+    consumeGold(recipe.requiredGold)
+
+    consumeMaterials(
+        recipe.requiredMaterials
+    )
+
+    addCraftingQueue(recipe)
+
+    return CRAFTING_STARTED
+```
+
+Setelah order diproses:
+
+```text
+function completeCraft(order):
+
+    rng = random(0,100)
+
+    if rng <= order.successRate:
+
+        equipment =
+            generateEquipmentInstance(
+                order.recipe.equipmentTemplateID
+            )
+
+        inventory.add(equipment)
+
+        order.status = COMPLETED
+
+    else:
+
+        order.status = FAILED
+```
+
+---
+
+# 43. BLACKSMITH LEVEL PROGRESSION
+
+Blacksmith dapat dinaikkan berdasarkan Master Progress.
+
+Contoh:
+
+```text
+MASTER PROGRESS
+       ↓
+TOWER FLOOR
+       ↓
+FACILITY UNLOCK
+       ↓
+BLACKSMITH LEVEL
+```
+
+Rekomendasi:
+
+```text
+Blacksmith Lv.1
+→ Initial Town Unlock
+
+Blacksmith Lv.2
+→ Master Progress 10
+
+Blacksmith Lv.3
+→ Master Progress 20
+
+Blacksmith Lv.4
+→ Master Progress 40
+
+Blacksmith Lv.5
+→ Master Progress 60
+```
+
+Nilai tersebut dapat disimpan sebagai konfigurasi sehingga mudah diubah.
+
+---
+
+# 44. BLACKSMITH CONFIGURATION
+
+```text
+BlacksmithConfig
+
+level_1:
+    tier = IRON
+    unlock_progress = 0
+
+level_2:
+    tier = STEEL
+    unlock_progress = 10
+
+level_3:
+    tier = DAMASCUS
+    unlock_progress = 20
+
+level_4:
+    tier = MITHRIL
+    unlock_progress = 40
+
+level_5:
+    tier = EPIC
+    unlock_progress = 60
+```
+
+---
+
+# 45. CRAFTING ECONOMY
+
+Gold crafting digunakan sebagai **crafting fee**.
+
+Gold tidak dianggap sebagai material.
+
+Contoh:
+
+```text
+EPIC WEAPON
+
+Materials:
+Mithril Ingot x35
+Epic Core x8
+Magic Crystal x25
+
+Crafting Fee:
+250,000 Gold
+```
+
+Maka:
+
+```text
+Material Account
+        ↓
+Material consumed
+
+Gold Account
+        ↓
+250,000 Gold consumed
+
+Equipment Account
+        ↓
+New Equipment Instance
+```
+
+Biaya crafting dibuat tinggi agar:
+
+```text
+Equipment tidak mudah diproduksi massal
+Gold tetap memiliki nilai ekonomi
+Material langka tetap bernilai
+Equipment drop dari Boss dan Raid tetap relevan
+```
+
+---
+
+# 46. RESOURCE SYNCHRONIZATION
+
+Crafting harus tersinkronisasi dengan Resource & Currency System.
+
+```text
+CRAFTING SYSTEM
+      │
+      ├── Gold
+      │
+      └── Materials
+             │
+             ▼
+     RESOURCE SYSTEM
+             │
+             ▼
+       DATABASE SYSTEM
+```
+
+Setiap perubahan:
+
+```text
+Gold
+Material
+Equipment
+Inventory
+Crafting Order
+```
+
+harus disimpan ke Database System.
+
+---
+
+# 47. INVENTORY SYNCHRONIZATION
+
+Setelah craft:
+
+```text
+Crafting System
+      ↓
+Equipment Instance Created
+      ↓
+Inventory System
+      ↓
+Equipment Stored
+```
+
+Contoh:
+
+```text
+EQI-00000125
+
+Template:
+EQP-WPN-EPIC-001
+
+Status:
+STORED
+
+Owner:
+NULL
+```
+
+---
+
+# 48. FAIRY OBSERVATION
+
+AI Fairy dapat memantau:
+
+```text
+Blacksmith Status
+Crafting Queue
+Material Consumption
+Gold Consumption
+Craft Completion
+Craft Failure
+Equipment Generated
+```
+
+Contoh laporan:
+
+```text
+FAIRY DAILY REPORT
+
+Blacksmith:
+Level 5
+
+Current Queue:
+2 / 3
+
+Crafting:
+Epic Flame Sword
+
+Progress:
+72%
+
+Material Status:
+Normal
+
+Gold Cost:
+250,000
+```
+
+---
+
+# 49. CRAFT COMPLETION REPORT
+
+Ketika crafting selesai:
+
+```text
+FAIRY
+
+"Crafting completed."
+
+Equipment:
+Epic Flame Sword
+
+Equipment ID:
+EQI-00000125
+
+Tier:
+EPIC
+
+ATK:
++200
+
+Status:
+Stored in Inventory.
+```
+
+Jika gagal:
+
+```text
+FAIRY
+
+"Crafting failed."
+
+Recipe:
+Epic Flame Sword
+
+Reason:
+Crafting RNG Failure.
+
+Materials:
+Consumed.
+
+Gold:
+Consumed.
+
+Equipment:
+Not generated.
+```
+
+---
+
+# 50. FINAL BLACKSMITH STRUCTURE
+
+```text
+TOWN SQUARE
+     │
+     ▼
+BLACKSMITH
+     │
+     ├── Lv.1 → IRON
+     │
+     ├── Lv.2 → STEEL
+     │
+     ├── Lv.3 → DAMASCUS
+     │
+     ├── Lv.4 → MITHRIL
+     │
+     └── Lv.5 → EPIC
+              │
+              ▼
+        SPECIAL CRAFT
+              │
+              ├── LEGEND
+              │
+              └── MYTHICAL
+```
+
+Normal crafting:
+
+```text
+IRON
+ ↓
+STEEL
+ ↓
+DAMASCUS
+ ↓
+MITHRIL
+ ↓
+EPIC
+```
+
+Special crafting:
+
+```text
+EPIC
+ ↓
+LEGEND
+ ↓
+MYTHICAL
+```
+
+Database:
+
+```text
+Equipment Template
+        ↓
+Crafting Recipe
+        ↓
+Blacksmith
+        ↓
+Crafting Order
+        ↓
+Material + Gold
+        ↓
+RNG
+        ↓
+Equipment Instance
+        ↓
+Inventory
+        ↓
+Master Decision
+        ↓
+Hero
+```
+
+---
+
+# 51. MASTER RULE
+
+Blacksmith **tidak menentukan equipment secara otomatis kepada Hero**.
+
+Sistem hanya:
+
+```text
+CREATE
+↓
+STORE
+↓
+REPORT
+```
+
+AI Fairy:
+
+```text
+OBSERVE
+↓
+ANALYZE
+↓
+RECOMMEND
+```
+
+Master:
+
+```text
+DECISION
+```
+
+Contoh:
+
+```text
+CRAFT COMPLETE
+
+Epic Flame Sword
+ATK +200
+Fire Damage +15%
+
+Recommended:
+Hero ID HERO-00025
+
+Reason:
+Physical DPS Build
+
+Equip?
+
+[ YES ] [ NO ]
+```
+
+Dengan demikian Blacksmith tetap berjalan otomatis, tetapi **Master tetap memiliki kontrol akhir terhadap ekonomi, crafting, dan distribusi equipment**.
+
+---
+
+# 52. FINAL SYSTEM SUMMARY
+
+```text
+BLACKSMITH LV.1
+      ↓
+IRON
+
+BLACKSMITH LV.2
+      ↓
+STEEL
+
+BLACKSMITH LV.3
+      ↓
+DAMASCUS
+
+BLACKSMITH LV.4
+      ↓
+MITHRIL
+
+BLACKSMITH LV.5
+      ↓
+EPIC
+
+SPECIAL CRAFT
+      ↓
+LEGEND
+      ↓
+MYTHICAL
+```
+
+Normal Craft:
+
+```text
+IRON      → 100% Success
+STEEL     → 100% Success
+DAMASCUS  → 100% Success
+MITHRIL   → 95% Success
+EPIC      → 90% Success
+```
+
+Crafting Fee:
+
+```text
+IRON:
+2,500 / 4,000 / 1,750
+
+STEEL:
+7,500 / 12,000 / 5,000
+
+DAMASCUS:
+20,000 / 32,000 / 14,000
+
+MITHRIL:
+60,000 / 90,000 / 40,000
+
+EPIC:
+250,000 / 375,000 / 175,000
+```
+
+Urutan:
+
+```text
+MATERIAL
+   ↓
+RECIPE
+   ↓
+BLACKSMITH LEVEL CHECK
+   ↓
+RESOURCE CHECK
+   ↓
+GOLD CHECK
+   ↓
+CRAFT QUEUE
+   ↓
+RNG
+   ↓
+EQUIPMENT INSTANCE
+   ↓
+INVENTORY
+   ↓
+FAIRY REPORT
+   ↓
+MASTER DECISION
+```
+
+**Blacksmith Lv.5 adalah batas normal crafting Aetheria.**
+
+`LEGEND` dan `MYTHICAL` harus tetap menjadi equipment yang langka dan tidak dapat diproduksi secara massal melalui crafting biasa. Ini menjaga nilai Boss Drop, Raid, Special Dungeon, Event, dan Floor 100 tetap tinggi.
