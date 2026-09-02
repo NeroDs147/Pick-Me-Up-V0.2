@@ -1,0 +1,80 @@
+# 🗼 Aetheria — The World After The End
+*“The world has already ended. Your journey is not to prevent its destruction, but to earn the right to create it again.”*[cite: 1]
+
+---
+
+## 📖 About The Project
+**Aetheria** adalah proyek *Fantasy RPG World Simulation* yang berlatar di dunia setelah kehancuran total akibat ulah entitas kegelapan bernama **Nythar, the Dark God**[cite: 1]. 
+
+Pemain berperan sebagai **The Master**, yang dipilih oleh **Game Master System** untuk mendaki sebuah menara misterius setinggi **100 lantai** bernama *Tower of Rebirth*, mengumpulkan para penyintas, mengungkap kebenaran di balik kehancuran, dan menantang sang Dewa Kegelapan demi mewujudkan reinkarnasi dunia (*World Rebirth*)[cite: 1].
+
+---
+
+## 📊 Core Mechanics: Tower Progression & Destruction Level
+Setiap lantai di dalam *Tower of Rebirth* memiliki **Destruction Level** yang merepresentasikan tingkat kerusakan lingkungan akibat pengaruh korupsi Nythar[cite: 1]:
+* **Lantai Dasar (Lantai 1):** 50% Destruction
+* **Puncak Menara (Lantai 100):** 100% Destruction (Kosong Mutlak / *Void*)
+
+Menara ini dibagi menjadi **4 Zona Utama** dengan tingkat kesulitan, musuh, dan bos yang semakin mematikan.
+
+---
+
+## 🗺️ Tower Zones & Enemy Structure
+
+### 🌑 Zona 1: Lantai 1 – 25 (Destruction Level: 50% – 62.5%)
+* **Lingkungan:** Reruntuhan pinggiran kota Valeria, hutan yang layu, monster liar, dan kultis tingkat rendah.
+* **Keroco Utama:** *Corrupted Vanguard* & *Warped Forest Wolf*
+* **Daftar Boss Utama:**
+  * **Lantai 5:** Warden of the Outer Gate *(Mantan Ksatria Valeria)* — Skill: *Broken Oath Strike* [Armor Broken & Stun]
+  * **Lantai 10:** Cult Inquisitor Vane — Skill: *Darkness Sacrament* [Mana Drain & Silence]
+  * **Lantai 15:** Corrupted Iron Golem — Skill: *Seismic Slam* [Slow & Concussion]
+  * **Lantai 20:** High Priestess of Agony — Skill: *Soul Tether* [Soul Link & Curse]
+  * **Lantai 25:** Malakor, The Gatekeeper of Ruins — Skill: *Eclipse Blade* [Darkness Veil & Deep Wound]
+
+---
+
+### 🌑 Zona 2: Lantai 26 – 50 (Destruction Level: 63% – 75%)
+* **Lingkungan:** Reruntuhan pusat perdagangan Aurelia, distrik akademi sihir, dan eksperimen alkimia gelap.
+* **Keroco Utama:** *Cultist Spellweaver* & *Distorted Automaton*
+* **Daftar Boss Utama:**
+  * **Lantai 30:** Archmage Valthor — Skill: *Mana Collapse* [Mana Overload]
+  * **Lantai 35:** Beastlord Garmr — Skill: *Bloodthirsty Howl* [Terror & Defense Down]
+  * **Lantai 40:** Abyssal Serpent of Atlantia — Skill: *Tidal Corruption* [Poison & Nausea]
+  * **Lantai 45:** Master Smith Ignis — Skill: *Forge of Despair* [Heavy Weight / 0% Dodge]
+  * **Lantai 50:** The Fallen Emperor of Aurelia — Skill: *Imperial Judgment* [Absolute Suppression & Stat Lock]
+
+---
+
+### 🌑 Zona 3: Lantai 51 – 75 (Destruction Level: 76% – 88%)
+* **Lingkungan:** Area inti kekaisaran Elysium dan kuil suci yang runtuh. Tempat hukum fisika dan sihir rusak parah.
+* **Keroco Utama:** *Corrupted Temple Templar* & *Void Phantom*
+* **Daftar Boss Utama:**
+  * **Lantai 55:** Guardian of the Grand Library — Skill: *Forbidden Knowledge* [Mental Confusion & Amnesia]
+  * **Lantai 60:** Corrupted High Elf General, Elidyr — Skill: *Wilted Nature Arrow* [Decay]
+  * **Lantai 65:** General of the Demon Vanguard, Malphas — Skill: *Hellfire Command* [Hellfire Burn & Armor Melt]
+  * **Lantai 70:** Dragonkin Overlord of Desolation, Ignirath — Skill: *Dragon's Breath of Nothingness* [Dragon Fear & Burn Out]
+  * **Lantai 75:** Grand Inquisitor of the Cult, Malakor’s Shadow — Skill: *Eclipse Judgment* [Total Darkness & Doom]
+
+---
+
+### 🌑 Zona 4: Lantai 76 – 100 (Destruction Level: 89% – 100%)
+* **Lingkungan:** Puncak menara tempat batas dunia melebur dengan kekosongan mutlak (*Void*), markas Cult of Eternal Night.
+* **Keroco Utama:** *Void Apostle* & *Corruption Chimera*
+* **Daftar Boss Utama:**
+  * **Lantai 80:** Herald of Nythar, The Faceless Prophet — Skill: *Prophecy of Annihilation* [Despair & Stat Drain]
+  * **Lantai 85:** Guardian of the Abyss Gate — Skill: *Abyssal Gravitation* [Crush & Rooted]
+  * **Lantai 90:** True Form of the Cult Grandmaster — Skill: *Eternal Night Protocol* [Eternal Slumber & Soul Fracture]
+  * **Lantai 95:** Avatar of Nythar (The Fragment of Nothingness) — Skill: *Gaze of the Dark God* [Erasure & Madness/Instant Death]
+  * **Lantai 100:** **NYTHAR, THE DARK GOD (Final Boss)** — Skill: *The Return to Nothingness* [Absolute Void: 100% Mana Drain, Doom, & Reset Cooldown]
+
+---
+
+## ⚙️ Core Features & Systems
+* **World Simulation & Game State System:** Mengelola kondisi dunia, status lantai menara, faksi, faksi musuh (*Cult of Eternal Night*), serta dinamika narasi yang responsif[cite: 1].
+* **Character Recruitment & Relationship System:** Merekrut para penyintas dari berbagai ras (Human, Elf, Dwarf, Beastfolk, Demon, dll.) yang memiliki latar belakang, trauma, dan motivasi unik masing-masing[cite: 1].
+* **Dynamic Tower Progression:** Tantangan per lantai yang tidak hanya berfokus pada pertempuran, tetapi juga manajemen sumber daya dan strategi menghadapi efek debuff skill musuh yang kompleks.
+
+---
+
+## 🎯 Final Goal
+Capai **Lantai 100**, takukkan **Nythar**, penuhi **The Pact**, dan raih hak untuk melahirkan kembali dunia (*A New Aetheria*) sesuai dengan pilihan dan takdir yang Anda tentukan[cite: 1]!
