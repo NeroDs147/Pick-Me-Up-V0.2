@@ -1,0 +1,1316 @@
+# 24. WORLD EXPLORATION — MEDICAL MATERIAL LOOT DROP
+
+World Exploration tidak hanya menghasilkan material untuk Blacksmith.
+
+Exploration juga dapat menghasilkan:
+
+```text
+BLACKSMITH MATERIAL
+        +
+MEDICAL MATERIAL
+```
+
+Medical Material digunakan untuk:
+
+```text
+WORLD EXPLORATION
+       ↓
+MEDICAL MATERIAL
+       ↓
+INVENTORY
+       ↓
+MAGE TOWER
+       ↓
+MEDICAL CRAFTING
+       ↓
+MEDICAL
+       ↓
+ACTIVE PARTY
+```
+
+Medical Material memiliki progression yang mengikuti Exploration Level.
+
+---
+
+# 25. MEDICAL MATERIAL TIER
+
+| Exploration | Unlock Floor | Medical Material Tier |
+| ----------- | -----------: | --------------------- |
+| Lv.1        |     Floor 10 | Basic                 |
+| Lv.2        |     Floor 20 | Minor                 |
+| Lv.3        |     Floor 30 | Advanced              |
+| Lv.4        |     Floor 40 | Superior              |
+| Lv.5        |     Floor 50 | Arcane                |
+
+Material untuk Medical Lv.6–9 tidak berasal dari normal exploration secara rutin.
+
+```text
+Exploration Lv.1
+      ↓
+Basic Medical Material
+
+Exploration Lv.2
+      ↓
+Minor Medical Material
+
+Exploration Lv.3
+      ↓
+Advanced Medical Material
+
+Exploration Lv.4
+      ↓
+Superior Medical Material
+
+Exploration Lv.5
+      ↓
+Arcane Medical Material
+
+Special Content
+      ↓
+Medical Lv.6 Material
+
+Boss Floor
+      ↓
+Medical Lv.7 Drop
+
+Boss Raid
+      ↓
+Medical Lv.8–9 Drop
+```
+
+---
+
+# 26. EXPLORATION Lv.1 — BASIC MEDICAL MATERIAL
+
+**Unlock: Floor 10**
+
+Material utama untuk:
+
+```text
+Medical Lv.1
+```
+
+### Loot List
+
+| ID          | Material             | Rarity   | Main Use           |
+| ----------- | -------------------- | -------- | ------------------ |
+| MED-MAT-001 | Healing Herb         | Common   | HP Recovery        |
+| MED-MAT-002 | Water Essence        | Common   | Potion Base        |
+| MED-MAT-003 | Medicinal Leaf       | Common   | Healing            |
+| MED-MAT-004 | Small Healing Flower | Common   | Recovery           |
+| MED-MAT-005 | Clean Water          | Common   | Medical Processing |
+| MED-MAT-006 | Soft Herb            | Common   | Basic Potion       |
+| MED-MAT-007 | Small Vital Seed     | Uncommon | Vital Essence      |
+| MED-MAT-008 | Weak Monster Blood   | Uncommon | Medical Catalyst   |
+| MED-MAT-009 | Small Green Crystal  | Uncommon | Healing Catalyst   |
+| MED-MAT-010 | Purified Herb        | Uncommon | Medical Refining   |
+
+### Recommended Source
+
+```text
+Forest
+Ruins
+Grassland
+Old Village
+River
+Low-Level Monster Nest
+Abandoned Farm
+```
+
+### Primary Materials
+
+```text
+Healing Herb
+Water Essence
+Medicinal Leaf
+Clean Water
+```
+
+### Craft Connection
+
+```text
+Healing Herb x5
++
+Water Essence x2
++
+Gold
+      ↓
+MED-001
+Basic Healing Potion
+```
+
+---
+
+# 27. EXPLORATION Lv.2 — MINOR MEDICAL MATERIAL
+
+**Unlock: Floor 20**
+
+Material utama untuk:
+
+```text
+Medical Lv.2
+```
+
+### Loot List
+
+| ID          | Material                | Rarity   | Main Use            |
+| ----------- | ----------------------- | -------- | ------------------- |
+| MED-MAT-011 | High Healing Herb       | Uncommon | Advanced Healing    |
+| MED-MAT-012 | Vital Essence           | Uncommon | Medical Buff        |
+| MED-MAT-013 | Refined Water Essence   | Uncommon | Potion              |
+| MED-MAT-014 | Vital Leaf              | Uncommon | HP Recovery         |
+| MED-MAT-015 | Strong Medicinal Flower | Uncommon | Medical             |
+| MED-MAT-016 | Minor Life Crystal      | Uncommon | Recovery            |
+| MED-MAT-017 | Monster Blood           | Uncommon | Catalyst            |
+| MED-MAT-018 | Green Magic Crystal     | Rare     | Medical Catalyst    |
+| MED-MAT-019 | Beast Vital Organ       | Rare     | Vital Essence       |
+| MED-MAT-020 | Purified Vital Herb     | Rare     | High-Grade Medicine |
+
+### Recommended Source
+
+```text
+Deep Forest
+Mountain
+Destroyed Fortress
+Ancient Road
+Underground Ruins
+Monster Camp
+```
+
+### Primary Materials
+
+```text
+High Healing Herb
+Vital Essence
+Refined Water Essence
+Vital Leaf
+```
+
+### Craft Connection
+
+```text
+Healing Herb
++
+Vital Essence
++
+Water Essence
+      ↓
+MED-002
+Minor Vital Potion
+```
+
+---
+
+# 28. EXPLORATION Lv.3 — ADVANCED MEDICAL MATERIAL
+
+**Unlock: Floor 30**
+
+Material utama untuk:
+
+```text
+Medical Lv.3
+```
+
+### Loot List
+
+| ID          | Material                | Rarity | Main Use            |
+| ----------- | ----------------------- | ------ | ------------------- |
+| MED-MAT-021 | Advanced Healing Herb   | Rare   | Advanced Medical    |
+| MED-MAT-022 | Magic Water             | Rare   | Medical Crafting    |
+| MED-MAT-023 | Refined Vital Essence   | Rare   | Stat Buff           |
+| MED-MAT-024 | High Medicinal Flower   | Rare   | Recovery            |
+| MED-MAT-025 | Magic Herb              | Rare   | Magic Medicine      |
+| MED-MAT-026 | Small Magic Crystal     | Rare   | Magical Catalyst    |
+| MED-MAT-027 | Monster Core Fragment   | Rare   | Medical Catalyst    |
+| MED-MAT-028 | Ancient Medicinal Leaf  | Rare   | High Recovery       |
+| MED-MAT-029 | Pure Vital Seed         | Rare   | Vital Essence       |
+| MED-MAT-030 | Refined Healing Crystal | Rare   | Medical Enhancement |
+
+### Recommended Source
+
+```text
+Ancient Mine
+Ruined Kingdom
+Ancient Battlefield
+Abandoned Capital
+Deep Dungeon Ruins
+High-Level Monster Nest
+```
+
+### Primary Materials
+
+```text
+High Healing Herb
+Vital Essence
+Magic Water
+Small Magic Crystal
+```
+
+### Craft Connection
+
+```text
+High Healing Herb x10
++
+Vital Essence x5
++
+Magic Water x5
++
+Small Magic Crystal x2
++
+Gold
+      ↓
+MED-003
+Advanced Battle Elixir
+```
+
+---
+
+# 29. EXPLORATION Lv.4 — SUPERIOR MEDICAL MATERIAL
+
+**Unlock: Floor 40**
+
+Material utama untuk:
+
+```text
+Medical Lv.4
+```
+
+### Loot List
+
+| ID          | Material               | Rarity | Main Use           |
+| ----------- | ---------------------- | ------ | ------------------ |
+| MED-MAT-031 | Superior Healing Herb  | Epic   | Superior Medical   |
+| MED-MAT-032 | Arcane Water           | Epic   | Advanced Potion    |
+| MED-MAT-033 | Refined Magic Crystal  | Epic   | Medical Catalyst   |
+| MED-MAT-034 | Superior Vital Essence | Epic   | Stat Buff          |
+| MED-MAT-035 | Arcane Flower          | Epic   | Medical            |
+| MED-MAT-036 | Ancient Medicinal Herb | Epic   | Recovery           |
+| MED-MAT-037 | Monster Core           | Epic   | Medical Catalyst   |
+| MED-MAT-038 | Pure Life Crystal      | Epic   | HP Recovery        |
+| MED-MAT-039 | Spirit Herb            | Epic   | Resistance         |
+| MED-MAT-040 | Refined Arcane Leaf    | Epic   | High-Level Medical |
+
+### Recommended Source
+
+```text
+Ancient Forest
+Mithril Mine
+Magic Ruins
+Spirit Realm Ruins
+Ancient Fortress
+High-Level Monster Territory
+```
+
+### Primary Materials
+
+```text
+Superior Healing Herb
+Arcane Water
+Magic Crystal
+Monster Core
+```
+
+### Craft Connection
+
+```text
+Superior Healing Herb x15
++
+Arcane Water x8
++
+Magic Crystal x5
++
+Monster Core x3
++
+Gold
+      ↓
+MED-004
+Superior Combat Elixir
+```
+
+---
+
+# 30. EXPLORATION Lv.5 — ARCANE MEDICAL MATERIAL
+
+**Unlock: Floor 50**
+
+Material utama untuk:
+
+```text
+Medical Lv.5
+```
+
+### Loot List
+
+| ID          | Material            | Rarity    | Main Use           |
+| ----------- | ------------------- | --------- | ------------------ |
+| MED-MAT-041 | Arcane Herb         | Legendary | Arcane Medical     |
+| MED-MAT-042 | Pure Magic Water    | Legendary | High-Level Medical |
+| MED-MAT-043 | Large Magic Crystal | Legendary | Medical Catalyst   |
+| MED-MAT-044 | High Monster Core   | Legendary | Advanced Catalyst  |
+| MED-MAT-045 | Ancient Life Flower | Legendary | HP Recovery        |
+| MED-MAT-046 | World Tree Leaf     | Legendary | Recovery           |
+| MED-MAT-047 | Dragon Blood        | Legendary | Combat Medical     |
+| MED-MAT-048 | High Spirit Herb    | Legendary | Resistance         |
+| MED-MAT-049 | Arcane Life Crystal | Legendary | Stat Enhancement   |
+| MED-MAT-050 | Pure Vital Essence  | Legendary | Advanced Medical   |
+
+### Recommended Source
+
+```text
+Ancient Capital
+World Tree Ruins
+Dragon Territory
+Legendary Monster Territory
+Ancient Battlefield
+Forbidden Ruins
+```
+
+### Primary Materials
+
+```text
+Arcane Herb
+Pure Magic Water
+Large Magic Crystal
+High Monster Core
+```
+
+### Craft Connection
+
+```text
+Arcane Herb x20
++
+Pure Magic Water x10
++
+Large Magic Crystal x8
++
+High Monster Core x5
++
+Gold
+      ↓
+MED-005
+Arcane Hero Elixir
+```
+
+---
+
+# 31. COMPLETE MEDICAL MATERIAL PROGRESSION
+
+```text
+EXPLORATION Lv.1
+      ↓
+Basic Medical Materials
+      ↓
+MEDICAL Lv.1
+
+EXPLORATION Lv.2
+      ↓
+Minor Medical Materials
+      ↓
+MEDICAL Lv.2
+
+EXPLORATION Lv.3
+      ↓
+Advanced Medical Materials
+      ↓
+MEDICAL Lv.3
+
+EXPLORATION Lv.4
+      ↓
+Superior Medical Materials
+      ↓
+MEDICAL Lv.4
+
+EXPLORATION Lv.5
+      ↓
+Arcane Medical Materials
+      ↓
+MEDICAL Lv.5
+```
+
+---
+
+# 32. MEDICAL MATERIAL DROP CHANCE
+
+Medical Material menggunakan RNG terpisah dari Blacksmith Material.
+
+Setiap exploration dapat melakukan dua loot roll:
+
+```text
+EXPLORATION
+     │
+     ├── BLACKSMITH LOOT ROLL
+     │
+     └── MEDICAL LOOT ROLL
+```
+
+Base chance:
+
+| Material Rarity | Drop Chance |
+| --------------- | ----------: |
+| Common          |         60% |
+| Uncommon        |         25% |
+| Rare            |         10% |
+| Epic            |          4% |
+| Legendary       |          1% |
+
+Nilai tersebut merupakan base RNG dan dapat dimodifikasi oleh:
+
+```text
+Exploration Level
+Location
+Difficulty
+Hero Skill
+Luck
+Party Composition
+Equipment
+Exploration Quest
+World Event
+RNG Modifier
+```
+
+---
+
+# 33. DUAL LOOT SYSTEM
+
+Satu Exploration dapat memberikan kedua jenis material.
+
+Contoh:
+
+```text
+Explore:
+Ancient Forest
+
+        ↓
+
+BLACKSMITH LOOT
+├── Mithril Ore x4
+├── Ancient Wood x2
+└── High Monster Core x1
+
+        +
+
+MEDICAL LOOT
+├── Superior Healing Herb x6
+├── Arcane Water x2
+└── Spirit Herb x1
+```
+
+Dengan demikian satu ekspedisi dapat memberikan:
+
+```text
+Equipment Material
++
+Medical Material
+```
+
+---
+
+# 34. EXPLORATION LOOT TABLE — COMBINED
+
+## Lv.1
+
+```text
+BLACKSMITH
+├── Iron Ore
+├── Coal
+├── Rough Leather
+├── Hardwood
+├── Rough Thread
+├── Iron Ingot
+├── Rough Gem
+├── Monster Bone
+├── Beast Fang
+└── Beast Claw
+
+MEDICAL
+├── Healing Herb
+├── Water Essence
+├── Medicinal Leaf
+├── Small Healing Flower
+├── Clean Water
+├── Soft Herb
+├── Small Vital Seed
+├── Weak Monster Blood
+├── Small Green Crystal
+└── Purified Herb
+```
+
+---
+
+## Lv.2
+
+```text
+BLACKSMITH
+├── Steel Ore
+├── Steel Ingot
+├── Refined Coal
+├── Hard Leather
+├── Quality Wood
+├── Strong Thread
+├── Steel Fragment
+├── Monster Bone
+├── Monster Horn
+└── Quality Gem
+
+MEDICAL
+├── High Healing Herb
+├── Vital Essence
+├── Refined Water Essence
+├── Vital Leaf
+├── Strong Medicinal Flower
+├── Minor Life Crystal
+├── Monster Blood
+├── Green Magic Crystal
+├── Beast Vital Organ
+└── Purified Vital Herb
+```
+
+---
+
+## Lv.3
+
+```text
+BLACKSMITH
+├── Damascus Ore
+├── Damascus Ingot
+├── Refined Iron
+├── Fine Coal
+├── Fine Leather
+├── Fine Wood
+├── Fine Thread
+├── Large Monster Bone
+├── Monster Core
+└── Refined Gem
+
+MEDICAL
+├── Advanced Healing Herb
+├── Magic Water
+├── Refined Vital Essence
+├── High Medicinal Flower
+├── Magic Herb
+├── Small Magic Crystal
+├── Monster Core Fragment
+├── Ancient Medicinal Leaf
+├── Pure Vital Seed
+└── Refined Healing Crystal
+```
+
+---
+
+## Lv.4
+
+```text
+BLACKSMITH
+├── Mithril Ore
+├── Mithril Ingot
+├── Pure Mithril Fragment
+├── Magic Crystal
+├── Mithril Thread
+├── Ancient Leather
+├── Ancient Wood
+├── High Monster Core
+├── Large Magic Gem
+└── Spirit Stone
+
+MEDICAL
+├── Superior Healing Herb
+├── Arcane Water
+├── Refined Magic Crystal
+├── Superior Vital Essence
+├── Arcane Flower
+├── Ancient Medicinal Herb
+├── Monster Core
+├── Pure Life Crystal
+├── Spirit Herb
+└── Refined Arcane Leaf
+```
+
+---
+
+## Lv.5
+
+```text
+BLACKSMITH
+├── Epic Metal Ore
+├── Epic Ingot
+├── Arcane Crystal
+├── Ancient Core
+├── Dragon Scale
+├── Dragon Bone
+├── Ancient Monster Leather
+├── World Tree Wood
+├── High Arcane Gem
+└── Epic Spirit Stone
+
+MEDICAL
+├── Arcane Herb
+├── Pure Magic Water
+├── Large Magic Crystal
+├── High Monster Core
+├── Ancient Life Flower
+├── World Tree Leaf
+├── Dragon Blood
+├── High Spirit Herb
+├── Arcane Life Crystal
+└── Pure Vital Essence
+```
+
+---
+
+# 35. MATERIAL DROP QUANTITY
+
+Jumlah material yang diperoleh menggunakan RNG quantity.
+
+### Exploration Lv.1
+
+```text
+Common:
+3–10
+
+Uncommon:
+1–5
+
+Rare:
+1–3
+```
+
+### Exploration Lv.2
+
+```text
+Common:
+3–10
+
+Uncommon:
+2–7
+
+Rare:
+1–4
+```
+
+### Exploration Lv.3
+
+```text
+Uncommon:
+2–8
+
+Rare:
+1–5
+
+Epic:
+1–2
+```
+
+### Exploration Lv.4
+
+```text
+Rare:
+2–6
+
+Epic:
+1–4
+
+Legendary:
+1–2
+```
+
+### Exploration Lv.5
+
+```text
+Epic:
+2–5
+
+Legendary:
+1–3
+```
+
+Material khusus seperti:
+
+```text
+Dragon Blood
+World Tree Leaf
+Pure Vital Essence
+High Monster Core
+```
+
+dapat memiliki quantity yang lebih rendah.
+
+---
+
+# 36. MATERIAL CONVERSION
+
+Beberapa material mentah dapat diproses menjadi material Medical yang lebih tinggi.
+
+Contoh:
+
+```text
+Healing Herb
+      ↓
+Medical Processing
+      ↓
+High Healing Herb
+```
+
+```text
+Water Essence
+      ↓
+Purification
+      ↓
+Refined Water Essence
+```
+
+```text
+Vital Seed
+      ↓
+Alchemy Processing
+      ↓
+Vital Essence
+```
+
+```text
+Magic Crystal
+      ↓
+Refinement
+      ↓
+Large Magic Crystal
+```
+
+Namun conversion membutuhkan:
+
+```text
+Mage Tower
++
+Material
++
+Gold
++
+Processing Time
+```
+
+---
+
+# 37. MEDICAL MATERIAL → MAGE TOWER
+
+```text
+WORLD EXPLORATION
+        ↓
+MEDICAL MATERIAL
+        ↓
+INVENTORY
+        ↓
+MAGE TOWER
+        ↓
+MATERIAL CHECK
+        ↓
+GOLD CHECK
+        ↓
+CRAFTING
+        ↓
+MEDICAL
+        ↓
+INVENTORY
+```
+
+Mage Tower tidak menghasilkan bahan mentah.
+
+```text
+WORLD EXPLORATION
+        ↓
+MATERIAL
+```
+
+Mage Tower hanya:
+
+```text
+PROCESS
++
+REFINE
++
+CRAFT
+```
+
+---
+
+# 38. MEDICAL MATERIAL DATABASE
+
+```text
+MedicalMaterialTemplate
+├── Material_Template_ID
+├── Material_Name
+├── Material_Rarity
+├── Material_Tier
+├── Exploration_Level
+├── Main_Use
+├── Source
+├── Drop_Rate
+├── Min_Quantity
+├── Max_Quantity
+├── Craft_Requirement
+└── Processing_Requirement
+```
+
+Contoh:
+
+```text
+Material_Template_ID:
+MED-MAT-001
+
+Name:
+Healing Herb
+
+Rarity:
+COMMON
+
+Tier:
+BASIC
+
+Exploration Level:
+1
+
+Source:
+World Exploration
+
+Drop Rate:
+60% Base
+
+Quantity:
+3–10
+
+Main Use:
+Medical Lv.1
+```
+
+---
+
+# 39. MEDICAL MATERIAL INSTANCE
+
+Material yang telah diperoleh disimpan dalam Inventory.
+
+```text
+MedicalMaterialInstance
+├── Material_ID
+├── Material_Template_ID
+├── Material_Name
+├── Material_Rarity
+├── Quantity
+├── Source
+├── Acquired_Date
+└── Status
+```
+
+Contoh:
+
+```text
+Material_ID:
+MMI-000001
+
+Template:
+MED-MAT-001
+
+Name:
+Healing Herb
+
+Rarity:
+COMMON
+
+Quantity:
+37
+
+Source:
+World Exploration
+
+Status:
+STORED
+```
+
+---
+
+# 40. EXPLORATION LOOT BONUS
+
+Hero tertentu dapat memiliki kemampuan yang memengaruhi Medical Material Drop.
+
+Contoh:
+
+```text
+Hero Skill:
+Herbalist
+
+Effect:
++15% Medical Material Drop Rate
+```
+
+Hero lain:
+
+```text
+Mage Skill:
+Arcane Harvest
+
+Effect:
++10% Magic Medical Material Drop Rate
+```
+
+Contoh:
+
+```text
+Base Medical Loot:
+10%
+
+Hero Skill:
++15%
+
+Final:
+25%
+```
+
+Bonus tidak mengubah material yang sudah tersimpan.
+
+Bonus hanya memengaruhi loot RNG saat Exploration berlangsung.
+
+---
+
+# 41. RARE MEDICAL MATERIAL
+
+Material tertentu memiliki drop rate khusus.
+
+Contoh:
+
+```text
+Dragon Blood
+World Tree Leaf
+Ancient Life Flower
+Arcane Life Crystal
+Pure Vital Essence
+```
+
+Material tersebut dapat memiliki:
+
+```text
+Base Drop:
+1%–5%
+```
+
+dan hanya muncul di:
+
+```text
+Exploration Lv.5
+Rare Location
+Special Exploration
+World Event
+Legendary Monster Territory
+```
+
+---
+
+# 42. SPECIAL EXPLORATION MEDICAL LOOT
+
+Special Exploration dapat memberikan material yang tidak tersedia pada normal exploration.
+
+Contoh:
+
+```text
+WORLD TREE RUINS
+        ↓
+Special Exploration
+        ↓
+RNG
+        ↓
+World Tree Leaf
+Ancient Life Flower
+Arcane Life Crystal
+Pure Vital Essence
+```
+
+Material tersebut dapat digunakan untuk:
+
+```text
+Medical Lv.5
+Medical Lv.6
+Special Medical Craft
+```
+
+---
+
+# 43. MEDICAL Lv.6 MATERIAL DROP
+
+Medical Lv.6 tidak dapat dibuat hanya dengan material normal Exploration Lv.1–5.
+
+Material khusus diperlukan.
+
+Contoh:
+
+```text
+High Arcane Herb
+Greater Life Crystal
+Pure Aether Water
+Ancient Vital Core
+Divine Medicinal Flower
+```
+
+Sumber:
+
+```text
+Special Exploration
+World Event
+Rare Location
+Special Quest
+High-Level Monster Territory
+```
+
+Progression:
+
+```text
+Special Exploration
+       ↓
+Rare Medical Material
+       ↓
+Special Craft
+       ↓
+MED-006
+High Arcane Panacea
+```
+
+---
+
+# 44. BOSS FLOOR MEDICAL DROP
+
+Medical Lv.7 menggunakan sistem drop yang berbeda dari normal Exploration.
+
+```text
+BOSS FLOOR
+     ↓
+BOSS DEFEATED
+     ↓
+BOSS LOOT TABLE
+     ↓
+RNG
+     ↓
+MED-007
+```
+
+Boss Floor dapat memberikan:
+
+```text
+Boss Recovery Elixir
+Boss Medical Core
+Boss Vital Essence
+Boss Blood
+Boss Life Crystal
+```
+
+Medical Lv.7 memiliki:
+
+```text
+CRAFTABLE:
+NO
+
+SOURCE:
+BOSS FLOOR
+```
+
+---
+
+# 45. BOSS RAID MEDICAL DROP
+
+Boss Raid dapat memberikan:
+
+```text
+MED-008
+MED-009
+```
+
+serta material khusus:
+
+```text
+Raid Life Core
+Raid Aether Crystal
+Greater Vital Essence
+Mythic Blood Essence
+Mythic Life Crystal
+```
+
+Flow:
+
+```text
+BOSS RAID
+    ↓
+BOSS DEFEATED
+    ↓
+RAID LOOT TABLE
+    ↓
+RNG
+    ├── Normal Raid Loot
+    ├── Rare Raid Loot
+    ├── MED-008
+    └── MED-009
+```
+
+---
+
+# 46. COMPLETE MEDICAL LOOT PROGRESSION
+
+```text
+FLOOR 10
+   ↓
+EXPLORATION Lv.1
+   ↓
+Basic Medical Materials
+   ↓
+Medical Lv.1
+
+
+FLOOR 20
+   ↓
+EXPLORATION Lv.2
+   ↓
+Minor Medical Materials
+   ↓
+Medical Lv.2
+
+
+FLOOR 30
+   ↓
+EXPLORATION Lv.3
+   ↓
+Advanced Medical Materials
+   ↓
+Medical Lv.3
+
+
+FLOOR 40
+   ↓
+EXPLORATION Lv.4
+   ↓
+Superior Medical Materials
+   ↓
+Medical Lv.4
+
+
+FLOOR 50
+   ↓
+EXPLORATION Lv.5
+   ↓
+Arcane Medical Materials
+   ↓
+Medical Lv.5
+
+
+SPECIAL CONTENT
+   ↓
+Rare Medical Materials
+   ↓
+Medical Lv.6
+
+
+BOSS FLOOR
+   ↓
+Boss Medical Loot
+   ↓
+Medical Lv.7
+
+
+BOSS RAID
+   ↓
+Raid Medical Loot
+   ↓
+Medical Lv.8
+
+
+RARE BOSS RAID
+   ↓
+Mythic Medical Loot
+   ↓
+Medical Lv.9
+```
+
+---
+
+# 47. COMPLETE AETHERIA MATERIAL FLOW
+
+```text
+                    TOWER OF REBIRTH
+                           │
+                           ▼
+                    FLOOR PROGRESS
+                           │
+                           ▼
+                  WORLD EXPLORATION
+                           │
+          ┌────────────────┴────────────────┐
+          │                                 │
+          ▼                                 ▼
+   BLACKSMITH LOOT                   MEDICAL LOOT
+          │                                 │
+          ▼                                 ▼
+   Material Storage                 Material Storage
+          │                                 │
+          ▼                                 ▼
+      BLACKSMITH                       MAGE TOWER
+          │                                 │
+          ▼                                 ▼
+     EQUIPMENT                         MEDICAL
+          │                                 │
+          └────────────────┬────────────────┘
+                           ▼
+                         HERO
+                           │
+                           ▼
+                     ACTIVE PARTY
+                           │
+                           ▼
+                        COMBAT
+```
+
+---
+
+# 48. FINAL LOOT RULE
+
+World Exploration menggunakan **dua jalur loot utama**:
+
+```text
+WORLD EXPLORATION
+       │
+       ├───────────────┐
+       ▼               ▼
+BLACKSMITH LOOT   MEDICAL LOOT
+       │               │
+       ▼               ▼
+Equipment Craft    Medical Craft
+       │               │
+       ▼               ▼
+Blacksmith         Mage Tower
+       │               │
+       ▼               ▼
+Equipment           Medical
+       │               │
+       └───────┬───────┘
+               ▼
+             HERO
+               │
+               ▼
+         ACTIVE PARTY
+```
+
+**Core Rule:**
+
+```text
+Exploration Lv.1–5
+        ↓
+Normal Material Loot
+
+Special Exploration
+        ↓
+Rare Medical Material
+
+Boss Floor
+        ↓
+Medical Lv.7
+
+Boss Raid
+        ↓
+Medical Lv.8
+
+Rare Boss Raid
+        ↓
+Medical Lv.9
+```
+
+Dengan sistem ini, **World Exploration menjadi sumber utama bahan mentah Aetheria**, sementara Blacksmith dan Mage Tower berfungsi sebagai fasilitas pengolahan/crafting. Progress Tower tetap menjadi kunci untuk membuka kualitas material yang lebih tinggi.
