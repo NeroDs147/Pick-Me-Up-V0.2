@@ -1,0 +1,1904 @@
+# ⚔️ AETHERIA — EQUIPMENT DATABASE
+
+## 1. OVERVIEW
+
+Equipment System menyimpan seluruh equipment yang dapat digunakan oleh Hero.
+
+Equipment dibagi menjadi tiga kategori:
+
+```text
+WEAPON
+ARMOR
+ACCESSORY
+```
+
+Equipment memiliki 7 tingkat kualitas:
+
+```text
+IRON
+STEEL
+DAMASCUS
+MITHRIL
+EPIC
+LEGEND
+MYTHICAL
+```
+
+Urutan kekuatan:
+
+```text
+IRON
+  ↓
+STEEL
+  ↓
+DAMASCUS
+  ↓
+MITHRIL
+  ↓
+EPIC
+  ↓
+LEGEND
+  ↓
+MYTHICAL
+```
+
+---
+
+# 2. EQUIPMENT ID SYSTEM
+
+Format ID:
+
+```text
+EQP-[TYPE]-[TIER]-[NUMBER]
+```
+
+Contoh:
+
+```text
+EQP-WPN-IRON-001
+EQP-ARM-STEEL-001
+EQP-ACC-EPIC-001
+```
+
+Keterangan:
+
+```text
+EQP = Equipment
+
+WPN = Weapon
+ARM = Armor
+ACC = Accessory
+```
+
+---
+
+# 3. EQUIPMENT TIER
+
+| Tier     | Code     | Rank |
+| -------- | -------- | ---: |
+| Iron     | IRON     |    1 |
+| Steel    | STEEL    |    2 |
+| Damascus | DAMASCUS |    3 |
+| Mithril  | MITHRIL  |    4 |
+| Epic     | EPIC     |    5 |
+| Legend   | LEGEND   |    6 |
+| Mythical | MYTHICAL |    7 |
+
+---
+
+# 4. STAT SYSTEM
+
+Equipment menggunakan stat utama:
+
+```text
+ATK
+MGATK
+DEF
+HP
+MP
+CRIT
+SPEED
+```
+
+Keterangan:
+
+```text
+ATK   = Physical Attack
+MGATK = Magic Attack
+DEF   = Defense
+HP    = Health Point
+MP    = Mana Point
+CRIT  = Critical Chance
+SPEED = Action Speed
+```
+
+Weapon umumnya memberikan:
+
+```text
+ATK
+MGATK
+CRIT
+SPEED
+```
+
+Senjata yang berfokus pada Mage atau Magic Build wajib menggunakan stat:
+
+```text
+MGATK
+```
+
+Senjata Mage dapat tetap memiliki `ATK` sebagai stat sekunder, tetapi sumber kekuatan utamanya harus berasal dari `MGATK`.
+
+Armor umumnya memberikan:
+
+```text
+DEF
+HP
+```
+
+Accessory dapat memberikan:
+
+```text
+HP
+ATK
+MGATK
+DEF
+CRIT
+SPEED
+MP
+```
+
+---
+
+# 5. EQUIPMENT LIST
+
+## ⚔️ 5.1 IRON EQUIPMENT
+
+### 001 — Iron Longsword
+
+```text
+ID       : EQP-WPN-IRON-001
+Name     : Iron Longsword
+Type     : WEAPON
+Tier     : IRON
+ATK      : +25
+MGATK    : +0
+DEF      : +0
+HP       : +0
+CRIT     : +1%
+SPEED    : +0
+Effect   : None
+```
+
+### 002 — Iron Battle Axe
+
+```text
+ID       : EQP-WPN-IRON-002
+Name     : Iron Battle Axe
+Type     : WEAPON
+Tier     : IRON
+ATK      : +32
+MGATK    : +0
+DEF      : +0
+HP       : +0
+CRIT     : +0%
+SPEED    : -2
+Effect   : Heavy Strike
+```
+
+### 003 — Iron Spear
+
+```text
+ID       : EQP-WPN-IRON-003
+Name     : Iron Spear
+Type     : WEAPON
+Tier     : IRON
+ATK      : +28
+MGATK    : +0
+DEF      : +0
+HP       : +0
+CRIT     : +2%
+SPEED    : +0
+Effect   : Piercing
+```
+
+### 004 — Iron Short Bow
+
+```text
+ID       : EQP-WPN-IRON-004
+Name     : Iron Short Bow
+Type     : WEAPON
+Tier     : IRON
+ATK      : +22
+MGATK    : +0
+DEF      : +0
+HP       : +0
+CRIT     : +3%
+SPEED    : +2
+Effect   : Quick Shot
+```
+
+### 005 — Iron Staff
+
+```text
+ID       : EQP-WPN-IRON-005
+Name     : Iron Staff
+Type     : WEAPON
+Tier     : IRON
+ATK      : +5
+MGATK    : +25
+DEF      : +0
+HP       : +0
+CRIT     : +1%
+SPEED    : +0
+Effect   : Magic Power +5%
+```
+
+### 006 — Iron Dagger
+
+```text
+ID       : EQP-WPN-IRON-006
+Name     : Iron Dagger
+Type     : WEAPON
+Tier     : IRON
+ATK      : +20
+MGATK    : +0
+DEF      : +0
+HP       : +0
+CRIT     : +5%
+SPEED    : +4
+Effect   : Critical Damage +5%
+```
+
+### 007 — Iron Shield
+
+```text
+ID       : EQP-ARM-IRON-001
+Name     : Iron Shield
+Type     : ARMOR
+Tier     : IRON
+ATK      : +0
+MGATK    : +0
+DEF      : +30
+HP       : +50
+CRIT     : +0%
+SPEED    : -1
+Effect   : Block +3%
+```
+
+### 008 — Iron Chainmail
+
+```text
+ID       : EQP-ARM-IRON-002
+Name     : Iron Chainmail
+Type     : ARMOR
+Tier     : IRON
+DEF      : +35
+HP       : +80
+SPEED    : -1
+Effect   : None
+```
+
+### 009 — Iron Helmet
+
+```text
+ID       : EQP-ARM-IRON-003
+Name     : Iron Helmet
+Type     : ARMOR
+Tier     : IRON
+DEF      : +20
+HP       : +40
+Effect   : Head Protection
+```
+
+### 010 — Iron Ring
+
+```text
+ID       : EQP-ACC-IRON-001
+Name     : Iron Ring
+Type     : ACCESSORY
+Tier     : IRON
+ATK      : +5
+MGATK    : +0
+DEF      : +5
+HP       : +20
+Effect   : None
+```
+
+---
+
+# 🛡️ 5.2 STEEL EQUIPMENT
+
+### 011 — Steel Longsword
+
+```text
+ID       : EQP-WPN-STEEL-001
+Name     : Steel Longsword
+Type     : WEAPON
+Tier     : STEEL
+ATK      : +50
+MGATK    : +0
+CRIT     : +2%
+Effect   : Steel Edge
+```
+
+### 012 — Steel Great Axe
+
+```text
+ID       : EQP-WPN-STEEL-002
+Name     : Steel Great Axe
+Type     : WEAPON
+Tier     : STEEL
+ATK      : +62
+MGATK    : +0
+SPEED    : -2
+Effect   : Heavy Strike II
+```
+
+### 013 — Steel Spear
+
+```text
+ID       : EQP-WPN-STEEL-003
+Name     : Steel Spear
+Type     : WEAPON
+Tier     : STEEL
+ATK      : +55
+MGATK    : +0
+CRIT     : +3%
+Effect   : Piercing II
+```
+
+### 014 — Steel Bow
+
+```text
+ID       : EQP-WPN-STEEL-004
+Name     : Steel Bow
+Type     : WEAPON
+Tier     : STEEL
+ATK      : +48
+MGATK    : +0
+CRIT     : +5%
+SPEED    : +3
+Effect   : Quick Shot II
+```
+
+### 015 — Steel Magic Staff
+
+```text
+ID       : EQP-WPN-STEEL-005
+Name     : Steel Magic Staff
+Type     : WEAPON
+Tier     : STEEL
+ATK      : +10
+MGATK    : +55
+CRIT     : +2%
+Effect   : Magic Power +10%
+```
+
+### 016 — Steel Dagger
+
+```text
+ID       : EQP-WPN-STEEL-006
+Name     : Steel Dagger
+Type     : WEAPON
+Tier     : STEEL
+ATK      : +44
+MGATK    : +0
+CRIT     : +7%
+SPEED    : +5
+Effect   : Critical Damage +10%
+```
+
+### 017 — Steel Shield
+
+```text
+ID       : EQP-ARM-STEEL-001
+Name     : Steel Shield
+Type     : ARMOR
+Tier     : STEEL
+DEF      : +60
+HP       : +120
+Effect   : Block +5%
+```
+
+### 018 — Steel Armor
+
+```text
+ID       : EQP-ARM-STEEL-002
+Name     : Steel Armor
+Type     : ARMOR
+Tier     : STEEL
+DEF      : +70
+HP       : +160
+SPEED    : -1
+Effect   : Damage Reduction +2%
+```
+
+### 019 — Steel Helmet
+
+```text
+ID       : EQP-ARM-STEEL-003
+Name     : Steel Helmet
+Type     : ARMOR
+Tier     : STEEL
+DEF      : +40
+HP       : +80
+Effect   : Head Protection II
+```
+
+### 020 — Steel Bracelet
+
+```text
+ID       : EQP-ACC-STEEL-001
+Name     : Steel Bracelet
+Type     : ACCESSORY
+Tier     : STEEL
+ATK      : +10
+MGATK    : +0
+DEF      : +10
+HP       : +50
+Effect   : Physical Resistance +2%
+```
+
+---
+
+# 🔥 5.3 DAMASCUS EQUIPMENT
+
+### 021 — Damascus Blade
+
+```text
+ID       : EQP-WPN-DAMASCUS-001
+Name     : Damascus Blade
+Type     : WEAPON
+Tier     : DAMASCUS
+ATK      : +85
+MGATK    : +0
+CRIT     : +4%
+Effect   : Sharp Edge
+```
+
+### 022 — Damascus Greatsword
+
+```text
+ID       : EQP-WPN-DAMASCUS-002
+Name     : Damascus Greatsword
+Type     : WEAPON
+Tier     : DAMASCUS
+ATK      : +105
+MGATK    : +0
+SPEED    : -2
+Effect   : Armor Break +5%
+```
+
+### 023 — Damascus Spear
+
+```text
+ID       : EQP-WPN-DAMASCUS-003
+Name     : Damascus Spear
+Type     : WEAPON
+Tier     : DAMASCUS
+ATK      : +92
+MGATK    : +0
+CRIT     : +5%
+Effect   : Piercing III
+```
+
+### 024 — Damascus Bow
+
+```text
+ID       : EQP-WPN-DAMASCUS-004
+Name     : Damascus Bow
+Type     : WEAPON
+Tier     : DAMASCUS
+ATK      : +80
+MGATK    : +0
+CRIT     : +7%
+SPEED    : +5
+Effect   : Long Shot
+```
+
+### 025 — Damascus Staff
+
+```text
+ID       : EQP-WPN-DAMASCUS-005
+Name     : Damascus Staff
+Type     : WEAPON
+Tier     : DAMASCUS
+ATK      : +15
+MGATK    : +95
+Effect   : Magic Power +15%
+```
+
+### 026 — Damascus Dagger
+
+```text
+ID       : EQP-WPN-DAMASCUS-006
+Name     : Damascus Dagger
+Type     : WEAPON
+Tier     : DAMASCUS
+ATK      : +75
+MGATK    : +0
+CRIT     : +10%
+SPEED    : +7
+Effect   : Critical Damage +15%
+```
+
+### 027 — Damascus Shield
+
+```text
+ID       : EQP-ARM-DAMASCUS-001
+Name     : Damascus Shield
+Type     : ARMOR
+Tier     : DAMASCUS
+DEF      : +105
+HP       : +240
+Effect   : Block +7%
+```
+
+### 028 — Damascus Armor
+
+```text
+ID       : EQP-ARM-DAMASCUS-002
+Name     : Damascus Armor
+Type     : ARMOR
+Tier     : DAMASCUS
+DEF      : +120
+HP       : +300
+Effect   : Damage Reduction +4%
+```
+
+### 029 — Damascus Helm
+
+```text
+ID       : EQP-ARM-DAMASCUS-003
+Name     : Damascus Helm
+Type     : ARMOR
+Tier     : DAMASCUS
+DEF      : +75
+HP       : +150
+Effect   : Critical Resistance +3%
+```
+
+### 030 — Damascus Ring
+
+```text
+ID       : EQP-ACC-DAMASCUS-001
+Name     : Damascus Ring
+Type     : ACCESSORY
+Tier     : DAMASCUS
+ATK      : +20
+MGATK    : +0
+DEF      : +20
+HP       : +100
+CRIT     : +2%
+Effect   : Power Boost
+```
+
+---
+
+# ✨ 5.4 MITHRIL EQUIPMENT
+
+### 031 — Mithril Sword
+
+```text
+ID       : EQP-WPN-MITHRIL-001
+Name     : Mithril Sword
+Type     : WEAPON
+Tier     : MITHRIL
+ATK      : +130
+MGATK    : +0
+CRIT     : +5%
+SPEED    : +3
+Effect   : Mithril Edge
+```
+
+### 032 — Mithril Greatsword
+
+```text
+ID       : EQP-WPN-MITHRIL-002
+Name     : Mithril Greatsword
+Type     : WEAPON
+Tier     : MITHRIL
+ATK      : +155
+MGATK    : +0
+SPEED    : -1
+Effect   : Armor Break +10%
+```
+
+### 033 — Mithril Lance
+
+```text
+ID       : EQP-WPN-MITHRIL-003
+Name     : Mithril Lance
+Type     : WEAPON
+Tier     : MITHRIL
+ATK      : +140
+MGATK    : +0
+CRIT     : +6%
+Effect   : Piercing IV
+```
+
+### 034 — Mithril Bow
+
+```text
+ID       : EQP-WPN-MITHRIL-004
+Name     : Mithril Bow
+Type     : WEAPON
+Tier     : MITHRIL
+ATK      : +125
+MGATK    : +0
+CRIT     : +9%
+SPEED    : +8
+Effect   : Eagle Eye
+```
+
+### 035 — Mithril Staff
+
+```text
+ID       : EQP-WPN-MITHRIL-005
+Name     : Mithril Staff
+Type     : WEAPON
+Tier     : MITHRIL
+ATK      : +20
+MGATK    : +145
+CRIT     : +5%
+Effect   : Magic Power +25%
+```
+
+### 036 — Mithril Dagger
+
+```text
+ID       : EQP-WPN-MITHRIL-006
+Name     : Mithril Dagger
+Type     : WEAPON
+Tier     : MITHRIL
+ATK      : +115
+MGATK    : +0
+CRIT     : +14%
+SPEED    : +10
+Effect   : Critical Damage +25%
+```
+
+### 037 — Mithril Shield
+
+```text
+ID       : EQP-ARM-MITHRIL-001
+Name     : Mithril Shield
+Type     : ARMOR
+Tier     : MITHRIL
+DEF      : +165
+HP       : +400
+Effect   : Block +10%
+```
+
+### 038 — Mithril Armor
+
+```text
+ID       : EQP-ARM-MITHRIL-002
+Name     : Mithril Armor
+Type     : ARMOR
+Tier     : MITHRIL
+DEF      : +185
+HP       : +500
+SPEED    : +2
+Effect   : Damage Reduction +6%
+```
+
+### 039 — Mithril Helm
+
+```text
+ID       : EQP-ARM-MITHRIL-003
+Name     : Mithril Helm
+Type     : ARMOR
+Tier     : MITHRIL
+DEF      : +110
+HP       : +250
+Effect   : Critical Resistance +5%
+```
+
+### 040 — Mithril Pendant
+
+```text
+ID       : EQP-ACC-MITHRIL-001
+Name     : Mithril Pendant
+Type     : ACCESSORY
+Tier     : MITHRIL
+ATK      : +35
+MGATK    : +25
+DEF      : +30
+HP       : +180
+CRIT     : +3%
+Effect   : Mana Recovery +5%
+```
+
+---
+
+# 🌟 5.5 EPIC EQUIPMENT
+
+### 041 — Epic Flame Sword
+
+```text
+ID       : EQP-WPN-EPIC-001
+Name     : Epic Flame Sword
+Type     : WEAPON
+Tier     : EPIC
+ATK      : +200
+MGATK    : +0
+CRIT     : +7%
+Effect   : Fire Damage +15%
+```
+
+### 042 — Epic Thunder Axe
+
+```text
+ID       : EQP-WPN-EPIC-002
+Name     : Epic Thunder Axe
+Type     : WEAPON
+Tier     : EPIC
+ATK      : +235
+MGATK    : +0
+SPEED    : -1
+Effect   : Thunder Damage +15%
+```
+
+### 043 — Epic Dragon Spear
+
+```text
+ID       : EQP-WPN-EPIC-003
+Name     : Epic Dragon Spear
+Type     : WEAPON
+Tier     : EPIC
+ATK      : +215
+MGATK    : +0
+CRIT     : +8%
+Effect   : Dragon Slayer +10%
+```
+
+### 044 — Epic Wind Bow
+
+```text
+ID       : EQP-WPN-EPIC-004
+Name     : Epic Wind Bow
+Type     : WEAPON
+Tier     : EPIC
+ATK      : +190
+MGATK    : +0
+CRIT     : +12%
+SPEED    : +12
+Effect   : Wind Damage +15%
+```
+
+### 045 — Epic Arcane Staff
+
+```text
+ID       : EQP-WPN-EPIC-005
+Name     : Epic Arcane Staff
+Type     : WEAPON
+Tier     : EPIC
+ATK      : +25
+MGATK    : +220
+CRIT     : +8%
+Effect   : Magic Power +35%
+```
+
+### 046 — Epic Assassin Dagger
+
+```text
+ID       : EQP-WPN-EPIC-006
+Name     : Epic Assassin Dagger
+Type     : WEAPON
+Tier     : EPIC
+ATK      : +180
+MGATK    : +0
+CRIT     : +18%
+SPEED    : +15
+Effect   : Critical Damage +35%
+```
+
+### 047 — Epic Guardian Shield
+
+```text
+ID       : EQP-ARM-EPIC-001
+Name     : Epic Guardian Shield
+Type     : ARMOR
+Tier     : EPIC
+DEF      : +240
+HP       : +650
+Effect   : Block +15%
+```
+
+### 048 — Epic Knight Armor
+
+```text
+ID       : EQP-ARM-EPIC-002
+Name     : Epic Knight Armor
+Type     : ARMOR
+Tier     : EPIC
+DEF      : +270
+HP       : +800
+Effect   : Damage Reduction +8%
+```
+
+### 049 — Epic Crown
+
+```text
+ID       : EQP-ARM-EPIC-003
+Name     : Epic Crown
+Type     : ARMOR
+Tier     : EPIC
+DEF      : +150
+HP       : +400
+Effect   : Skill Power +5%
+```
+
+### 050 — Epic Soul Ring
+
+```text
+ID       : EQP-ACC-EPIC-001
+Name     : Epic Soul Ring
+Type     : ACCESSORY
+Tier     : EPIC
+ATK      : +55
+MGATK    : +35
+DEF      : +45
+HP       : +300
+CRIT     : +5%
+Effect   : Skill Damage +10%
+```
+
+---
+
+# 👑 5.6 LEGEND EQUIPMENT
+
+### 051 — Legend Holy Sword
+
+```text
+ID       : EQP-WPN-LEGEND-001
+Name     : Legend Holy Sword
+Type     : WEAPON
+Tier     : LEGEND
+ATK      : +300
+MGATK    : +0
+CRIT     : +10%
+Effect   : Holy Damage +20%
+```
+
+### 052 — Legend Demon Axe
+
+```text
+ID       : EQP-WPN-LEGEND-002
+Name     : Legend Demon Axe
+Type     : WEAPON
+Tier     : LEGEND
+ATK      : +350
+MGATK    : +0
+SPEED    : -2
+Effect   : Damage +20%
+```
+
+### 053 — Legend Dragon Lance
+
+```text
+ID       : EQP-WPN-LEGEND-003
+Name     : Legend Dragon Lance
+Type     : WEAPON
+Tier     : LEGEND
+ATK      : +325
+MGATK    : +0
+CRIT     : +12%
+Effect   : Dragon Damage +25%
+```
+
+### 054 — Legend Sky Bow
+
+```text
+ID       : EQP-WPN-LEGEND-004
+Name     : Legend Sky Bow
+Type     : WEAPON
+Tier     : LEGEND
+ATK      : +290
+MGATK    : +0
+CRIT     : +16%
+SPEED    : +18
+Effect   : Ranged Damage +20%
+```
+
+### 055 — Legend Sage Staff
+
+```text
+ID       : EQP-WPN-LEGEND-005
+Name     : Legend Sage Staff
+Type     : WEAPON
+Tier     : LEGEND
+ATK      : +35
+MGATK    : +350
+CRIT     : +12%
+Effect   : Magic Power +50%
+```
+
+### 056 — Legend Shadow Dagger
+
+```text
+ID       : EQP-WPN-LEGEND-006
+Name     : Legend Shadow Dagger
+Type     : WEAPON
+Tier     : LEGEND
+ATK      : +280
+MGATK    : +0
+CRIT     : +25%
+SPEED    : +22
+Effect   : Critical Damage +50%
+```
+
+### 057 — Legend Aegis Shield
+
+```text
+ID       : EQP-ARM-LEGEND-001
+Name     : Legend Aegis Shield
+Type     : ARMOR
+Tier     : LEGEND
+DEF      : +370
+HP       : +1,000
+Effect   : Block +20%
+```
+
+### 058 — Legend Paladin Armor
+
+```text
+ID       : EQP-ARM-LEGEND-002
+Name     : Legend Paladin Armor
+Type     : ARMOR
+Tier     : LEGEND
+DEF      : +420
+HP       : +1,250
+Effect   : Damage Reduction +12%
+```
+
+### 059 — Legend Crown
+
+```text
+ID       : EQP-ARM-LEGEND-003
+Name     : Legend Crown
+Type     : ARMOR
+Tier     : LEGEND
+DEF      : +230
+HP       : +650
+Effect   : Skill Power +10%
+```
+
+### 060 — Legend Soul Pendant
+
+```text
+ID       : EQP-ACC-LEGEND-001
+Name     : Legend Soul Pendant
+Type     : ACCESSORY
+Tier     : LEGEND
+ATK      : +80
+MGATK    : +60
+DEF      : +70
+HP       : +500
+CRIT     : +8%
+Effect   : Skill Damage +20%
+```
+
+---
+
+# 🔱 5.7 MYTHICAL EQUIPMENT
+
+### 061 — Mythical Worldbreaker
+
+```text
+ID       : EQP-WPN-MYTHICAL-001
+Name     : Mythical Worldbreaker
+Type     : WEAPON
+Tier     : MYTHICAL
+ATK      : +500
+MGATK    : +0
+CRIT     : +15%
+Effect   : Damage +30%
+Special  : Worldbreaker
+```
+
+### 062 — Mythical Ragnarok Axe
+
+```text
+ID       : EQP-WPN-MYTHICAL-002
+Name     : Mythical Ragnarok Axe
+Type     : WEAPON
+Tier     : MYTHICAL
+ATK      : +575
+MGATK    : +0
+CRIT     : +10%
+SPEED    : -2
+Effect   : Damage +35%
+Special  : Ragnarok Strike
+```
+
+### 063 — Mythical Dragon King Spear
+
+```text
+ID       : EQP-WPN-MYTHICAL-003
+Name     : Mythical Dragon King Spear
+Type     : WEAPON
+Tier     : MYTHICAL
+ATK      : +540
+MGATK    : +0
+CRIT     : +18%
+Effect   : Dragon Damage +40%
+Special  : Dragon Pierce
+```
+
+### 064 — Mythical Star Bow
+
+```text
+ID       : EQP-WPN-MYTHICAL-004
+Name     : Mythical Star Bow
+Type     : WEAPON
+Tier     : MYTHICAL
+ATK      : +500
+MGATK    : +0
+CRIT     : +22%
+SPEED    : +25
+Effect   : Ranged Damage +35%
+Special  : Star Arrow
+```
+
+### 065 — Mythical Astral Staff
+
+```text
+ID       : EQP-WPN-MYTHICAL-005
+Name     : Mythical Astral Staff
+Type     : WEAPON
+Tier     : MYTHICAL
+ATK      : +50
+MGATK    : +600
+CRIT     : +18%
+Effect   : Magic Power +70%
+Special  : Astral Burst
+```
+
+### 066 — Mythical Void Dagger
+
+```text
+ID       : EQP-WPN-MYTHICAL-006
+Name     : Mythical Void Dagger
+Type     : WEAPON
+Tier     : MYTHICAL
+ATK      : +475
+MGATK    : +0
+CRIT     : +30%
+SPEED    : +30
+Effect   : Critical Damage +75%
+Special  : Void Strike
+```
+
+### 067 — Mythical Aegis
+
+```text
+ID       : EQP-ARM-MYTHICAL-001
+Name     : Mythical Aegis
+Type     : ARMOR
+Tier     : MYTHICAL
+DEF      : +600
+HP       : +1,800
+Effect   : Block +30%
+Special  : Absolute Guard
+```
+
+### 068 — Mythical World Armor
+
+```text
+ID       : EQP-ARM-MYTHICAL-002
+Name     : Mythical World Armor
+Type     : ARMOR
+Tier     : MYTHICAL
+DEF      : +700
+HP       : +2,200
+Effect   : Damage Reduction +20%
+Special  : World Barrier
+```
+
+### 069 — Mythical Crown of Eternity
+
+```text
+ID       : EQP-ARM-MYTHICAL-003
+Name     : Mythical Crown of Eternity
+Type     : ARMOR
+Tier     : MYTHICAL
+DEF      : +400
+HP       : +1,000
+Effect   : Skill Power +20%
+Special  : Eternal Mind
+```
+
+### 070 — Mythical Soul Core
+
+```text
+ID       : EQP-ACC-MYTHICAL-001
+Name     : Mythical Soul Core
+Type     : ACCESSORY
+Tier     : MYTHICAL
+ATK      : +150
+MGATK    : +100
+DEF      : +120
+HP       : +900
+CRIT     : +12%
+Effect   : Skill Damage +35%
+Special  : Soul Resonance
+```
+
+---
+
+# 🌌 5.8 SPECIAL EQUIPMENT
+
+Equipment 071–100 merupakan equipment khusus dengan desain yang lebih unik. Equipment ini dapat digunakan sebagai **rare drop, dungeon loot, boss loot, event reward, atau special craft**.
+
+---
+
+### 071 — Flameheart Blade
+
+```text
+ID       : EQP-WPN-SPECIAL-001
+Name     : Flameheart Blade
+Type     : WEAPON
+Tier     : EPIC
+ATK      : +220
+MGATK    : +0
+CRIT     : +8%
+Effect   : Fire Damage +20%
+```
+
+### 072 — Frostfang Sword
+
+```text
+ID       : EQP-WPN-SPECIAL-002
+Name     : Frostfang Sword
+Type     : WEAPON
+Tier     : EPIC
+ATK      : +215
+MGATK    : +0
+CRIT     : +8%
+Effect   : Ice Damage +20%
+```
+
+### 073 — Stormcaller
+
+```text
+ID       : EQP-WPN-SPECIAL-003
+Name     : Stormcaller
+Type     : WEAPON
+Tier     : LEGEND
+ATK      : +330
+MGATK    : +0
+CRIT     : +15%
+Effect   : Lightning Damage +30%
+```
+
+### 074 — Moonfang
+
+```text
+ID       : EQP-WPN-SPECIAL-004
+Name     : Moonfang
+Type     : WEAPON
+Tier     : LEGEND
+ATK      : +315
+MGATK    : +0
+CRIT     : +20%
+SPEED    : +20
+Effect   : Night Damage +25%
+```
+
+### 075 — Sunpiercer
+
+```text
+ID       : EQP-WPN-SPECIAL-005
+Name     : Sunpiercer
+Type     : WEAPON
+Tier     : LEGEND
+ATK      : +340
+MGATK    : +0
+CRIT     : +14%
+Effect   : Light Damage +30%
+```
+
+### 076 — Void Reaper
+
+```text
+ID       : EQP-WPN-SPECIAL-006
+Name     : Void Reaper
+Type     : WEAPON
+Tier     : MYTHICAL
+ATK      : +550
+MGATK    : +0
+CRIT     : +25%
+Effect   : Void Damage +40%
+Special  : Void Execution
+```
+
+### 077 — Dragonheart Armor
+
+```text
+ID       : EQP-ARM-SPECIAL-001
+Name     : Dragonheart Armor
+Type     : ARMOR
+Tier     : LEGEND
+DEF      : +450
+HP       : +1,400
+Effect   : Fire Resistance +30%
+```
+
+### 078 — Frost Guardian Armor
+
+```text
+ID       : EQP-ARM-SPECIAL-002
+Name     : Frost Guardian Armor
+Type     : ARMOR
+Tier     : LEGEND
+DEF      : +440
+HP       : +1,350
+Effect   : Ice Resistance +30%
+```
+
+### 079 — Storm Knight Armor
+
+```text
+ID       : EQP-ARM-SPECIAL-003
+Name     : Storm Knight Armor
+Type     : ARMOR
+Tier     : LEGEND
+DEF      : +430
+HP       : +1,300
+SPEED    : +10
+Effect   : Lightning Resistance +30%
+```
+
+### 080 — Abyss Armor
+
+```text
+ID       : EQP-ARM-SPECIAL-004
+Name     : Abyss Armor
+Type     : ARMOR
+Tier     : MYTHICAL
+DEF      : +750
+HP       : +2,500
+Effect   : Dark Resistance +40%
+Special  : Abyss Barrier
+```
+
+### 081 — Ring of Strength
+
+```text
+ID       : EQP-ACC-SPECIAL-001
+Name     : Ring of Strength
+Type     : ACCESSORY
+Tier     : EPIC
+ATK      : +70
+MGATK    : +0
+HP       : +250
+Effect   : Physical Damage +10%
+```
+
+### 082 — Ring of Protection
+
+```text
+ID       : EQP-ACC-SPECIAL-002
+Name     : Ring of Protection
+Type     : ACCESSORY
+Tier     : EPIC
+DEF      : +80
+HP       : +350
+Effect   : Damage Reduction +5%
+```
+
+### 083 — Ring of Speed
+
+```text
+ID       : EQP-ACC-SPECIAL-003
+Name     : Ring of Speed
+Type     : ACCESSORY
+Tier     : EPIC
+SPEED    : +20
+CRIT     : +5%
+Effect   : Action Speed +10%
+```
+
+### 084 — Ring of Magic
+
+```text
+ID       : EQP-ACC-SPECIAL-004
+Name     : Ring of Magic
+Type     : ACCESSORY
+Tier     : EPIC
+ATK      : +10
+MGATK    : +70
+MP       : +300
+Effect   : Magic Power +15%
+```
+
+### 085 — Dragon Ring
+
+```text
+ID       : EQP-ACC-SPECIAL-005
+Name     : Dragon Ring
+Type     : ACCESSORY
+Tier     : LEGEND
+ATK      : +100
+MGATK    : +0
+DEF      : +80
+HP       : +600
+Effect   : Dragon Damage +20%
+```
+
+### 086 — Phoenix Ring
+
+```text
+ID       : EQP-ACC-SPECIAL-006
+Name     : Phoenix Ring
+Type     : ACCESSORY
+Tier     : LEGEND
+ATK      : +90
+MGATK    : +0
+HP       : +700
+Effect   : Fire Resistance +30%
+Special  : Phoenix Revival
+```
+
+### 087 — Eternal Necklace
+
+```text
+ID       : EQP-ACC-SPECIAL-007
+Name     : Eternal Necklace
+Type     : ACCESSORY
+Tier     : LEGEND
+DEF      : +100
+HP       : +800
+Effect   : HP Recovery +10%
+```
+
+### 088 — Abyss Eye
+
+```text
+ID       : EQP-ACC-SPECIAL-008
+Name     : Abyss Eye
+Type     : ACCESSORY
+Tier     : MYTHICAL
+ATK      : +30
+MGATK    : +130
+CRIT     : +15%
+HP       : +700
+Effect   : Dark Damage +35%
+```
+
+### 089 — Celestial Pendant
+
+```text
+ID       : EQP-ACC-SPECIAL-009
+Name     : Celestial Pendant
+Type     : ACCESSORY
+Tier     : MYTHICAL
+ATK      : +40
+MGATK    : +140
+DEF      : +120
+HP       : +1,000
+Effect   : Light Damage +35%
+```
+
+### 090 — World Tree Pendant
+
+```text
+ID       : EQP-ACC-SPECIAL-010
+Name     : World Tree Pendant
+Type     : ACCESSORY
+Tier     : MYTHICAL
+DEF      : +150
+HP       : +1,200
+Effect   : HP Recovery +20%
+Special  : Nature Blessing
+```
+
+---
+
+# 🔥 5.9 BOSS EQUIPMENT
+
+Equipment 091–100 merupakan equipment khusus Boss.
+
+Equipment ini tidak dapat diperoleh melalui equipment drop biasa.
+
+Sumber:
+
+```text
+BOSS DROP
+RAID
+SPECIAL DUNGEON
+EVENT
+FLOOR REWARD
+```
+
+### 091 — Nythar's Edge
+
+```text
+ID       : EQP-WPN-BOSS-001
+Name     : Nythar's Edge
+Type     : WEAPON
+Tier     : MYTHICAL
+ATK      : +650
+MGATK    : +0
+CRIT     : +25%
+Effect   : Dark Damage +50%
+Special  : Dark God Slayer
+Source   : Nythar
+```
+
+### 092 — Nythar's Greatsword
+
+```text
+ID       : EQP-WPN-BOSS-002
+Name     : Nythar's Greatsword
+Type     : WEAPON
+Tier     : MYTHICAL
+ATK      : +720
+MGATK    : +0
+CRIT     : +18%
+SPEED    : -2
+Effect   : Damage +45%
+Special  : World Destruction
+Source   : Nythar
+```
+
+### 093 — Dragon King's Crown
+
+```text
+ID       : EQP-ARM-BOSS-001
+Name     : Dragon King's Crown
+Type     : ARMOR
+Tier     : MYTHICAL
+DEF      : +500
+HP       : +1,500
+Effect   : Dragon Resistance +50%
+Special  : Dragon Authority
+Source   : Dragon King Boss
+```
+
+### 094 — Demon Lord Armor
+
+```text
+ID       : EQP-ARM-BOSS-002
+Name     : Demon Lord Armor
+Type     : ARMOR
+Tier     : MYTHICAL
+DEF      : +800
+HP       : +2,800
+Effect   : Dark Resistance +50%
+Special  : Demon Lord's Will
+Source   : Demon Lord Boss
+```
+
+### 095 — Titan Shield
+
+```text
+ID       : EQP-ARM-BOSS-003
+Name     : Titan Shield
+Type     : ARMOR
+Tier     : MYTHICAL
+DEF      : +900
+HP       : +3,000
+Effect   : Block +40%
+Special  : Titan Wall
+Source   : Titan Boss
+```
+
+### 096 — Phoenix Feather
+
+```text
+ID       : EQP-ACC-BOSS-001
+Name     : Phoenix Feather
+Type     : ACCESSORY
+Tier     : LEGEND
+ATK      : +110
+MGATK    : +0
+HP       : +900
+Effect   : Fire Resistance +40%
+Special  : Revival
+Source   : Phoenix Boss
+```
+
+### 097 — Dragon Heart
+
+```text
+ID       : EQP-ACC-BOSS-002
+Name     : Dragon Heart
+Type     : ACCESSORY
+Tier     : MYTHICAL
+ATK      : +180
+MGATK    : +0
+HP       : +1,500
+CRIT     : +15%
+Effect   : Dragon Damage +40%
+Special  : Dragon Heart
+Source   : Dragon Boss
+```
+
+### 098 — Demon Core
+
+```text
+ID       : EQP-ACC-BOSS-003
+Name     : Demon Core
+Type     : ACCESSORY
+Tier     : MYTHICAL
+ATK      : +190
+MGATK    : +0
+HP       : +1,300
+CRIT     : +18%
+Effect   : Dark Damage +45%
+Special  : Demon Core
+Source   : Demon Boss
+```
+
+### 099 — World Core
+
+```text
+ID       : EQP-ACC-BOSS-004
+Name     : World Core
+Type     : ACCESSORY
+Tier     : MYTHICAL
+ATK      : +200
+MGATK    : +100
+DEF      : +180
+HP       : +2,000
+Effect   : All Element Damage +20%
+Special  : World Resonance
+Source   : World Boss
+```
+
+### 100 — Aetheria's Legacy
+
+```text
+ID       : EQP-ACC-BOSS-005
+Name     : Aetheria's Legacy
+Type     : ACCESSORY
+Tier     : MYTHICAL
+ATK      : +250
+MGATK    : +150
+DEF      : +250
+HP       : +2,500
+CRIT     : +20%
+SPEED    : +20
+
+Effect:
+All Damage +25%
+All Resistance +20%
+
+Special:
+Legacy of Rebirth
+
+Source:
+Floor 100 / Nythar Final Battle
+```
+
+---
+
+# 6. EQUIPMENT TIER SUMMARY
+
+| Tier     | Equipment Power | Typical Source             |
+| -------- | --------------- | -------------------------- |
+| IRON     | Basic           | Early Dungeon              |
+| STEEL    | Low             | Early Dungeon              |
+| DAMASCUS | Medium          | Mid Dungeon                |
+| MITHRIL  | High            | Mid Dungeon                |
+| EPIC     | Very High       | Dungeon / Boss             |
+| LEGEND   | Extreme         | Boss / Raid                |
+| MYTHICAL | Highest         | Final Boss / Special Event |
+
+---
+
+# 7. EQUIPMENT SOURCE
+
+Equipment dapat berasal dari:
+
+```text
+Dungeon Loot
+      ↓
+Boss Loot
+      ↓
+Raid
+      ↓
+Quest
+      ↓
+Crafting
+      ↓
+Event
+      ↓
+Floor Reward
+      ↓
+Special Dungeon
+```
+
+Equipment dengan tier tinggi memiliki sumber yang lebih terbatas.
+
+---
+
+# 8. EQUIPMENT DATABASE
+
+Database utama:
+
+```text
+Equipment
+│
+├── Equipment_ID
+├── Name
+├── Type
+├── Tier
+├── ATK
+├── MGATK
+├── DEF
+├── HP
+├── MP
+├── CRIT
+├── SPEED
+├── Effect
+├── Special Effect
+├── Source
+├── Required Level
+├── Owner Hero ID
+└── Inventory Status
+```
+
+---
+
+# 9. EQUIPMENT OWNERSHIP
+
+Equipment yang diperoleh akan masuk ke:
+
+```text
+Inventory System
+```
+
+Default:
+
+```text
+Owner Hero ID = NULL
+Status = STORED
+```
+
+Setelah Master memberikan equipment:
+
+```text
+Owner Hero ID = HERO-XXXX
+Status = EQUIPPED
+```
+
+---
+
+# 10. EQUIPMENT FLOW
+
+```text
+DUNGEON
+   ↓
+LOOT DROP
+   ↓
+EQUIPMENT GENERATED
+   ↓
+CHECK EQUIPMENT ID
+   ↓
+DATABASE
+   ↓
+INVENTORY
+   ↓
+MASTER ASSIGNS EQUIPMENT
+   ↓
+HERO
+   ↓
+EQUIPMENT STATS UPDATE
+```
+
+---
+
+# 11. EQUIPMENT DUPLICATE RULE
+
+Equipment dapat memiliki ID database yang berbeda walaupun nama dan tier sama.
+
+Contoh:
+
+```text
+EQP-WPN-IRON-001
+EQP-WPN-IRON-001-COPY
+```
+
+Namun untuk **equipment instance**, ID harus unik.
+
+Format:
+
+```text
+Equipment Template ID
++
+Equipment Instance ID
+```
+
+Contoh:
+
+```text
+Template:
+EQP-WPN-LEGEND-001
+
+Instance:
+EQI-00000001
+```
+
+Dengan demikian satu template dapat menghasilkan banyak equipment instance.
+
+---
+
+# 12. EQUIPMENT INSTANCE
+
+Contoh:
+
+```text
+Equipment Template
+        ↓
+Legend Holy Sword
+        ↓
+EQP-WPN-LEGEND-001
+        ↓
+Generate Instance
+        ↓
+EQI-000001
+```
+
+Database:
+
+```text
+Equipment_ID     : EQI-000001
+Template_ID      : EQP-WPN-LEGEND-001
+Name             : Legend Holy Sword
+Tier             : LEGEND
+Owner_Hero_ID    : HERO-00025
+Status            : EQUIPPED
+```
+
+---
+
+# 13. EQUIPMENT RARITY PROGRESSION
+
+```text
+IRON
+ │
+ ├── Early Game
+ │
+STEEL
+ │
+ ├── Early → Mid Game
+ │
+DAMASCUS
+ │
+ ├── Mid Game
+ │
+MITHRIL
+ │
+ ├── Mid → Late Game
+ │
+EPIC
+ │
+ ├── Late Game
+ │
+LEGEND
+ │
+ ├── End Game
+ │
+MYTHICAL
+ │
+ └── Final / Special Content
+```
+
+---
+
+# 14. SPECIAL EQUIPMENT RULE
+
+Equipment `EPIC`, `LEGEND`, dan `MYTHICAL` dapat memiliki:
+
+```text
+Passive Effect
+Special Effect
+Element Effect
+Boss Effect
+Critical Effect
+Resistance
+Unique Skill
+```
+
+Equipment Mage atau Magic Build dapat memiliki:
+
+```text
+MGATK
+Magic Power
+Elemental Magic Damage
+Spell Critical
+Mana Recovery
+Skill Damage
+```
+
+Equipment Mythical tertentu dapat memiliki **Unique Effect** yang tidak dapat ditemukan pada equipment tier rendah.
+
+---
+
+# 15. IMPORTANT RULE
+
+Equipment tidak langsung dibuat sebagai equipment milik Hero.
+
+Sistem:
+
+```text
+DROP
+ ↓
+INVENTORY
+ ↓
+MASTER DECISION
+ ↓
+EQUIP
+ ↓
+HERO
+```
+
+Master memiliki kontrol akhir terhadap distribusi equipment.
+
+AI Fairy dapat memberikan rekomendasi:
+
+```text
+"Equipment detected."
+
+"Legend Sage Staff is recommended for Hero ID HERO-00025."
+
+"Reason:
+Current Hero build prioritizes MGATK and Magic Damage."
+
+"Equip?"
+
+YES / NO
+```
+
+Master kemudian memberikan keputusan.
+
+---
+
+# 16. TOTAL EQUIPMENT
+
+Total database:
+
+```text
+100 EQUIPMENT
+```
+
+Kategori utama:
+
+```text
+WEAPON
+ARMOR
+ACCESSORY
+```
+
+Tier:
+
+```text
+IRON
+STEEL
+DAMASCUS
+MITHRIL
+EPIC
+LEGEND
+MYTHICAL
+```
+
+Database ID:
+
+```text
+EQP-WPN-XXXX
+EQP-ARM-XXXX
+EQP-ACC-XXXX
+```
+
+Equipment instance:
+
+```text
+EQI-XXXXXXXX
+```
+
+Dengan struktur ini, **Equipment Template** dan **Equipment Instance** dipisahkan sehingga satu jenis equipment dapat menghasilkan banyak item berbeda dalam Inventory tanpa merusak data template aslinya.
