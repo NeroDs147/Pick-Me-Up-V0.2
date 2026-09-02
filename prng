@@ -1,0 +1,944 @@
+```python
+import weasyprint
+print("WeasyPrint available")
+
+
+```
+
+```python
+html_content = """<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>README - Sistem PRNG Summon Hero Aetheria</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm 15mm;
+            background-color: #f7f9fb;
+            @bottom-right {
+                content: "Halaman " counter(page);
+                font-size: 9pt;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                color: #6c757d;
+            }
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #2c3e50;
+            line-height: 1.6;
+            font-size: 10pt;
+            background-color: #f7f9fb;
+        }
+        
+        .header-banner {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffffff;
+            margin: -20mm -15mm 20mm -15mm;
+            padding: 25mm 15mm 15mm 15mm;
+            border-bottom: 4px solid #f39c12;
+        }
+        .header-banner h1 {
+            margin: 0 0 5px 0;
+            font-size: 22pt;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .header-banner p {
+            margin: 0;
+            font-size: 11pt;
+            color: #dcdde1;
+            font-weight: 300;
+        }
+
+        h2 {
+            font-size: 14pt;
+            color: #1e3c72;
+            border-left: 4px solid #f39c12;
+            padding-left: 8px;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            page-break-after: avoid;
+        }
+
+        h3 {
+            font-size: 11pt;
+            color: #2980b9;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            page-break-after: avoid;
+        }
+
+        p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        ul {
+            margin: 0 0 12px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .math {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: bold;
+            color: #c0392b;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 9.5pt;
+        }
+
+        th, td {
+            border: 1px solid #dcdde1;
+            padding: 8px 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1e3c72;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #f1f2f6;
+        }
+
+        .callout {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .callout-title {
+            font-weight: bold;
+            color: #2980b9;
+            margin-bottom: 4px;
+        }
+
+        pre {
+            background-color: #2d3436;
+            color: #dfe6e9;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 8.5pt;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .code-keyword { color: #ff7675; }
+        .code-string { color: #55efc4; }
+        .code-comment { color: #b2bec3; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <h1>README: Sistem PRNG Summon Hero Aetheria</h1>
+        <p>Spesifikasi Teknis & Dokumentasi Algoritma Pemanggilan Karakter Berbasis Pseudo-Random Number Generator</p>
+    </div>
+
+    <h2>1. Pengantar & Ringkasan Sistem</h2>
+    <p>Dokumen ini merinci spesifikasi teknis untuk sistem <strong>Pseudo-Random Number Generator (PRNG)</strong> yang digunakan dalam fitur <em>Summon Hero</em> pada semesta permainan <strong>Aetheria</strong> [cite: 1]. Sistem ini mengatur mekanisme probabilitas perolehan bintang karakter, aturan keunikan nama hero (tidak boleh ada nama hero kembar yang aktif dalam pool/inventori pemain), peluang kemunculan faksi sekunder (nama kedua sebesar <span class="math">10%</span>), serta alokasi skill dasar acak dari total <span class="math">55</span> skill yang tersedia [cite: 2, 3].</p>
+
+    <h2>2. Metode & Biaya Summon</h2>
+    <p>Sistem menyediakan tiga kanal summon utama dengan variasi mata uang dan distribusi probabilitas bintang yang berbeda:</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Metode Summon</th>
+                <th>Biaya / Konsumsi</th>
+                <th>Pool Bintang (Rarity)</th>
+                <th>Catatan Probabilitas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Gold 1x</strong></td>
+                <td><span class="math">1000</span> Gold</td>
+                <td>Bintang 1 – 3</td>
+                <td>Akses mudah untuk pemain awal & farming harian.</td>
+            </tr>
+            <tr>
+                <td><strong>Gems 1x</strong></td>
+                <td><span class="math">160</span> Gems</td>
+                <td>Bintang 1 – 4</td>
+                <td>Memberikan peluang lebih tinggi ke tier menengah-atas.</td>
+            </tr>
+            <tr>
+                <td><strong>Ticket 1x</strong></td>
+                <td><span class="math">1</span>x Summon Ticket</td>
+                <td>Bintang 2 – 4</td>
+                <td>Eksklusif tier premium, mengeliminasi bintang 1 sepenuhnya.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>3. Aturan Unik & Komponen Karakter</h2>
+    <ul>
+        <li><strong>Database Hero Master:</strong> Terdapat total <span class="math">200</span> nama hero unik dalam database master Aetheria (<span class="math">CHR-0001</span> hingga <span class="math">CHR-0200</span>) [cite: 4, 5].</li>
+        <li><strong>Aturan Keunikan Nama (<span class="math">No-Duplicate Name</span>):</strong> Setiap hero yang berhasil di-summon dicatat ke dalam set <code>summoned_hero_ids</code>. Sistem PRNG wajib mengecualikan ID hero yang sudah pernah dimiliki pemain agar tidak ada nama hero yang sama di dalam inventori.</li>
+        <li><strong>Peluang Faksi/Nama Kedua (<span class="math">10% Chance</span>):</strong> Setiap kali summon dieksekusi, terdapat peluang sebesar <span class="math">10%</span> (<span class="math">p = 0.10</span>) di mana hero tersebut mendapatkan Faksi/Gelar kedua dari sistem faksi Aetheria (Human, Elf, Dwarf, Beastfolk, Dragonkin, Demon, Merfolk) [cite: 1], memberikan akumulasi bonus stat tambahan.</li>
+        <li><strong>Skill Dasar Acak:</strong> Setiap hero yang dipanggil secara otomatis di-assign <span class="math">1</span> skill dasar acak yang dipilih secara uniform dari pool global berisikan <span class="math">55</span> skill unik (<span class="math">SKILL-0001</span> s.d. <span class="math">SKILL-0055</span>) [cite: 2, 3].</li>
+    </ul>
+
+    <h2>4. Implementasi Kode Referensi (Python / PRNG Engine)</h2>
+    <p>Berikut adalah rancangan implementasi inti menggunakan modul <code>random</code> standar untuk mendukung logika summon di atas:</p>
+    
+    <pre><code><span class="code-keyword">import</span> random
+
+<span class="code-comment"># Mock Database Master</span>
+MASTER_HEROES = [{<span class="code-string">"id"</span>: f<span class="code-string">"CHR-{i:04d}"</span>, <span class="code-string">"name"</span>: f<span class="code-string">"Hero_{i}"</span>} <span class="code-keyword">for</span> i <span class="code-keyword">in</span> range(<span class="code-string">1</span>, <span class="code-string">201</span>)]
+FACTIONS = [<span class="code-string">"Valerian Royal Guard"</span>, <span class="code-string">"Guardians of Eternal Forest"</span>, <span class="code-string">"Clan Ironforge"</span>, <span class="code-string">"Lunaris Wolf Clan"</span>, <span class="code-string">"Draconis High Dominion"</span>]
+SKILLS = [f<span class="code-string">"SKILL-{i:04d}"</span> <span class="code-keyword">for</span> i <span class="code-keyword">in</span> range(<span class="code-string">1</span>, <span class="code-string">56</span>)]
+
+<span class="code-keyword">class</span> <span class="code-string">AetheriaSummonSystem</span>:
+    <span class="code-keyword">def</span> <span class="code-keyword">__init__</span>(self):
+        self.summoned_ids = <span class="code-keyword">set</span>()
+
+    <span class="code-keyword">def</span> <span class="code-keyword">summon</span>(self, method: <span class="code-string">str</span>):
+        <span class="code-comment"># 1. Tentukan distribusi bintang berdasarkan metode</span>
+        <span class="code-keyword">if</span> method == <span class="code-string">"gold"</span>:
+            stars = random.choices([<span class="code-string">1</span>, <span class="code-string">2</span>, <span class="code-string">3</span>], weights=[<span class="code-string">70</span>, <span class="code-string">25</span>, <span class="code-string">5</span>])[<span class="code-string">0</span>]
+        <span class="code-keyword">elif</span> method == <span class="code-string">"gems"</span>:
+            stars = random.choices([<span class="code-string">1</span>, <span class="code-string">2</span>, <span class="code-string">3</span>, <span class="code-string">4</span>], weights=[<span class="code-string">50</span>, <span class="code-string">30</span>, <span class="code-string">15</span>, <span class="code-string">5</span>])[<span class="code-string">0</span>]
+        <span class="code-keyword">elif</span> method == <span class="code-string">"ticket"</span>:
+            stars = random.choices([<span class="code-string">2</span>, <span class="code-string">3</span>, <span class="code-string">4</span>], weights=[<span class="code-string">60</span>, <span class="code-string">30</span>, <span class="code-string">10</span>])[<span class="code-string">0</span>]
+        <span class="code-keyword">else</span>:
+            <span class="code-keyword">raise</span> ValueError(<span class="code-string">"Metode summon tidak valid."</span>)
+
+        <span class="code-comment"># 2. Filter hero yang belum pernah di-summon (No-Duplicate Name)</span>
+        available = [h <span class="code-keyword">for</span> h <span class="code-keyword">in</span> MASTER_HEROES <span class="code-keyword">if</span> h[<span class="code-string">"id"</span>] <span class="code-keyword">not_in</span> self.summoned_ids]
+        <span class="code-keyword">if</span> <span class="code-keyword">not</span> available:
+            <span class="code-keyword">return</span> <span class="code-string">"Semua hero telah terkoleksi!"</span>
+        
+        hero = random.choice(available)
+        self.summoned_ids.add(hero[<span class="code-string">"id"</span>])
+
+        <span class="code-comment"># 3. Cek peluang 10% memiliki faksi/nama kedua</span>
+        second_faction = random.choice(FACTIONS) <span class="code-keyword">if</span> random.random() &lt; <span class="code-string">0.10</span> <span class="code-keyword">else</span> <span class="code-keyword">None</span>
+
+        <span class="code-comment"># 4. Alokasi skill dasar acak dari 55 skill</span>
+        basic_skill = random.choice(SKILLS)
+
+        <span class="code-keyword">return</span> {
+            <span class="code-string">"id"</span>: hero[<span class="code-string">"id"</span>],
+            <span class="code-string">"name"</span>: hero[<span class="code-string">"name"</span>],
+            <span class="code-string">"stars"</span>: stars,
+            <span class="code-string">"second_faction"</span>: second_faction,
+            <span class="code-string">"basic_skill"</span>: basic_skill
+        }
+</code></pre>
+
+    <div class="callout">
+        <div class="callout-title">Catatan Pengembang</div>
+        <p>Pastikan seed PRNG diinisialisasi dengan entropy yang aman pada lingkungan production server (misalnya menggunakan <code>random.SystemRandom()</code> atau enkripsi CSPRNG) untuk menghindari manipulasi hasil summon oleh klien.</p>
+    </div>
+
+</body>
+</html>
+"""
+
+with open("readme_prng_summon.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+from weasyprint import HTML
+HTML("readme_prng_summon.html").write_pdf("README_Sistem_PRNG_Summon_Aetheria.pdf")
+print("PDF generated successfully.")
+
+
+```
+
+```python
+import weasyprint
+
+html_content = """<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>README - Sistem PRNG Summon Hero Aetheria</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm 15mm;
+            background-color: #f7f9fb;
+            @bottom-right {
+                content: "Halaman " counter(page);
+                font-size: 9pt;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                color: #6c757d;
+            }
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #2c3e50;
+            line-height: 1.6;
+            font-size: 10pt;
+            background-color: #f7f9fb;
+        }
+        
+        .header-banner {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffffff;
+            margin: -20mm -15mm 20mm -15mm;
+            padding: 25mm 15mm 15mm 15mm;
+            border-bottom: 4px solid #f39c12;
+        }
+        .header-banner h1 {
+            margin: 0 0 5px 0;
+            font-size: 22pt;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .header-banner p {
+            margin: 0;
+            font-size: 11pt;
+            color: #dcdde1;
+            font-weight: 300;
+        }
+
+        h2 {
+            font-size: 14pt;
+            color: #1e3c72;
+            border-left: 4px solid #f39c12;
+            padding-left: 8px;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            page-break-after: avoid;
+        }
+
+        h3 {
+            font-size: 11pt;
+            color: #2980b9;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            page-break-after: avoid;
+        }
+
+        p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        ul {
+            margin: 0 0 12px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .math {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: bold;
+            color: #c0392b;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 9.5pt;
+        }
+
+        th, td {
+            border: 1px solid #dcdde1;
+            padding: 8px 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1e3c72;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #f1f2f6;
+        }
+
+        .callout {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .callout-title {
+            font-weight: bold;
+            color: #2980b9;
+            margin-bottom: 4px;
+        }
+
+        pre {
+            background-color: #2d3436;
+            color: #dfe6e9;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 8.5pt;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .code-keyword { color: #ff7675; }
+        .code-string { color: #55efc4; }
+        .code-comment { color: #b2bec3; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <h1>README: Sistem PRNG Summon Hero Aetheria</h1>
+        <p>Spesifikasi Teknis & Dokumentasi Algoritma Pemanggilan Karakter Berbasis Pseudo-Random Number Generator</p>
+    </div>
+
+    <h2>1. Pengantar & Ringkasan Sistem</h2>
+    <p>Dokumen ini merinci spesifikasi teknis untuk sistem <strong>Pseudo-Random Number Generator (PRNG)</strong> yang digunakan dalam fitur <em>Summon Hero</em> pada semesta permainan <strong>Aetheria</strong> [cite: 1]. Sistem ini mengatur mekanisme probabilitas perolehan bintang karakter, aturan keunikan nama hero (tidak boleh ada nama hero kembar yang aktif dalam pool/inventori pemain), peluang kemunculan faksi sekunder (nama kedua sebesar <span class="math">10%</span>), serta alokasi skill dasar acak dari total <span class="math">55</span> skill yang tersedia [cite: 2, 3].</p>
+
+    <h2>2. Metode & Biaya Summon</h2>
+    <p>Sistem menyediakan tiga kanal summon utama dengan variasi mata uang dan distribusi probabilitas bintang yang berbeda:</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Metode Summon</th>
+                <th>Biaya / Konsumsi</th>
+                <th>Pool Bintang (Rarity)</th>
+                <th>Catatan Probabilitas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Gold 1x</strong></td>
+                <td><span class="math">1000</span> Gold</td>
+                <td>Bintang 1 – 3</td>
+                <td>Akses mudah untuk pemain awal & farming harian.</td>
+            </tr>
+            <tr>
+                <td><strong>Gems 1x</strong></td>
+                <td><span class="math">160</span> Gems</td>
+                <td>Bintang 1 – 4</td>
+                <td>Memberikan peluang lebih tinggi ke tier menengah-atas.</td>
+            </tr>
+            <tr>
+                <td><strong>Ticket 1x</strong></td>
+                <td><span class="math">1</span>x Summon Ticket</td>
+                <td>Bintang 2 – 4</td>
+                <td>Eksklusif tier premium, mengeliminasi bintang 1 sepenuhnya.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>3. Aturan Unik & Komponen Karakter</h2>
+    <ul>
+        <li><strong>Database Hero Master:</strong> Terdapat total <span class="math">200</span> nama hero unik dalam database master Aetheria (<span class="math">CHR-0001</span> hingga <span class="math">CHR-0200</span>) [cite: 4, 5].</li>
+        <li><strong>Aturan Keunikan Nama (<span class="math">No-Duplicate Name</span>):</strong> Setiap hero yang berhasil di-summon dicatat ke dalam set <code>summoned_hero_ids</code>. Sistem PRNG wajib mengecualikan ID hero yang sudah pernah dimiliki pemain agar tidak ada nama hero yang sama di dalam inventori.</li>
+        <li><strong>Peluang Faksi/Nama Kedua (<span class="math">10% Chance</span>):</strong> Setiap kali summon dieksekusi, terdapat peluang sebesar <span class="math">10%</span> (<span class="math">p = 0.10</span>) di mana hero tersebut mendapatkan Faksi/Gelar kedua dari sistem faksi Aetheria (Human, Elf, Dwarf, Beastfolk, Dragonkin, Demon, Merfolk) [cite: 1], memberikan akumulasi bonus stat tambahan.</li>
+        <li><strong>Skill Dasar Acak:</strong> Setiap hero yang dipanggil secara otomatis di-assign <span class="math">1</span> skill dasar acak yang dipilih secara uniform dari pool global berisikan <span class="math">55</span> skill unik (<span class="math">SKILL-0001</span> s.d. <span class="math">SKILL-0055</span>) [cite: 2, 3].</li>
+    </ul>
+
+    <h2>4. Implementasi Kode Referensi (Python / PRNG Engine)</h2>
+    <p>Berikut adalah rancangan implementasi inti menggunakan modul <code>random</code> standar untuk mendukung logika summon di atas:</p>
+    
+    <pre><code><span class="code-keyword">import</span> random
+
+<span class="code-comment"># Mock Database Master</span>
+MASTER_HEROES = [{<span class="code-string">"id"</span>: f<span class="code-string">"CHR-{i:04d}"</span>, <span class="code-string">"name"</span>: f<span class="code-string">"Hero_{i}"</span>} <span class="code-keyword">for</span> i <span class="code-keyword">in</span> range(<span class="code-string">1</span>, <span class="code-string">201</span>)]
+FACTIONS = [<span class="code-string">"Valerian Royal Guard"</span>, <span class="code-string">"Guardians of Eternal Forest"</span>, <span class="code-string">"Clan Ironforge"</span>, <span class="code-string">"Lunaris Wolf Clan"</span>, <span class="code-string">"Draconis High Dominion"</span>]
+SKILLS = [f<span class="code-string">"SKILL-{i:04d}"</span> <span class="code-keyword">for</span> i <span class="code-keyword">in</span> range(<span class="code-string">1</span>, <span class="code-string">56</span>)]
+
+<span class="code-keyword">class</span> <span class="code-string">AetheriaSummonSystem</span>:
+    <span class="code-keyword">def</span> <span class="code-keyword">__init__</span>(self):
+        self.summoned_ids = <span class="code-keyword">set</span>()
+
+    <span class="code-keyword">def</span> <span class="code-keyword">summon</span>(self, method: <span class="code-string">str</span>):
+        <span class="code-comment"># 1. Tentukan distribusi bintang berdasarkan metode</span>
+        <span class="code-keyword">if</span> method == <span class="code-string">"gold"</span>:
+            stars = random.choices([<span class="code-string">1</span>, <span class="code-string">2</span>, <span class="code-string">3</span>], weights=[<span class="code-string">70</span>, <span class="code-string">25</span>, <span class="code-string">5</span>])[<span class="code-string">0</span>]
+        <span class="code-keyword">elif</span> method == <span class="code-string">"gems"</span>:
+            stars = random.choices([<span class="code-string">1</span>, <span class="code-string">2</span>, <span class="code-string">3</span>, <span class="code-string">4</span>], weights=[<span class="code-string">50</span>, <span class="code-string">30</span>, <span class="code-string">15</span>, <span class="code-string">5</span>])[<span class="code-string">0</span>]
+        <span class="code-keyword">elif</span> method == <span class="code-string">"ticket"</span>:
+            stars = random.choices([<span class="code-string">2</span>, <span class="code-string">3</span>, <span class="code-string">4</span>], weights=[<span class="code-string">60</span>, <span class="code-string">30</span>, <span class="code-string">10</span>])[<span class="code-string">0</span>]
+        <span class="code-keyword">else</span>:
+            <span class="code-keyword">raise</span> ValueError(<span class="code-string">"Metode summon tidak valid."</span>)
+
+        <span class="code-comment"># 2. Filter hero yang belum pernah di-summon (No-Duplicate Name)</span>
+        available = [h <span class="code-keyword">for</span> h <span class="code-keyword">in</span> MASTER_HEROES <span class="code-keyword">if</span> h[<span class="code-string">"id"</span>] <span class="code-keyword">not in</span> self.summoned_ids]
+        <span class="code-keyword">if</span> <span class="code-keyword">not</span> available:
+            <span class="code-keyword">return</span> <span class="code-string">"Semua hero telah terkoleksi!"</span>
+        
+        hero = random.choice(available)
+        self.summoned_ids.add(hero[<span class="code-string">"id"</span>])
+
+        <span class="code-comment"># 3. Cek peluang 10% memiliki faksi/nama kedua</span>
+        second_faction = random.choice(FACTIONS) <span class="code-keyword">if</span> random.random() &lt; <span class="code-string">0.10</span> <span class="code-keyword">else</span> <span class="code-keyword">None</span>
+
+        <span class="code-comment"># 4. Alokasi skill dasar acak dari 55 skill</span>
+        basic_skill = random.choice(SKILLS)
+
+        <span class="code-keyword">return</span> {
+            <span class="code-string">"id"</span>: hero[<span class="code-string">"id"</span>],
+            <span class="code-string">"name"</span>: hero[<span class="code-string">"name"</span>],
+            <span class="code-string">"stars"</span>: stars,
+            <span class="code-string">"second_faction"</span>: second_faction,
+            <span class="code-string">"basic_skill"</span>: basic_skill
+        }
+</code></pre>
+
+    <div class="callout">
+        <div class="callout-title">Catatan Pengembang</div>
+        <p>Pastikan seed PRNG diinisialisasi dengan entropy yang aman pada lingkungan production server (misalnya menggunakan <code>random.SystemRandom()</code> atau enkripsi CSPRNG) untuk menghindari manipulasi hasil summon oleh klien.</p>
+    </div>
+
+</body>
+</html>
+"""
+
+with open("readme_prng_summon.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+weasyprint.HTML("readme_prng_summon.html").write_pdf("README_Sistem_PRNG_Summon_Aetheria.pdf")
+print("PDF generated successfully.")
+
+
+```
+
+```python
+import subprocess
+import weasyprint
+
+# Generate HTML file
+html_content = """<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>README - Sistem PRNG Summon Hero Aetheria</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm 15mm;
+            background-color: #f7f9fb;
+            @bottom-right {
+                content: "Halaman " counter(page);
+                font-size: 9pt;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                color: #6c757d;
+            }
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #2c3e50;
+            line-height: 1.6;
+            font-size: 10pt;
+            background-color: #f7f9fb;
+        }
+        
+        .header-banner {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffffff;
+            margin: -20mm -15mm 20mm -15mm;
+            padding: 25mm 15mm 15mm 15mm;
+            border-bottom: 4px solid #f39c12;
+        }
+        .header-banner h1 {
+            margin: 0 0 5px 0;
+            font-size: 22pt;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .header-banner p {
+            margin: 0;
+            font-size: 11pt;
+            color: #dcdde1;
+            font-weight: 300;
+        }
+
+        h2 {
+            font-size: 14pt;
+            color: #1e3c72;
+            border-left: 4px solid #f39c12;
+            padding-left: 8px;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            page-break-after: avoid;
+        }
+
+        p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        ul {
+            margin: 0 0 12px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .math {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: bold;
+            color: #c0392b;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 9.5pt;
+        }
+
+        th, td {
+            border: 1px solid #dcdde1;
+            padding: 8px 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1e3c72;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #f1f2f6;
+        }
+
+        .callout {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .callout-title {
+            font-weight: bold;
+            color: #2980b9;
+            margin-bottom: 4px;
+        }
+
+        pre {
+            background-color: #2d3436;
+            color: #dfe6e9;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 8.5pt;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .code-keyword { color: #ff7675; }
+        .code-string { color: #55efc4; }
+        .code-comment { color: #b2bec3; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <h1>README: Sistem PRNG Summon Hero Aetheria</h1>
+        <p>Spesifikasi Teknis & Dokumentasi Algoritma Pemanggilan Karakter Berbasis Pseudo-Random Number Generator</p>
+    </div>
+
+    <h2>1. Pengantar & Ringkasan Sistem</h2>
+    <p>Dokumen ini merinci spesifikasi teknis untuk sistem <strong>Pseudo-Random Number Generator (PRNG)</strong> yang digunakan dalam fitur <em>Summon Hero</em> pada semesta permainan <strong>Aetheria</strong> [cite: 1]. Sistem ini mengatur mekanisme probabilitas perolehan bintang karakter, aturan keunikan nama hero (tidak boleh ada nama hero kembar yang aktif dalam pool/inventori pemain), peluang kemunculan faksi sekunder (nama kedua sebesar <span class="math">10%</span>), serta alokasi skill dasar acak dari total <span class="math">55</span> skill yang tersedia [cite: 2, 3].</p>
+
+    <h2>2. Metode & Biaya Summon</h2>
+    <p>Sistem menyediakan tiga kanal summon utama dengan variasi mata uang dan distribusi probabilitas bintang yang berbeda:</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Metode Summon</th>
+                <th>Biaya / Konsumsi</th>
+                <th>Pool Bintang (Rarity)</th>
+                <th>Catatan Probabilitas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Gold 1x</strong></td>
+                <td><span class="math">1000</span> Gold</td>
+                <td>Bintang 1 – 3</td>
+                <td>Akses mudah untuk pemain awal & farming harian.</td>
+            </tr>
+            <tr>
+                <td><strong>Gems 1x</strong></td>
+                <td><span class="math">160</span> Gems</td>
+                <td>Bintang 1 – 4</td>
+                <td>Memberikan peluang lebih tinggi ke tier menengah-atas.</td>
+            </tr>
+            <tr>
+                <td><strong>Ticket 1x</strong></td>
+                <td><span class="math">1</span>x Summon Ticket</td>
+                <td>Bintang 2 – 4</td>
+                <td>Eksklusif tier premium, mengeliminasi bintang 1 sepenuhnya.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>3. Aturan Unik & Komponen Karakter</h2>
+    <ul>
+        <li><strong>Database Hero Master:</strong> Terdapat total <span class="math">200</span> nama hero unik dalam database master Aetheria (<span class="math">CHR-0001</span> hingga <span class="math">CHR-0200</span>) [cite: 4, 5].</li>
+        <li><strong>Aturan Keunikan Nama (<span class="math">No-Duplicate Name</span>):</strong> Setiap hero yang berhasil di-summon dicatat ke dalam set <code>summoned_hero_ids</code>. Sistem PRNG wajib mengecualikan ID hero yang sudah pernah dimiliki pemain agar tidak ada nama hero yang sama di dalam inventori.</li>
+        <li><strong>Peluang Faksi/Nama Kedua (<span class="math">10% Chance</span>):</strong> Setiap kali summon dieksekusi, terdapat peluang sebesar <span class="math">10%</span> (<span class="math">p = 0.10</span>) di mana hero tersebut mendapatkan Faksi/Gelar kedua dari sistem faksi Aetheria [cite: 1], memberikan akumulasi bonus stat tambahan.</li>
+        <li><strong>Skill Dasar Acak:</strong> Setiap hero yang dipanggil secara otomatis di-assign <span class="math">1</span> skill dasar acak yang dipilih secara uniform dari pool global berisikan <span class="math">55</span> skill unik (<span class="math">SKILL-0001</span> s.d. <span class="math">SKILL-0055</span>) [cite: 2, 3].</li>
+    </ul>
+
+    <h2>4. Implementasi Kode Referensi (Python / PRNG Engine)</h2>
+    <p>Berikut adalah rancangan implementasi inti menggunakan modul <code>random</code> standar untuk mendukung logika summon di atas:</p>
+    
+    <pre><code><span class="code-keyword">import</span> random
+
+<span class="code-comment"># Mock Database Master</span>
+MASTER_HEROES = [{<span class="code-string">"id"</span>: f<span class="code-string">"CHR-{i:04d}"</span>, <span class="code-string">"name"</span>: f<span class="code-string">"Hero_{i}"</span>} <span class="code-keyword">for</span> i <span class="code-keyword">in</span> range(<span class="code-string">1</span>, <span class="code-string">201</span>)]
+FACTIONS = [<span class="code-string">"Valerian Royal Guard"</span>, <span class="code-string">"Guardians of Eternal Forest"</span>, <span class="code-string">"Clan Ironforge"</span>, <span class="code-string">"Lunaris Wolf Clan"</span>, <span class="code-string">"Draconis High Dominion"</span>]
+SKILLS = [f<span class="code-string">"SKILL-{i:04d}"</span> <span class="code-keyword">for</span> i <span class="code-keyword">in</span> range(<span class="code-string">1</span>, <span class="code-string">56</span>)]
+
+<span class="code-keyword">class</span> <span class="code-string">AetheriaSummonSystem</span>:
+    <span class="code-keyword">def</span> <span class="code-keyword">__init__</span>(self):
+        self.summoned_ids = <span class="code-keyword">set</span>()
+
+    <span class="code-keyword">def</span> <span class="code-keyword">summon</span>(self, method: <span class="code-string">str</span>):
+        <span class="code-comment"># 1. Tentukan distribusi bintang berdasarkan metode</span>
+        <span class="code-keyword">if</span> method == <span class="code-string">"gold"</span>:
+            stars = random.choices([1, 2, 3], weights=[70, 25, 5])[0]
+        <span class="code-keyword">elif</span> method == <span class="code-string">"gems"</span>:
+            stars = random.choices([1, 2, 3, 4], weights=[50, 30, 15, 5])[0]
+        <span class="code-keyword">elif</span> method == <span class="code-string">"ticket"</span>:
+            stars = random.choices([2, 3, 4], weights=[60, 30, 10])[0]
+        <span class="code-keyword">else</span>:
+            <span class="code-keyword">raise</span> ValueError(<span class="code-string">"Metode summon tidak valid."</span>)
+
+        <span class="code-comment"># 2. Filter hero yang belum pernah di-summon (No-Duplicate Name)</span>
+        available = [h <span class="code-keyword">for</span> h <span class="code-keyword">in</span> MASTER_HEROES <span class="code-keyword">if</span> h[<span class="code-string">"id"</span>] <span class="code-keyword">not in</span> self.summoned_ids]
+        <span class="code-keyword">if</span> <span class="code-keyword">not</span> available:
+            <span class="code-keyword">return</span> <span class="code-string">"Semua hero telah terkoleksi!"</span>
+        
+        hero = random.choice(available)
+        self.summoned_ids.add(hero[<span class="code-string">"id"</span>])
+
+        <span class="code-comment"># 3. Cek peluang 10% memiliki faksi/nama kedua</span>
+        second_faction = random.choice(FACTIONS) <span class="code-keyword">if</span> random.random() &lt; 0.10 <span class="code-keyword">else</span> <span class="code-keyword">None</span>
+
+        <span class="code-comment"># 4. Alokasi skill dasar acak dari 55 skill</span>
+        basic_skill = random.choice(SKILLS)
+
+        <span class="code-keyword">return</span> {
+            <span class="code-string">"id"</span>: hero[<span class="code-string">"id"</span>],
+            <span class="code-string">"name"</span>: hero[<span class="code-string">"name"</span>],
+            <span class="code-string">"stars"</span>: stars,
+            <span class="code-string">"second_faction"</span>: second_faction,
+            <span class="code-string">"basic_skill"</span>: basic_skill
+        }
+</code></pre>
+
+    <div class="callout">
+        <div class="callout-title">Catatan Pengembang</div>
+        <p>Pastikan seed PRNG diinisialisasi dengan entropy yang aman pada lingkungan production server (misalnya menggunakan <code>random.SystemRandom()</code> atau enkripsi CSPRNG) untuk menghindari manipulasi hasil summon oleh klien.</p>
+    </div>
+
+</body>
+</html>
+"""
+
+with open("readme_prng_summon.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+weasyprint.HTML("readme_prng_summon.html").write_pdf("README_Sistem_PRNG_Summon_Aetheria.pdf")
+print("PDF generated successfully via direct script.")
+
+
+```
+
+```python
+import os
+import weasyprint
+
+print("Working directory:", os.getcwd())
+
+
+```
+
+```python
+import subprocess
+
+result = subprocess.run(["python3", "-c", "import weasyprint; print(weasyprint.__version__)"], capture_output=True, text=True)
+print("Stdout:", result.stdout)
+print("Stderr:", result.stderr)
+
+
+```
+
+```python
+import pypdf
+print("pypdf available")
+
+
+```
+
+```python
+print("Testing sandbox environment capabilities")
+
+
+```
+
+```python
+import sys
+print(sys.executable)
+print(sys.path)
+
+
+```
+
+```python
+with open("test.txt", "w") as f:
+    f.write("hello")
+print("File written")
+
+
+```
+
+```python
+import reportlab
+print("Reportlab available")
+
+
+```
+
+```python
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+from reportlab.lib.styles import getSampleStyleSheet
+
+doc = SimpleDocTemplate("output.pdf", pagesize=letter)
+styles = getSampleStyleSheet()
+story = [Paragraph("Hello World", styles['Normal'])]
+doc.build(story)
+print("PDF built with reportlab successfully")
+
+
+```
+
+# README: Sistem PRNG Summon Hero Aetheria
+
+Dokumen ini berisi spesifikasi teknis dan rancangan sistem *Pseudo-Random Number Generator* (PRNG) untuk fitur *Summon Hero* berdasarkan parameter mata uang, peluang bintang, keunikan nama (*no duplicate*), sistem faksi sekunder, dan alokasi skill dasar acak.
+
+---
+
+## ⚙️ 1. Metode & Biaya Summon
+
+Sistem menyediakan 3 (tiga) cara summon dengan bobot tier bintang yang berbeda:
+
+| Metode Summon | Biaya | Rentang Bintang | Catatan |
+| --- | --- | --- | --- |
+| **Gold Summon** | 1.000 Gold | Bintang 1 – 3 | Akses reguler untuk pemain pemula. |
+| **Gems Summon** | 160 Gems | Bintang 1 – 4 | Memiliki peluang mendapatkan hero tier lebih tinggi. |
+| **Ticket Summon** | 1x Tiket | Bintang 2 – 4 | *Pool* aman yang langsung mengeliminasi tier bintang 1. |
+
+---
+
+## 🎲 2. Logika Distribusi Bintang (Tiering)
+
+Setiap metode summon menggunakan algoritma PRNG untuk menentukan tingkat kelangkaan (bintang) terlebih dahulu sebelum memilih instance karakter dari database.
+
+* **Gold Summon:**
+* Bintang 1: 60%
+* Bintang 2: 30%
+* Bintang 3: 10%
+* Bintang 4: 0%
+
+
+* **Gems Summon:**
+* Bintang 1: 40%
+* Bintang 2: 40%
+* Bintang 3: 15%
+* Bintang 4: 5%
+
+
+* **Ticket Summon:**
+* Bintang 1: 0%
+* Bintang 2: 65%
+* Bintang 3: 25%
+* Bintang 4: 10%
+
+
+
+---
+
+## 🚫 3. Aturan Unik & Mekanisme Nama Hero (*No Duplicate*)
+
+Untuk memastikan tidak ada nama hero yang sama per sesi atau *inventory* pemain, sistem menerapkan pengecekan status menggunakan struktur data set/array penanda (*Registry Check*):
+
+1. **Database Master:** Seluruh daftar hero terdaftar dari `CHR-0001` hingga `CHR-0200`.
+
+
+2. **Pengecekan Kepemilikan (`isUnlocked`):** Sebelum fungsi PRNG mengunci hasil akhir summon, sistem memvalidasi ID hero terhadap daftar hero yang sudah dimiliki pemain.
+3. **Algoritma *Re-roll* Terkontrol:** Jika PRNG menghasilkan indeks hero yang namanya/ID-nya sudah ada pada inventaris pemain, fungsi akan melakukan *re-roll* secara rekursif hingga mendapatkan hero unik yang belum pernah di-summon. Jika seluruh hero dalam satu tier sudah habis, sistem akan mengalihkan *fallback* ke sistem konversi pecahan (*shard*).
+
+---
+
+## 👑 4. Sistem Faksi Sekunder (Peluang 10%)
+
+Sesuai aturan sistem faksi *Aetheria*, setiap karakter maksimal dapat memiliki 3 faksi. Dalam mekanisme summon ini:
+
+* Terdapat peluang sebesar **10% ($P = 0.10$)** bagi hero yang di-summon untuk mendapatkan **Nama Kedua / Faksi Sekunder** tambahan di luar faksi bawaan mereka.
+* Jika roll 10% berhasil, sistem akan memilih secara acak 1 faksi tambahan dari total 7 ras faksi yang tersedia (Human, Elf, Dwarf, Beastfolk, Dragonkin, Demon, Merfolk) tanpa melanggar batas maksimal 3 faksi per karakter.
+
+
+
+---
+
+## ⚔️ 5. Alokasi Skill Basic Acak
+
+Setiap hero yang berhasil di-summon akan otomatis menerima 1 (satu) buah **Skill Basic Acak** yang ditarik dari daftar database skill universal (ID: `SKILL-0001` sampai `SKILL-0055`).
+
+* PRNG akan menghasilkan angka acak bulat (*integer random*) antara 1 hingga 55 untuk menentukan ID skill (`SKILL-00xx`) yang diinjeksikan ke slot skill dasar hero tersebut.
