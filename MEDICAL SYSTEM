@@ -1,0 +1,1977 @@
+# 🧪 AETHERIA — MEDICAL SYSTEM
+
+## 1. OVERVIEW
+
+Medical System adalah sistem item khusus yang digunakan untuk meningkatkan kondisi tempur seluruh party.
+
+Medical digunakan oleh Master dan efeknya diterapkan kepada semua Hero yang berada di dalam party aktif.
+
+Medical dapat memberikan:
+
+```text
+HP Recovery
+ATK
+DEF
+MATK
+Critical ATK
+Critical Rate
+Resistance
+```
+
+Medical berbeda dengan Equipment.
+
+```text
+EQUIPMENT
+    ↓
+Stat permanen pada Hero pemilik equipment
+
+MEDICAL
+    ↓
+Buff / Recovery / Temporary Effect
+    ↓
+Diterapkan kepada seluruh party
+```
+
+Medical dibuat melalui:
+
+```text
+MAGE TOWER
+```
+
+Sedangkan Medical tingkat tinggi diperoleh melalui:
+
+```text
+BOSS FLOOR
+BOSS RAID
+SPECIAL CONTENT
+```
+
+---
+
+# 2. MEDICAL LEVEL
+
+Medical memiliki 9 Level.
+
+| Level | Nama Tier   | Cara Mendapatkan    | Efek                  |
+| ----: | ----------- | ------------------- | --------------------- |
+|     1 | BASIC       | Mage Tower Lv.1     | Recovery Party        |
+|     2 | MINOR       | Mage Tower Lv.2     | Recovery + Basic Stat |
+|     3 | ADVANCED    | Mage Tower Lv.3     | Stat Buff Party       |
+|     4 | SUPERIOR    | Mage Tower Lv.4     | Multi Stat Party      |
+|     5 | ARCANE      | Mage Tower Lv.5     | Strong Multi Stat     |
+|     6 | HIGH ARCANE | Special Craft       | Advanced Party Buff   |
+|     7 | BOSS        | Boss Floor Drop     | Boss-grade Party Buff |
+|     8 | RAID        | Boss Raid Drop      | Raid-grade Party Buff |
+|     9 | MYTHIC      | Boss Raid Rare Drop | Extreme Party Buff    |
+
+---
+
+# 3. MEDICAL SOURCE PROGRESSION
+
+```text
+MAGE TOWER LV.1
+      ↓
+MEDICAL LV.1
+      ↓
+Efek kepada seluruh party
+
+MAGE TOWER LV.2
+      ↓
+MEDICAL LV.2
+      ↓
+Efek kepada seluruh party
+
+MAGE TOWER LV.3
+      ↓
+MEDICAL LV.3
+      ↓
+Efek kepada seluruh party
+
+MAGE TOWER LV.4
+      ↓
+MEDICAL LV.4
+      ↓
+Efek kepada seluruh party
+
+MAGE TOWER LV.5
+      ↓
+MEDICAL LV.5
+      ↓
+Efek kepada seluruh party
+
+SPECIAL CONTENT
+      ↓
+MEDICAL LV.6
+      ↓
+Efek kepada seluruh party
+
+BOSS FLOOR
+      ↓
+MEDICAL LV.7
+      ↓
+Efek kepada seluruh party
+
+BOSS RAID
+      ↓
+MEDICAL LV.8
+      ↓
+Efek kepada seluruh party
+
+RAID RARE DROP
+      ↓
+MEDICAL LV.9
+      ↓
+Efek kepada seluruh party
+```
+
+---
+
+# 4. MEDICAL EFFECT TYPE
+
+Medical memiliki dua kategori utama.
+
+```text
+RECOVERY
+    ↓
+Mengembalikan HP / kondisi seluruh Hero dalam party
+
+BUFF
+    ↓
+Meningkatkan combat statistics seluruh Hero dalam party
+```
+
+Medical dapat memiliki keduanya.
+
+Contoh:
+
+```text
+Medical Lv.4
+
+HP Recovery seluruh party
++
+ATK Buff seluruh party
++
+DEF Buff seluruh party
+```
+
+Medical tidak hanya memengaruhi Hero yang menggunakan item.
+
+```text
+Master menggunakan Medical
+        ↓
+Medical Effect aktif
+        ↓
+Seluruh Hero dalam party menerima efek
+```
+
+---
+
+# 5. PARTY EFFECT RULE
+
+Medical selalu menggunakan cakupan party.
+
+```text
+PARTY ACTIVE
+    ↓
+Semua Hero yang berada di party menerima efek
+```
+
+Contoh:
+
+```text
+Party:
+Hero A
+Hero B
+Hero C
+Hero D
+Hero E
+```
+
+Jika Master menggunakan Medical Lv.5:
+
+```text
+Hero A → HP Recovery +35%, ATK +12%, DEF +12%, MATK +12%
+Hero B → HP Recovery +35%, ATK +12%, DEF +12%, MATK +12%
+Hero C → HP Recovery +35%, ATK +12%, DEF +12%, MATK +12%
+Hero D → HP Recovery +35%, ATK +12%, DEF +12%, MATK +12%
+Hero E → HP Recovery +35%, ATK +12%, DEF +12%, MATK +12%
+```
+
+Jika jumlah Hero dalam party berubah setelah Medical digunakan:
+
+```text
+Hero baru masuk party
+        ↓
+Menerima buff Medical yang sedang aktif
+```
+
+```text
+Hero keluar dari party
+        ↓
+Tidak lagi menerima efek Medical
+```
+
+Medical tidak memengaruhi Hero yang berada di luar party aktif.
+
+---
+
+# 6. STAT DATABASE
+
+Medical System menggunakan stat:
+
+```text
+HP
+ATK
+DEF
+MATK
+CRITICAL ATK
+CRITICAL RATE
+RESISTANCE
+```
+
+Resistance dibagi menjadi:
+
+```text
+Physical Resistance
+Magic Resistance
+Fire Resistance
+Water Resistance
+Wind Resistance
+Earth Resistance
+Light Resistance
+Dark Resistance
+Status Resistance
+```
+
+Semua stat Medical diterapkan kepada setiap Hero dalam party.
+
+---
+
+# 7. MEDICAL LV.1 — BASIC
+
+## Item ID
+
+```text
+MED-001
+```
+
+## Name
+
+**Basic Healing Potion**
+
+## Mage Tower Requirement
+
+```text
+Mage Tower Lv.1
+```
+
+## Effect
+
+```text
+HP Recovery:
+10% Max HP per Hero
+
+Target:
+Seluruh party
+```
+
+Setiap Hero menerima pemulihan berdasarkan Max HP masing-masing.
+
+Contoh:
+
+```text
+Hero A Max HP:
+10,000
+Recovery:
+1,000 HP
+
+Hero B Max HP:
+8,000
+Recovery:
+800 HP
+```
+
+Tidak memberikan combat buff.
+
+### Craft Material
+
+```text
+Healing Herb x5
+Water Essence x2
+Gold x100
+```
+
+### Craft Result
+
+```text
+1 Medical
+```
+
+### Usage
+
+```text
+Battle
+Dungeon
+Exploration
+Training
+```
+
+---
+
+# 8. MEDICAL LV.2 — MINOR
+
+## Item ID
+
+```text
+MED-002
+```
+
+## Name
+
+**Minor Vital Potion**
+
+## Mage Tower Requirement
+
+```text
+Mage Tower Lv.2
+```
+
+## Effect
+
+```text
+HP Recovery:
+15% Max HP per Hero
+
+ATK:
++3% kepada seluruh party
+
+DEF:
++3% kepada seluruh party
+
+Duration:
+5 Minutes
+```
+
+### Craft Material
+
+```text
+Healing Herb x8
+Vital Essence x3
+Water Essence x3
+Gold x500
+```
+
+---
+
+# 9. MEDICAL LV.3 — ADVANCED
+
+## Item ID
+
+```text
+MED-003
+```
+
+## Name
+
+**Advanced Battle Elixir**
+
+## Mage Tower Requirement
+
+```text
+Mage Tower Lv.3
+```
+
+## Effect
+
+```text
+HP Recovery:
+20% Max HP per Hero
+
+ATK:
++5% kepada seluruh party
+
+DEF:
++5% kepada seluruh party
+
+MATK:
++5% kepada seluruh party
+
+Critical Rate:
++2% kepada seluruh party
+
+Duration:
+10 Minutes
+```
+
+### Craft Material
+
+```text
+High Healing Herb x10
+Vital Essence x5
+Magic Water x5
+Small Magic Crystal x2
+Gold x1,500
+```
+
+---
+
+# 10. MEDICAL LV.4 — SUPERIOR
+
+## Item ID
+
+```text
+MED-004
+```
+
+## Name
+
+**Superior Combat Elixir**
+
+## Mage Tower Requirement
+
+```text
+Mage Tower Lv.4
+```
+
+## Effect
+
+```text
+HP Recovery:
+25% Max HP per Hero
+
+ATK:
++8% kepada seluruh party
+
+DEF:
++8% kepada seluruh party
+
+MATK:
++8% kepada seluruh party
+
+Critical ATK:
++10% kepada seluruh party
+
+Critical Rate:
++4% kepada seluruh party
+
+Physical Resistance:
++5% kepada seluruh party
+
+Magic Resistance:
++5% kepada seluruh party
+
+Duration:
+15 Minutes
+```
+
+### Craft Material
+
+```text
+Superior Healing Herb x15
+Arcane Water x8
+Magic Crystal x5
+Monster Core x3
+Gold x5,000
+```
+
+---
+
+# 11. MEDICAL LV.5 — ARCANE
+
+## Item ID
+
+```text
+MED-005
+```
+
+## Name
+
+**Arcane Hero Elixir**
+
+## Mage Tower Requirement
+
+```text
+Mage Tower Lv.5
+```
+
+## Effect
+
+```text
+HP Recovery:
+35% Max HP per Hero
+
+ATK:
++12% kepada seluruh party
+
+DEF:
++12% kepada seluruh party
+
+MATK:
++12% kepada seluruh party
+
+Critical ATK:
++20% kepada seluruh party
+
+Critical Rate:
++7% kepada seluruh party
+
+Physical Resistance:
++8% kepada seluruh party
+
+Magic Resistance:
++8% kepada seluruh party
+
+Status Resistance:
++10% kepada seluruh party
+
+Duration:
+20 Minutes
+```
+
+### Craft Material
+
+```text
+Arcane Herb x20
+Pure Magic Water x10
+Large Magic Crystal x8
+High Monster Core x5
+Gold x15,000
+```
+
+---
+
+# 12. MEDICAL LV.6 — HIGH ARCANE
+
+Medical Lv.6 bukan hasil normal crafting Mage Tower Lv.1–5.
+
+## Item ID
+
+```text
+MED-006
+```
+
+## Name
+
+**High Arcane Panacea**
+
+## Source
+
+```text
+Special Craft
+Special Quest
+Rare World Exploration
+Special Event
+```
+
+## Effect
+
+```text
+HP Recovery:
+50% Max HP per Hero
+
+ATK:
++18% kepada seluruh party
+
+DEF:
++18% kepada seluruh party
+
+MATK:
++18% kepada seluruh party
+
+Critical ATK:
++30% kepada seluruh party
+
+Critical Rate:
++10% kepada seluruh party
+
+Physical Resistance:
++12% kepada seluruh party
+
+Magic Resistance:
++12% kepada seluruh party
+
+Status Resistance:
++15% kepada seluruh party
+
+Elemental Resistance:
++10% kepada seluruh party
+
+Duration:
+30 Minutes
+```
+
+---
+
+# 13. MEDICAL LV.7 — BOSS GRADE
+
+Medical Lv.7 hanya dapat diperoleh dari **Boss Floor**.
+
+## Source
+
+```text
+Boss Floor Drop
+```
+
+Contoh:
+
+```text
+Floor 10 Boss
+Floor 20 Boss
+Floor 30 Boss
+Floor 40 Boss
+Floor 50 Boss
+...
+```
+
+## Item ID
+
+```text
+MED-007
+```
+
+## Name
+
+**Boss Recovery Elixir**
+
+## Effect
+
+```text
+HP Recovery:
+60% Max HP per Hero
+
+ATK:
++25% kepada seluruh party
+
+DEF:
++25% kepada seluruh party
+
+MATK:
++25% kepada seluruh party
+
+Critical ATK:
++40% kepada seluruh party
+
+Critical Rate:
++12% kepada seluruh party
+
+Physical Resistance:
++15% kepada seluruh party
+
+Magic Resistance:
++15% kepada seluruh party
+
+Elemental Resistance:
++15% kepada seluruh party
+
+Status Resistance:
++20% kepada seluruh party
+
+Boss Damage Resistance:
++10% kepada seluruh party
+
+Duration:
+30 Minutes
+```
+
+### Important
+
+Medical Lv.7:
+
+```text
+CANNOT BE CRAFTED
+```
+
+Normal Mage Tower tidak dapat membuat item ini.
+
+---
+
+# 14. MEDICAL LV.8 — RAID GRADE
+
+Medical Lv.8 diperoleh dari **Boss Raid**.
+
+## Source
+
+```text
+Boss Raid Lv.1
+Boss Raid Lv.2
+Raid Reward
+Raid Boss Drop
+```
+
+## Item ID
+
+```text
+MED-008
+```
+
+## Name
+
+**Raid Hero Elixir**
+
+## Effect
+
+```text
+HP Recovery:
+70% Max HP per Hero
+
+ATK:
++35% kepada seluruh party
+
+DEF:
++35% kepada seluruh party
+
+MATK:
++35% kepada seluruh party
+
+Critical ATK:
++55% kepada seluruh party
+
+Critical Rate:
++15% kepada seluruh party
+
+Physical Resistance:
++20% kepada seluruh party
+
+Magic Resistance:
++20% kepada seluruh party
+
+Elemental Resistance:
++20% kepada seluruh party
+
+Status Resistance:
++25% kepada seluruh party
+
+Boss Damage Resistance:
++15% kepada seluruh party
+
+Raid Damage Resistance:
++10% kepada seluruh party
+
+Duration:
+45 Minutes
+```
+
+### Drop Example
+
+```text
+IGNAROK
+    ↓
+Raid Reward
+    ↓
+MED-008
+    ↓
+Efek kepada seluruh party
+```
+
+atau:
+
+```text
+VULKARION
+    ↓
+Rare Raid Drop
+    ↓
+MED-008
+    ↓
+Efek kepada seluruh party
+```
+
+Medical Lv.8 tidak dapat dibuat melalui Mage Tower normal.
+
+---
+
+# 15. MEDICAL LV.9 — MYTHIC GRADE
+
+Medical Lv.9 adalah Medical tertinggi.
+
+## Source
+
+```text
+Boss Raid Rare Drop
+Greater Boss Raid
+Special Raid Reward
+Event Raid
+```
+
+## Item ID
+
+```text
+MED-009
+```
+
+## Name
+
+**Mythic Aether Panacea**
+
+## Effect
+
+```text
+HP Recovery:
+100% Max HP per Hero
+
+ATK:
++50% kepada seluruh party
+
+DEF:
++50% kepada seluruh party
+
+MATK:
++50% kepada seluruh party
+
+Critical ATK:
++80% kepada seluruh party
+
+Critical Rate:
++20% kepada seluruh party
+
+Physical Resistance:
++30% kepada seluruh party
+
+Magic Resistance:
++30% kepada seluruh party
+
+Fire Resistance:
++25% kepada seluruh party
+
+Water Resistance:
++25% kepada seluruh party
+
+Wind Resistance:
++25% kepada seluruh party
+
+Earth Resistance:
++25% kepada seluruh party
+
+Light Resistance:
++25% kepada seluruh party
+
+Dark Resistance:
++25% kepada seluruh party
+
+Status Resistance:
++40% kepada seluruh party
+
+Boss Damage Resistance:
++20% kepada seluruh party
+
+Raid Damage Resistance:
++20% kepada seluruh party
+
+Duration:
+60 Minutes
+```
+
+Medical Lv.9 sangat langka.
+
+```text
+MEDICAL LV.9
+       ↓
+RARE RAID DROP
+       ↓
+LOW DROP RATE
+       ↓
+Efek kepada seluruh party
+```
+
+Tidak dapat dibuat melalui:
+
+```text
+Mage Tower Lv.1
+Mage Tower Lv.2
+Mage Tower Lv.3
+Mage Tower Lv.4
+Mage Tower Lv.5
+```
+
+---
+
+# 16. MEDICAL STAT TABLE
+
+| Lv | HP Recovery |  ATK |  DEF | MATK | Crit ATK | Crit Rate |
+| -: | ----------: | ---: | ---: | ---: | -------: | --------: |
+|  1 |         10% |    - |    - |    - |        - |         - |
+|  2 |         15% |  +3% |  +3% |    - |        - |         - |
+|  3 |         20% |  +5% |  +5% |  +5% |        - |       +2% |
+|  4 |         25% |  +8% |  +8% |  +8% |     +10% |       +4% |
+|  5 |         35% | +12% | +12% | +12% |     +20% |       +7% |
+|  6 |         50% | +18% | +18% | +18% |     +30% |      +10% |
+|  7 |         60% | +25% | +25% | +25% |     +40% |      +12% |
+|  8 |         70% | +35% | +35% | +35% |     +55% |      +15% |
+|  9 |        100% | +50% | +50% | +50% |     +80% |      +20% |
+
+Semua nilai pada tabel diterapkan kepada setiap Hero dalam party aktif.
+
+---
+
+# 17. RESISTANCE PROGRESSION
+
+| Lv | Physical | Magic | Elemental | Status |
+| -: | -------: | ----: | --------: | -----: |
+|  1 |        - |     - |         - |      - |
+|  2 |        - |     - |         - |      - |
+|  3 |        - |     - |         - |      - |
+|  4 |      +5% |   +5% |         - |      - |
+|  5 |      +8% |   +8% |         - |   +10% |
+|  6 |     +12% |  +12% |      +10% |   +15% |
+|  7 |     +15% |  +15% |      +15% |   +20% |
+|  8 |     +20% |  +20% |      +20% |   +25% |
+|  9 |     +30% |  +30% |      +25% |   +40% |
+
+Resistance diterapkan kepada seluruh Hero dalam party aktif.
+
+---
+
+# 18. MEDICAL CRAFTING — MAGE TOWER
+
+Mage Tower digunakan untuk memproduksi Medical Lv.1–5.
+
+```text
+MAGE TOWER
+     │
+     ├── Lv.1 → Medical Lv.1
+     │              ↓
+     │        Efek seluruh party
+     │
+     ├── Lv.2 → Medical Lv.2
+     │              ↓
+     │        Efek seluruh party
+     │
+     ├── Lv.3 → Medical Lv.3
+     │              ↓
+     │        Efek seluruh party
+     │
+     ├── Lv.4 → Medical Lv.4
+     │              ↓
+     │        Efek seluruh party
+     │
+     └── Lv.5 → Medical Lv.5
+                    ↓
+              Efek seluruh party
+```
+
+---
+
+# 19. MAGE TOWER LEVEL
+
+| Mage Tower |      Medical | Status               |
+| ---------: | -----------: | -------------------- |
+|       Lv.1 | Medical Lv.1 | Basic Party Effect   |
+|       Lv.2 | Medical Lv.2 | Unlocked             |
+|       Lv.3 | Medical Lv.3 | Unlocked             |
+|       Lv.4 | Medical Lv.4 | Unlocked             |
+|       Lv.5 | Medical Lv.5 | Maximum Normal Craft |
+
+Medical Lv.6+ berada di luar normal crafting.
+
+---
+
+# 20. MAGE TOWER LV.1
+
+## Facility
+
+```text
+FAC-MAGE-TOWER
+```
+
+## Level
+
+```text
+1
+```
+
+Dapat membuat:
+
+```text
+MED-001
+```
+
+Material:
+
+```text
+Healing Herb
+Water Essence
+```
+
+Efek Medical diterapkan kepada seluruh party.
+
+---
+
+# 21. MAGE TOWER LV.2
+
+Dapat membuat:
+
+```text
+MED-001
+MED-002
+```
+
+Tambahan material:
+
+```text
+Vital Essence
+```
+
+Efek Medical diterapkan kepada seluruh party.
+
+---
+
+# 22. MAGE TOWER LV.3
+
+Dapat membuat:
+
+```text
+MED-001
+MED-002
+MED-003
+```
+
+Tambahan:
+
+```text
+Magic Water
+Small Magic Crystal
+```
+
+Efek Medical diterapkan kepada seluruh party.
+
+---
+
+# 23. MAGE TOWER LV.4
+
+Dapat membuat:
+
+```text
+MED-001
+MED-002
+MED-003
+MED-004
+```
+
+Tambahan:
+
+```text
+Arcane Water
+Magic Crystal
+Monster Core
+```
+
+Efek Medical diterapkan kepada seluruh party.
+
+---
+
+# 24. MAGE TOWER LV.5
+
+Dapat membuat:
+
+```text
+MED-001
+MED-002
+MED-003
+MED-004
+MED-005
+```
+
+Tambahan:
+
+```text
+Arcane Herb
+Pure Magic Water
+Large Magic Crystal
+High Monster Core
+```
+
+Efek Medical diterapkan kepada seluruh party.
+
+---
+
+# 25. CRAFTING TABLE
+
+| Mage Tower | Medical                |   Gold | Main Material |
+| ---------: | ---------------------- | -----: | ------------- |
+|          1 | Basic Healing Potion   |    100 | Healing Herb  |
+|          2 | Minor Vital Potion     |    500 | Vital Essence |
+|          3 | Advanced Battle Elixir |  1,500 | Magic Water   |
+|          4 | Superior Combat Elixir |  5,000 | Magic Crystal |
+|          5 | Arcane Hero Elixir     | 15,000 | Arcane Herb   |
+
+Setiap Medical yang dibuat memiliki efek party-wide.
+
+---
+
+# 26. CRAFTING FLOW
+
+```text
+MASTER
+   ↓
+MAGE TOWER
+   ↓
+SELECT MEDICAL
+   ↓
+CHECK MAGE TOWER LEVEL
+   ↓
+CHECK RECIPE
+   ↓
+CHECK MATERIAL
+   ↓
+CHECK GOLD
+   ↓
+CRAFT
+   ↓
+MEDICAL CREATED
+   ↓
+INVENTORY
+   ↓
+Dapat digunakan untuk seluruh party
+```
+
+---
+
+# 27. CRAFTING VALIDATION
+
+Contoh:
+
+```text
+Player:
+Mage Tower Lv.3
+
+Selected:
+MED-004
+```
+
+System:
+
+```text
+Required:
+Mage Tower Lv.4
+
+Current:
+Mage Tower Lv.3
+
+Result:
+CRAFT DENIED
+```
+
+Jika:
+
+```text
+Mage Tower Lv.4
+```
+
+maka:
+
+```text
+CRAFT AVAILABLE
+```
+
+Medical yang dibuat tetap memiliki cakupan efek seluruh party.
+
+---
+
+# 28. MEDICAL USAGE
+
+Medical digunakan oleh Master dan diterapkan kepada seluruh Hero dalam party aktif.
+
+```text
+Inventory
+    ↓
+Medical
+    ↓
+Select Medical
+    ↓
+Check Active Party
+    ↓
+Confirm
+    ↓
+Effect Applied to All Party Members
+```
+
+Contoh:
+
+```text
+Active Party:
+HERO-00025
+HERO-00026
+HERO-00027
+HERO-00028
+HERO-00029
+
+Medical:
+MED-005
+```
+
+Effect:
+
+```text
+HERO-00025:
+HP Recovery +35%
+ATK +12%
+DEF +12%
+MATK +12%
+Critical ATK +20%
+Critical Rate +7%
+
+HERO-00026:
+HP Recovery +35%
+ATK +12%
+DEF +12%
+MATK +12%
+Critical ATK +20%
+Critical Rate +7%
+
+HERO-00027:
+HP Recovery +35%
+ATK +12%
+DEF +12%
+MATK +12%
+Critical ATK +20%
+Critical Rate +7%
+
+HERO-00028:
+HP Recovery +35%
+ATK +12%
+DEF +12%
+MATK +12%
+Critical ATK +20%
+Critical Rate +7%
+
+HERO-00029:
+HP Recovery +35%
+ATK +12%
+DEF +12%
+MATK +12%
+Critical ATK +20%
+Critical Rate +7%
+```
+
+---
+
+# 29. MEDICAL BUFF RULE
+
+Buff Medical tidak mengubah Base Stat Hero secara permanen.
+
+Contoh:
+
+```text
+Hero Base ATK:
+1,000
+```
+
+Medical Lv.5:
+
+```text
+ATK +12%
+```
+
+Maka setiap Hero dalam party menerima perhitungan berdasarkan Base ATK masing-masing.
+
+```text
+Hero A:
+1,000 × 12%
+= 120
+
+Combat ATK Hero A:
+1,120
+```
+
+Hero lain menggunakan Base ATK masing-masing.
+
+```text
+Hero B Base ATK:
+800
+
+800 × 12%
+= 96
+
+Combat ATK Hero B:
+896
+```
+
+Setelah durasi habis:
+
+```text
+ATK seluruh Hero kembali ke nilai sebelum Medical
+```
+
+Database Hero Base Stat tetap tidak berubah.
+
+```text
+Hero A Base ATK = 1,000
+Hero B Base ATK = 800
+```
+
+---
+
+# 30. CRITICAL ATK
+
+Critical ATK berbeda dari Critical Rate.
+
+```text
+Critical Rate
+=
+Chance melakukan Critical Hit
+```
+
+```text
+Critical ATK
+=
+Bonus damage ketika Critical Hit terjadi
+```
+
+Keduanya diterapkan kepada seluruh Hero dalam party.
+
+Contoh:
+
+```text
+Hero A Critical Rate:
+10%
+
+Hero B Critical Rate:
+15%
+
+Medical:
++7%
+```
+
+Final:
+
+```text
+Hero A Critical Rate:
+17%
+
+Hero B Critical Rate:
+22%
+```
+
+Sedangkan:
+
+```text
+Critical ATK:
++20%
+```
+
+meningkatkan kekuatan Critical Hit setiap Hero dalam party.
+
+---
+
+# 31. RESISTANCE CALCULATION
+
+Resistance Medical dihitung secara individual berdasarkan stat setiap Hero.
+
+Contoh:
+
+```text
+Hero A Fire Resistance:
+10%
+
+Hero B Fire Resistance:
+20%
+```
+
+Medical Lv.9:
+
+```text
+Fire Resistance:
++25%
+```
+
+Final:
+
+```text
+Hero A:
+35%
+
+Hero B:
+45%
+```
+
+Jika Hero A menerima:
+
+```text
+Fire Damage = 10,000
+```
+
+maka:
+
+```text
+10,000 × (1 - 0.35)
+
+= 6,500 Damage
+```
+
+Jika Hero B menerima:
+
+```text
+Fire Damage = 10,000
+```
+
+maka:
+
+```text
+10,000 × (1 - 0.45)
+
+= 5,500 Damage
+```
+
+---
+
+# 32. MEDICAL STACK RULE
+
+Medical tidak dapat menumpuk item yang sama pada party.
+
+Contoh:
+
+```text
+MED-005
++
+MED-005
+```
+
+Result:
+
+```text
+BUFF REFRESH
+```
+
+Buff tidak menjadi dua kali lipat.
+
+```text
+ATK +12%
++
+ATK +12%
+=
+ATK +12%
+```
+
+Durasi Medical akan di-refresh untuk seluruh party.
+
+---
+
+# 33. DIFFERENT MEDICAL
+
+Medical berbeda dapat memiliki aturan stacking pada seluruh party.
+
+Contoh:
+
+```text
+MED-003
++
+MED-005
+```
+
+Default:
+
+```text
+Same Stat:
+Highest Effect diterapkan kepada seluruh party
+
+Different Stat:
+Dapat aktif bersamaan kepada seluruh party
+```
+
+Contoh:
+
+```text
+MED-003:
+ATK +5% kepada seluruh party
+
+MED-005:
+ATK +12% kepada seluruh party
+```
+
+Final:
+
+```text
+ATK +12% kepada seluruh party
+```
+
+Bukan:
+
+```text
+ATK +17% kepada seluruh party
+```
+
+Namun:
+
+```text
+MED-003:
+Critical Rate +2% kepada seluruh party
+
+MED-005:
+Critical ATK +20% kepada seluruh party
+```
+
+keduanya dapat aktif karena stat berbeda.
+
+---
+
+# 34. MEDICAL COOLDOWN
+
+Medical memiliki cooldown penggunaan berdasarkan jumlah turn.
+
+```text
+Lv.1–3:
+3 Turn
+
+Lv.4–5:
+6 Turn
+
+Lv.6–7:
+9 Turn
+
+Lv.8:
+12 Turn
+
+Lv.9:
+18 Turn
+```
+
+Cooldown berlaku pada penggunaan Medical oleh Master dan mengatur seluruh party.
+
+Cooldown mulai dihitung setelah Medical digunakan.
+
+```text
+Turn Penggunaan
+      ↓
+Medical Effect Aktif kepada seluruh party
+      ↓
+Cooldown Aktif
+      ↓
+Turn Berjalan
+      ↓
+Cooldown Berkurang
+      ↓
+Cooldown 0
+      ↓
+Medical Dapat Digunakan Kembali
+```
+
+Contoh:
+
+```text
+Medical Lv.5
+Cooldown:
+6 Turn
+```
+
+Jika digunakan pada Turn 10:
+
+```text
+Turn 10:
+Medical digunakan
+Seluruh party menerima efek
+
+Turn 11:
+Cooldown tersisa 5 Turn
+
+Turn 12:
+Cooldown tersisa 4 Turn
+
+Turn 13:
+Cooldown tersisa 3 Turn
+
+Turn 14:
+Cooldown tersisa 2 Turn
+
+Turn 15:
+Cooldown tersisa 1 Turn
+
+Turn 16:
+Cooldown selesai
+```
+
+Medical tidak dapat digunakan kembali sebelum cooldown mencapai 0.
+
+---
+
+# 35. MEDICAL LIMIT
+
+Medical Slot dimiliki oleh party, bukan oleh setiap Hero secara terpisah.
+
+```text
+Party Medical Slot:
+3
+```
+
+Contoh:
+
+```text
+Slot 1 → Recovery Party
+Slot 2 → Offensive Buff Party
+Slot 3 → Defensive Buff Party
+```
+
+Medical yang sudah aktif memberikan efek kepada seluruh party.
+
+Medical yang sudah aktif tidak dapat diganti sampai durasinya selesai, kecuali Master menggunakan item khusus untuk menghapus buff party.
+
+Jika satu Hero keluar dari party:
+
+```text
+Hero keluar
+    ↓
+Tidak lagi menerima Medical Effect
+```
+
+Jika Hero baru masuk ke party saat Medical masih aktif:
+
+```text
+Hero baru masuk
+    ↓
+Menerima Medical Effect yang sedang aktif
+    ↓
+Mengikuti sisa durasi Medical
+```
+
+---
+
+# 36. BOSS FLOOR DROP
+
+Medical Lv.7 dapat masuk ke loot table Boss Floor.
+
+Contoh:
+
+```text
+BOSS FLOOR 10
+      ↓
+Boss Defeated
+      ↓
+Loot RNG
+      ↓
+MED-007
+      ↓
+Medical digunakan
+      ↓
+Efek kepada seluruh party
+```
+
+Medical Lv.7 bukan reward 100%.
+
+Drop menggunakan RNG.
+
+---
+
+# 37. BOSS RAID DROP
+
+Boss Raid dapat memberikan Medical Lv.8 dan Lv.9.
+
+```text
+BOSS RAID
+     ↓
+RAID REWARD
+     ↓
+RNG
+     ├── MED-008
+     │       ↓
+     │  Efek seluruh party
+     │
+     └── MED-009
+             ↓
+        Efek seluruh party
+```
+
+Contoh:
+
+```text
+IGNAROK
+    ↓
+Boss Raid Lv.1
+    ↓
+MED-008 possible
+    ↓
+Efek kepada seluruh party
+```
+
+```text
+VULKARION
+    ↓
+Boss Raid Lv.2
+    ↓
+MED-008
+MED-009 possible
+    ↓
+Efek kepada seluruh party
+```
+
+---
+
+# 38. DROP RARITY
+
+Recommended:
+
+```text
+MED-007
+Boss Floor:
+Rare
+
+MED-008
+Boss Raid:
+Very Rare
+
+MED-009
+Boss Raid:
+Extremely Rare
+```
+
+Medical Lv.9 harus menjadi item yang sangat sulit diperoleh.
+
+Walaupun Medical hanya menggunakan satu item, efeknya dirasakan oleh seluruh party aktif.
+
+---
+
+# 39. INVENTORY
+
+Medical disimpan di:
+
+```text
+Inventory
+   ↓
+Consumable
+   ↓
+Medical
+```
+
+Database:
+
+```text
+MedicalInstance
+├── Medical_ID
+├── Medical_Template_ID
+├── Level
+├── Name
+├── Quantity
+├── Source
+├── Duration
+├── Cooldown_Turns
+├── Target_Type
+└── Owner
+```
+
+Nilai `Target_Type` untuk Medical adalah:
+
+```text
+Target_Type:
+ACTIVE_PARTY
+```
+
+Medical tidak memiliki target Hero tunggal.
+
+---
+
+# 40. MEDICAL TEMPLATE
+
+```text
+MedicalTemplate
+├── Medical_Template_ID
+├── Medical_Level
+├── Name
+├── HP_Recovery
+├── ATK_Bonus
+├── DEF_Bonus
+├── MATK_Bonus
+├── Critical_ATK_Bonus
+├── Critical_Rate_Bonus
+├── Physical_Resistance
+├── Magic_Resistance
+├── Elemental_Resistance
+├── Status_Resistance
+├── Duration
+├── Cooldown_Turns
+├── Target_Type
+├── Craftable
+├── Source
+└── Drop_Rarity
+```
+
+Nilai default:
+
+```text
+Target_Type:
+ACTIVE_PARTY
+```
+
+---
+
+# 41. MEDICAL SOURCE RULE
+
+```text
+LV.1
+↓
+Mage Tower Lv.1
+↓
+Efek seluruh party
+
+LV.2
+↓
+Mage Tower Lv.2
+↓
+Efek seluruh party
+
+LV.3
+↓
+Mage Tower Lv.3
+↓
+Efek seluruh party
+
+LV.4
+↓
+Mage Tower Lv.4
+↓
+Efek seluruh party
+
+LV.5
+↓
+Mage Tower Lv.5
+↓
+Efek seluruh party
+
+LV.6
+↓
+Special Craft / Special Content
+↓
+Efek seluruh party
+
+LV.7
+↓
+Boss Floor
+↓
+Efek seluruh party
+
+LV.8
+↓
+Boss Raid
+↓
+Efek seluruh party
+
+LV.9
+↓
+Rare Boss Raid Drop
+↓
+Efek seluruh party
+```
+
+---
+
+# 42. FINAL MEDICAL PROGRESSION
+
+```text
+                    MEDICAL
+                       │
+        ┌──────────────┴──────────────┐
+        │                             │
+      CRAFT                          DROP
+        │                             │
+        ▼                             ▼
+ MAGE TOWER                      BOSS CONTENT
+        │                             │
+        ├── Lv.1                     ├── Lv.7
+        ├── Lv.2                     │    Boss Floor
+        ├── Lv.3                     │
+        ├── Lv.4                     ├── Lv.8
+        └── Lv.5                     │    Boss Raid
+                                      │
+                                      └── Lv.9
+                                           Rare Raid
+```
+
+Semua Medical memiliki aturan:
+
+```text
+Medical digunakan oleh Master
+        ↓
+Medical diterapkan kepada Active Party
+        ↓
+Semua Hero dalam party menerima efek
+```
+
+---
+
+# 43. FINAL SYSTEM RULE
+
+```text
+MAGE TOWER LV.1
+      ↓
+MEDICAL LV.1
+      ↓
+Efek seluruh party
+
+MAGE TOWER LV.2
+      ↓
+MEDICAL LV.2
+      ↓
+Efek seluruh party
+
+MAGE TOWER LV.3
+      ↓
+MEDICAL LV.3
+      ↓
+Efek seluruh party
+
+MAGE TOWER LV.4
+      ↓
+MEDICAL LV.4
+      ↓
+Efek seluruh party
+
+MAGE TOWER LV.5
+      ↓
+MEDICAL LV.5
+      ↓
+Efek seluruh party
+
+SPECIAL CONTENT
+      ↓
+MEDICAL LV.6
+      ↓
+Efek seluruh party
+
+BOSS FLOOR
+      ↓
+MEDICAL LV.7
+      ↓
+Efek seluruh party
+
+BOSS RAID LV.1 / LV.2
+      ↓
+MEDICAL LV.8
+      ↓
+Efek seluruh party
+
+RARE BOSS RAID DROP
+      ↓
+MEDICAL LV.9
+      ↓
+Efek seluruh party
+```
+
+Medical System terhubung dengan:
+
+```text
+Mage Tower
+      ↓
+Craft System
+      ↓
+Resource System
+      ↓
+Inventory
+      ↓
+Party System
+      ↓
+Hero System
+      ↓
+Combat System
+      ↓
+Boss System
+      ↓
+Boss Raid System
+      ↓
+Database System
+```
+
+**Medical Lv.1–5 = dapat dibuat dan efeknya dirasakan oleh seluruh party.**
+
+**Medical Lv.6 = special content dan efeknya dirasakan oleh seluruh party.**
+
+**Medical Lv.7 = khusus Boss Floor dan efeknya dirasakan oleh seluruh party.**
+
+**Medical Lv.8 = Boss Raid dan efeknya dirasakan oleh seluruh party.**
+
+**Medical Lv.9 = rare Boss Raid drop, menjadi Medical tertinggi, dan efeknya dirasakan oleh seluruh party.**
