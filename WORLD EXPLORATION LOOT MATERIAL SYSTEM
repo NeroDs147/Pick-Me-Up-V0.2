@@ -1,0 +1,954 @@
+# AETHERIA — WORLD EXPLORATION LOOT MATERIAL SYSTEM
+
+## 1. OVERVIEW
+
+World Exploration System menyediakan material yang digunakan oleh:
+
+```text
+WORLD EXPLORATION
+       ↓
+EXPLORATION LOOT
+       ↓
+MATERIAL INVENTORY
+       ↓
+BLACKSMITH
+       ↓
+EQUIPMENT CRAFTING
+```
+
+Material Exploration dibagi menjadi **5 Exploration Level**.
+
+```text
+Exploration Lv.1 → Floor 10
+Exploration Lv.2 → Floor 20
+Exploration Lv.3 → Floor 30
+Exploration Lv.4 → Floor 40
+Exploration Lv.5 → Floor 50
+```
+
+Setiap level membuka wilayah eksplorasi dan material dengan kualitas yang lebih tinggi.
+
+---
+
+# 2. EXPLORATION LEVEL UNLOCK
+
+| Exploration Level | Unlock Floor | Material Tier | Blacksmith |
+| ----------------- | -----------: | ------------- | ---------: |
+| Lv.1              |     Floor 10 | Basic / Iron  |       Lv.1 |
+| Lv.2              |     Floor 20 | Steel         |       Lv.2 |
+| Lv.3              |     Floor 30 | Damascus      |       Lv.3 |
+| Lv.4              |     Floor 40 | Mithril       |       Lv.4 |
+| Lv.5              |     Floor 50 | Epic          |       Lv.5 |
+
+### Rule
+
+```text
+Floor 10
+   ↓
+Exploration Lv.1
+
+Floor 20
+   ↓
+Exploration Lv.2
+
+Floor 30
+   ↓
+Exploration Lv.3
+
+Floor 40
+   ↓
+Exploration Lv.4
+
+Floor 50
+   ↓
+Exploration Lv.5
+```
+
+Unlock hanya berdasarkan **progress Tower of Rebirth**.
+
+---
+
+# 3. MATERIAL DATABASE
+
+## 3.1 Exploration Lv.1 — IRON MATERIAL
+
+**Unlock:** Floor 10
+
+Material digunakan untuk:
+
+```text
+IRON WEAPON
+IRON ARMOR
+IRON ACCESSORY
+```
+
+### Loot List
+
+| ID      | Material           | Rarity   | Main Use          |
+| ------- | ------------------ | -------- | ----------------- |
+| MAT-001 | Iron Ore           | Common   | Iron Equipment    |
+| MAT-002 | Coal               | Common   | Smelting          |
+| MAT-003 | Rough Leather      | Common   | Armor             |
+| MAT-004 | Hardwood           | Common   | Weapon Handle     |
+| MAT-005 | Rough Thread       | Common   | Armor / Accessory |
+| MAT-006 | Iron Ingot         | Uncommon | Weapon / Armor    |
+| MAT-007 | Rough Gem          | Uncommon | Accessory         |
+| MAT-008 | Small Monster Bone | Common   | Weapon / Armor    |
+| MAT-009 | Beast Fang         | Common   | Weapon            |
+| MAT-010 | Beast Claw         | Common   | Weapon            |
+
+### Recommended Source
+
+```text
+Ruins
+Forest
+Mountain
+Old Mine
+Abandoned Village
+Monster Nest
+```
+
+### Primary Materials
+
+```text
+Iron Ore
+Coal
+Iron Ingot
+```
+
+---
+
+# 4. EXPLORATION Lv.2 — STEEL MATERIAL
+
+**Unlock:** Floor 20
+
+Material digunakan untuk:
+
+```text
+STEEL WEAPON
+STEEL ARMOR
+STEEL ACCESSORY
+```
+
+### Loot List
+
+| ID      | Material            | Rarity   | Main Use        |
+| ------- | ------------------- | -------- | --------------- |
+| MAT-011 | Steel Ore           | Uncommon | Steel Equipment |
+| MAT-012 | Steel Ingot         | Uncommon | Weapon / Armor  |
+| MAT-013 | Refined Coal        | Uncommon | Smelting        |
+| MAT-014 | Hard Leather        | Uncommon | Armor           |
+| MAT-015 | Quality Wood        | Uncommon | Weapon          |
+| MAT-016 | Strong Thread       | Uncommon | Armor           |
+| MAT-017 | Steel Fragment      | Common   | Steel Ingot     |
+| MAT-018 | Medium Monster Bone | Uncommon | Weapon          |
+| MAT-019 | Monster Horn        | Uncommon | Weapon          |
+| MAT-020 | Quality Gem         | Rare     | Accessory       |
+
+### Recommended Source
+
+```text
+Deep Forest
+Mountain Mine
+Destroyed Fortress
+Monster Camp
+Ancient Road
+Underground Ruins
+```
+
+### Primary Materials
+
+```text
+Steel Ore
+Steel Ingot
+Refined Coal
+Hard Leather
+Quality Wood
+```
+
+---
+
+# 5. EXPLORATION Lv.3 — DAMASCUS MATERIAL
+
+**Unlock:** Floor 30
+
+Material digunakan untuk:
+
+```text
+DAMASCUS WEAPON
+DAMASCUS ARMOR
+DAMASCUS ACCESSORY
+```
+
+### Loot List
+
+| ID      | Material           | Rarity | Main Use           |
+| ------- | ------------------ | ------ | ------------------ |
+| MAT-021 | Damascus Ore       | Rare   | Damascus Equipment |
+| MAT-022 | Damascus Ingot     | Rare   | Weapon / Armor     |
+| MAT-023 | Refined Iron       | Rare   | Metal Processing   |
+| MAT-024 | Fine Coal          | Rare   | High Heat Smelting |
+| MAT-025 | Fine Leather       | Rare   | Armor              |
+| MAT-026 | Fine Wood          | Rare   | Weapon             |
+| MAT-027 | Fine Thread        | Rare   | Armor              |
+| MAT-028 | Large Monster Bone | Rare   | Weapon             |
+| MAT-029 | Monster Core       | Rare   | Equipment          |
+| MAT-030 | Refined Gem        | Rare   | Accessory          |
+
+### Recommended Source
+
+```text
+Ancient Mine
+Ruined Kingdom
+High-Level Monster Nest
+Ancient Battlefield
+Deep Dungeon Ruins
+Abandoned Capital
+```
+
+### Primary Materials
+
+```text
+Damascus Ore
+Damascus Ingot
+Refined Iron
+Fine Coal
+Monster Core
+```
+
+---
+
+# 6. EXPLORATION Lv.4 — MITHRIL MATERIAL
+
+**Unlock:** Floor 40
+
+Material digunakan untuk:
+
+```text
+MITHRIL WEAPON
+MITHRIL ARMOR
+MITHRIL ACCESSORY
+```
+
+### Loot List
+
+| ID      | Material              | Rarity | Main Use           |
+| ------- | --------------------- | ------ | ------------------ |
+| MAT-031 | Mithril Ore           | Epic   | Mithril Equipment  |
+| MAT-032 | Mithril Ingot         | Epic   | Weapon / Armor     |
+| MAT-033 | Pure Mithril Fragment | Epic   | Mithril Processing |
+| MAT-034 | Magic Crystal         | Epic   | Equipment          |
+| MAT-035 | Mithril Thread        | Epic   | Armor              |
+| MAT-036 | Ancient Leather       | Epic   | Armor              |
+| MAT-037 | Ancient Wood          | Epic   | Weapon             |
+| MAT-038 | High Monster Core     | Epic   | Equipment          |
+| MAT-039 | Large Magic Gem       | Epic   | Accessory          |
+| MAT-040 | Spirit Stone          | Epic   | Magic Equipment    |
+
+### Recommended Source
+
+```text
+Ancient Forest
+Mithril Mine
+Magic Ruins
+Spirit Realm Ruins
+Ancient Fortress
+High-Level Monster Territory
+```
+
+### Primary Materials
+
+```text
+Mithril Ore
+Mithril Ingot
+Magic Crystal
+High Monster Core
+Spirit Stone
+```
+
+---
+
+# 7. EXPLORATION Lv.5 — EPIC MATERIAL
+
+**Unlock:** Floor 50
+
+Material digunakan untuk:
+
+```text
+EPIC WEAPON
+EPIC ARMOR
+EPIC ACCESSORY
+```
+
+### Loot List
+
+| ID      | Material                | Rarity    | Main Use       |
+| ------- | ----------------------- | --------- | -------------- |
+| MAT-041 | Epic Metal Ore          | Legendary | Epic Equipment |
+| MAT-042 | Epic Ingot              | Legendary | Weapon / Armor |
+| MAT-043 | Arcane Crystal          | Legendary | Equipment      |
+| MAT-044 | Ancient Core            | Legendary | Equipment      |
+| MAT-045 | Dragon Scale            | Legendary | Armor          |
+| MAT-046 | Dragon Bone             | Legendary | Weapon         |
+| MAT-047 | Ancient Monster Leather | Legendary | Armor          |
+| MAT-048 | World Tree Wood         | Legendary | Weapon         |
+| MAT-049 | High Arcane Gem         | Legendary | Accessory      |
+| MAT-050 | Epic Spirit Stone       | Legendary | Epic Equipment |
+
+### Recommended Source
+
+```text
+Ancient Capital
+World Tree Ruins
+Dragon Territory
+Legendary Monster Territory
+Ancient Battlefield
+Forbidden Ruins
+```
+
+### Primary Materials
+
+```text
+Epic Metal Ore
+Epic Ingot
+Arcane Crystal
+Ancient Core
+Dragon Scale
+Dragon Bone
+```
+
+---
+
+# 8. MATERIAL PROGRESSION
+
+Material progression dibuat bertingkat.
+
+```text
+IRON
+  ↓
+STEEL
+  ↓
+DAMASCUS
+  ↓
+MITHRIL
+  ↓
+EPIC
+```
+
+Hubungan dengan Blacksmith:
+
+```text
+Exploration Lv.1
+        ↓
+Iron Materials
+        ↓
+Blacksmith Lv.1
+        ↓
+IRON Equipment
+```
+
+```text
+Exploration Lv.2
+        ↓
+Steel Materials
+        ↓
+Blacksmith Lv.2
+        ↓
+STEEL Equipment
+```
+
+```text
+Exploration Lv.3
+        ↓
+Damascus Materials
+        ↓
+Blacksmith Lv.3
+        ↓
+DAMASCUS Equipment
+```
+
+```text
+Exploration Lv.4
+        ↓
+Mithril Materials
+        ↓
+Blacksmith Lv.4
+        ↓
+MITHRIL Equipment
+```
+
+```text
+Exploration Lv.5
+        ↓
+Epic Materials
+        ↓
+Blacksmith Lv.5
+        ↓
+EPIC Equipment
+```
+
+---
+
+# 9. LOOT DROP SYSTEM
+
+Setiap World Exploration memiliki tabel Loot Drop.
+
+Contoh:
+
+```text
+Exploration Area
+      ↓
+Loot Table
+      ↓
+RNG
+      ↓
+Material
+      ↓
+Inventory
+```
+
+Loot tidak selalu memberikan material yang sama.
+
+Contoh:
+
+```text
+Explore Ancient Mine
+        ↓
+RNG
+        ↓
+Iron Ore
+Iron Ingot
+Coal
+Steel Fragment
+Monster Bone
+```
+
+---
+
+# 10. DROP RARITY
+
+Setiap material memiliki rarity.
+
+```text
+COMMON
+UNCOMMON
+RARE
+EPIC
+LEGENDARY
+```
+
+Rarity menentukan kemungkinan material muncul.
+
+### Suggested Base Drop Rate
+
+| Rarity    | Drop Chance |
+| --------- | ----------: |
+| Common    |         60% |
+| Uncommon  |         25% |
+| Rare      |         10% |
+| Epic      |          4% |
+| Legendary |          1% |
+
+Drop rate dapat dimodifikasi berdasarkan:
+
+```text
+Exploration Level
+Area
+Hero Skill
+Party Composition
+Luck
+Equipment
+Event
+Difficulty
+RNG
+```
+
+---
+
+# 11. EXPLORATION LEVEL EFFECT
+
+Semakin tinggi Exploration Level, semakin tinggi kualitas loot.
+
+### Lv.1
+
+```text
+Common
+Uncommon
+Rare (low chance)
+```
+
+### Lv.2
+
+```text
+Common
+Uncommon
+Rare
+```
+
+### Lv.3
+
+```text
+Uncommon
+Rare
+Epic (low chance)
+```
+
+### Lv.4
+
+```text
+Rare
+Epic
+Legendary (low chance)
+```
+
+### Lv.5
+
+```text
+Epic
+Legendary
+Special Material
+```
+
+---
+
+# 12. SPECIAL MATERIAL
+
+Tidak semua material dapat diperoleh dari area biasa.
+
+Material tertentu hanya dapat diperoleh melalui:
+
+```text
+Special Exploration
+Rare Location
+World Event
+Monster Hunt
+Boss Area
+Hidden Area
+Exploration Quest
+```
+
+Contoh:
+
+```text
+Dragon Scale
+      ↓
+Dragon Territory
+      ↓
+High-Level Exploration
+      ↓
+RNG
+```
+
+---
+
+# 13. MATERIAL QUANTITY
+
+World Exploration dapat memberikan material dalam jumlah acak.
+
+Contoh:
+
+```text
+Iron Ore
+Drop: 3–10
+
+Steel Ingot
+Drop: 1–5
+
+Damascus Ingot
+Drop: 1–3
+
+Mithril Ingot
+Drop: 1–2
+
+Epic Ingot
+Drop: 1
+```
+
+Quantity dipengaruhi oleh:
+
+```text
+Exploration Level
+Exploration Difficulty
+Hero Skill
+Luck
+Location
+Quest
+Event
+RNG
+```
+
+---
+
+# 14. EXPLORATION QUEST BONUS
+
+Exploration Quest dapat memberikan bonus material.
+
+Contoh:
+
+```text
+Quest:
+Collect 50 Iron Ore
+
+Reward:
++20 Iron Ore
++5 Coal
++500 Gold
+```
+
+Untuk quest tingkat tinggi:
+
+```text
+Quest:
+Collect 20 Mithril Ore
+
+Reward:
++5 Mithril Ingot
++1 Magic Crystal
++5,000 Gold
+```
+
+---
+
+# 15. MATERIAL STORAGE
+
+Semua material yang diperoleh otomatis masuk ke:
+
+```text
+INVENTORY
+   ↓
+MATERIAL STORAGE
+```
+
+Material tidak langsung digunakan untuk crafting.
+
+Master dapat melihat:
+
+```text
+Material ID
+Material Name
+Rarity
+Quantity
+Source
+Acquired Date
+```
+
+---
+
+# 16. INVENTORY DATABASE
+
+```text
+MaterialInstance
+├── Material_ID
+├── Material_Template_ID
+├── Material_Name
+├── Material_Rarity
+├── Quantity
+├── Source
+└── Acquired_Date
+```
+
+Contoh:
+
+```text
+Material_ID:
+MATI-000001
+
+Template:
+MAT-001
+
+Name:
+Iron Ore
+
+Rarity:
+COMMON
+
+Quantity:
+37
+
+Source:
+World Exploration
+
+Status:
+STORED
+```
+
+---
+
+# 17. EXPLORATION → BLACKSMITH CONNECTION
+
+Blacksmith tidak menghasilkan material.
+
+Blacksmith hanya menggunakan material yang sudah dikumpulkan melalui:
+
+```text
+World Exploration
+      ↓
+Inventory
+      ↓
+Blacksmith
+      ↓
+Crafting
+```
+
+Contoh:
+
+```text
+Floor 10 Cleared
+       ↓
+Exploration Lv.1
+       ↓
+Iron Ore
+       ↓
+Inventory
+       ↓
+Blacksmith Lv.1
+       ↓
+Iron Sword
+```
+
+---
+
+# 18. FLOOR UNLOCK RULE
+
+Exploration Level tidak dapat dibuka sebelum Master mencapai floor tertentu.
+
+```text
+Floor < 10
+   ↓
+Exploration Lv.1 LOCKED
+```
+
+```text
+Floor 10
+   ↓
+Exploration Lv.1 UNLOCKED
+```
+
+```text
+Floor 20
+   ↓
+Exploration Lv.2 UNLOCKED
+```
+
+```text
+Floor 30
+   ↓
+Exploration Lv.3 UNLOCKED
+```
+
+```text
+Floor 40
+   ↓
+Exploration Lv.4 UNLOCKED
+```
+
+```text
+Floor 50
+   ↓
+Exploration Lv.5 UNLOCKED
+```
+
+Setelah terbuka, level Exploration **tetap terbuka** dan tidak perlu dibuka kembali.
+
+---
+
+# 19. BLACKSMITH REQUIREMENT
+
+| Blacksmith | Unlock   | Required Exploration |
+| ---------- | -------- | -------------------- |
+| Lv.1       | Iron     | Exploration Lv.1     |
+| Lv.2       | Steel    | Exploration Lv.2     |
+| Lv.3       | Damascus | Exploration Lv.3     |
+| Lv.4       | Mithril  | Exploration Lv.4     |
+| Lv.5       | Epic     | Exploration Lv.5     |
+
+Dengan demikian:
+
+```text
+BLACKSMITH Lv.1
+       ↓
+IRON
+
+BLACKSMITH Lv.2
+       ↓
+STEEL
+
+BLACKSMITH Lv.3
+       ↓
+DAMASCUS
+
+BLACKSMITH Lv.4
+       ↓
+MITHRIL
+
+BLACKSMITH Lv.5
+       ↓
+EPIC
+```
+
+---
+
+# 20. NON-CRAFTABLE MATERIAL
+
+Material untuk equipment tingkat:
+
+```text
+LEGEND
+MYTHICAL
+SPECIAL
+BOSS
+EVENT
+```
+
+tidak dapat digunakan untuk crafting Blacksmith Lv.1–5 secara normal.
+
+Sumbernya:
+
+```text
+Boss Raid
+Special Dungeon
+Floor Boss
+World Event
+Special Exploration
+Event Quest
+Rare Loot
+```
+
+Contoh:
+
+```text
+Legend Equipment
+       ↓
+Boss Raid
+       ↓
+Legend Loot
+```
+
+bukan:
+
+```text
+Legend Equipment
+       ↓
+Blacksmith Lv.5
+       ↓
+Craft
+```
+
+---
+
+# 21. COMPLETE PROGRESSION
+
+```text
+TOWER OF REBIRTH
+        │
+        ├── Floor 10
+        │      ↓
+        │  Exploration Lv.1
+        │      ↓
+        │  Iron Materials
+        │      ↓
+        │  Blacksmith Lv.1
+        │      ↓
+        │  IRON EQUIPMENT
+        │
+        ├── Floor 20
+        │      ↓
+        │  Exploration Lv.2
+        │      ↓
+        │  Steel Materials
+        │      ↓
+        │  Blacksmith Lv.2
+        │      ↓
+        │  STEEL EQUIPMENT
+        │
+        ├── Floor 30
+        │      ↓
+        │  Exploration Lv.3
+        │      ↓
+        │  Damascus Materials
+        │      ↓
+        │  Blacksmith Lv.3
+        │      ↓
+        │  DAMASCUS EQUIPMENT
+        │
+        ├── Floor 40
+        │      ↓
+        │  Exploration Lv.4
+        │      ↓
+        │  Mithril Materials
+        │      ↓
+        │  Blacksmith Lv.4
+        │      ↓
+        │  MITHRIL EQUIPMENT
+        │
+        └── Floor 50
+               ↓
+           Exploration Lv.5
+               ↓
+           Epic Materials
+               ↓
+           Blacksmith Lv.5
+               ↓
+           EPIC EQUIPMENT
+```
+
+---
+
+# 22. SYSTEM RULE SUMMARY
+
+```text
+1. Master mencapai Floor 10.
+2. Exploration Lv.1 terbuka.
+3. Iron Material mulai dapat diperoleh.
+4. Blacksmith Lv.1 dapat menggunakan Iron Material.
+
+5. Master mencapai Floor 20.
+6. Exploration Lv.2 terbuka.
+7. Steel Material mulai dapat diperoleh.
+8. Blacksmith Lv.2 dapat menggunakan Steel Material.
+
+9. Master mencapai Floor 30.
+10. Exploration Lv.3 terbuka.
+11. Damascus Material mulai dapat diperoleh.
+12. Blacksmith Lv.3 dapat menggunakan Damascus Material.
+
+13. Master mencapai Floor 40.
+14. Exploration Lv.4 terbuka.
+15. Mithril Material mulai dapat diperoleh.
+16. Blacksmith Lv.4 dapat menggunakan Mithril Material.
+
+17. Master mencapai Floor 50.
+18. Exploration Lv.5 terbuka.
+19. Epic Material mulai dapat diperoleh.
+20. Blacksmith Lv.5 dapat menggunakan Epic Material.
+```
+
+---
+
+# 23. FINAL MATERIAL TIER
+
+| Tier     | Exploration | Floor | Blacksmith | Equipment |
+| -------- | ----------: | ----: | ---------: | --------- |
+| Iron     |        Lv.1 |    10 |       Lv.1 | Iron      |
+| Steel    |        Lv.2 |    20 |       Lv.2 | Steel     |
+| Damascus |        Lv.3 |    30 |       Lv.3 | Damascus  |
+| Mithril  |        Lv.4 |    40 |       Lv.4 | Mithril   |
+| Epic     |        Lv.5 |    50 |       Lv.5 | Epic      |
+
+**Core Rule:**
+
+```text
+FLOOR PROGRESS
+      ↓
+EXPLORATION UNLOCK
+      ↓
+MATERIAL ACCESS
+      ↓
+BLACKSMITH LEVEL
+      ↓
+CRAFTING TIER
+      ↓
+EQUIPMENT
+```
+
+Sistem ini membuat **Tower Progress → World Exploration → Material → Blacksmith → Equipment** menjadi satu progression chain yang saling terhubung.
