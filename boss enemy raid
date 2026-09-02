@@ -1,0 +1,1241 @@
+# AETHERIA — ENEMY BOSS RAID SYSTEM
+
+## 1. OVERVIEW
+
+Boss Raid adalah mode PVE khusus yang menghadapkan banyak Party melawan satu Enemy Boss dengan HP, fase, skill, dan mekanisme khusus.
+
+```text
+TOWER OF REBIRTH
+       │
+       ├── Floor 25
+       │      ↓
+       │   BOSS RAID LV.1
+       │      ↓
+       │   MAX 5 PARTY
+       │      ↓
+       │   MAX 25 HERO
+       │
+       └── Floor 50
+              ↓
+           BOSS RAID LV.2
+              ↓
+           MAX 10 PARTY
+              ↓
+           MAX 50 HERO
+```
+
+Boss Raid tidak menggantikan Dungeon Floor.
+
+Boss Raid adalah **konten khusus** yang terbuka berdasarkan progress Tower.
+
+---
+
+# 2. BOSS RAID UNLOCK
+
+| Raid Level     | Unlock Floor | Max Party | Max Hero | Boss Rank         |
+| -------------- | -----------: | --------: | -------: | ----------------- |
+| Boss Raid Lv.1 |     Floor 25 |   5 Party |  25 Hero | Raid Boss         |
+| Boss Raid Lv.2 |     Floor 50 |  10 Party |  50 Hero | Greater Raid Boss |
+
+### Unlock Rule
+
+```text
+Master mencapai Floor 25
+        ↓
+Boss Raid Lv.1 Unlock
+        ↓
+Master mencapai Floor 50
+        ↓
+Boss Raid Lv.2 Unlock
+```
+
+Boss Raid Lv.2 tidak dapat dimainkan sebelum Floor 50 terbuka.
+
+---
+
+# 3. PARTY STRUCTURE
+
+## Boss Raid Lv.1
+
+```text
+PARTY 1 → 5 HERO
+PARTY 2 → 5 HERO
+PARTY 3 → 5 HERO
+PARTY 4 → 5 HERO
+PARTY 5 → 5 HERO
+
+TOTAL
+25 HERO
+```
+
+## Boss Raid Lv.2
+
+```text
+PARTY 1  → 5 HERO
+PARTY 2  → 5 HERO
+PARTY 3  → 5 HERO
+PARTY 4  → 5 HERO
+PARTY 5  → 5 HERO
+PARTY 6  → 5 HERO
+PARTY 7  → 5 HERO
+PARTY 8  → 5 HERO
+PARTY 9  → 5 HERO
+PARTY 10 → 5 HERO
+
+TOTAL
+50 HERO
+```
+
+Setiap Party tetap memiliki:
+
+```text
+1 Leader
+4 Member
+```
+
+---
+
+# 4. BOSS RAID LV.1
+
+## BOSS ID
+
+```text
+RAID_BOSS_001
+```
+
+## Boss Name
+
+**IGNAROK — THE ASHEN COLOSSUS**
+
+## Classification
+
+```text
+Type       : Raid Boss
+Element    : Fire
+Race       : Ancient Beast
+Role       : Tank / Area Damage
+Threat     : S
+Raid Level : 1
+Unlock     : Floor 25
+```
+
+## Lore
+
+Ignarok adalah monster raksasa yang muncul dari wilayah yang terbakar setelah kehancuran Aetheria.
+
+Tubuhnya tersusun dari batu hitam, tulang monster, dan inti api kuno.
+
+Setiap kali Ignarok menerima kerusakan besar, inti apinya menjadi semakin aktif.
+
+---
+
+# 5. IGNAROK LV.1 — BASE STATUS
+
+| Status              |     Value |
+| ------------------- | --------: |
+| Level               |        50 |
+| HP                  | 2,500,000 |
+| MP                  |    50,000 |
+| ATK                 |     8,500 |
+| DEF                 |     6,500 |
+| MATK                |     7,000 |
+| MDEF                |     5,500 |
+| Speed               |       180 |
+| Critical Rate       |       15% |
+| Critical Damage     |      150% |
+| Accuracy            |       95% |
+| Evasion             |        5% |
+| Fire Resistance     |       80% |
+| Physical Resistance |       25% |
+| Magic Resistance    |       20% |
+| Status Resistance   |       60% |
+
+---
+
+# 6. IGNAROK LV.1 — PASSIVE SKILLS
+
+## PASSIVE 01 — Ancient Flame Core
+
+```text
+Effect:
+Ignarok memperoleh Fire Damage Reduction 80%.
+
+Setiap HP berkurang 20%:
+Fire Core Charge +1.
+```
+
+Maximum:
+
+```text
+5 Charge
+```
+
+Setiap Charge:
+
+```text
+ATK +5%
+MATK +5%
+```
+
+Maximum bonus:
+
+```text
+ATK +25%
+MATK +25%
+```
+
+---
+
+## PASSIVE 02 — Colossal Body
+
+Ignarok memiliki tubuh yang sangat besar.
+
+Effect:
+
+```text
+Knockback Immunity
+Stun Duration -50%
+Slow Duration -30%
+Taunt Resistance +50%
+```
+
+---
+
+## PASSIVE 03 — Rage of the Ruined World
+
+Jika HP Ignarok berada di bawah 30%:
+
+```text
+ATK +30%
+Speed +20%
+Critical Rate +15%
+Damage Taken -15%
+```
+
+---
+
+# 7. IGNAROK LV.1 — ACTIVE SKILLS
+
+## SKILL 01 — Molten Smash
+
+```text
+Type      : Physical
+Target    : Front Area
+Cooldown  : 8 sec
+```
+
+Ignarok menghantam tanah menggunakan tangan raksasanya.
+
+Effect:
+
+```text
+300% ATK Physical Damage
+AoE
+Knockback
+Slow 20% selama 4 detik
+```
+
+---
+
+## SKILL 02 — Burning Roar
+
+```text
+Type      : Fire
+Target    : All Party
+Cooldown  : 15 sec
+```
+
+Ignarok mengeluarkan raungan yang menghasilkan gelombang api.
+
+Effect:
+
+```text
+180% MATK Fire Damage
+Burn
+Accuracy -15%
+Attack Speed -10%
+```
+
+Burn:
+
+```text
+2% Max HP Damage setiap 2 detik
+Duration: 8 sec
+```
+
+---
+
+## SKILL 03 — Magma Rain
+
+```text
+Type      : Fire
+Target    : Random Areas
+Cooldown  : 20 sec
+```
+
+Ignarok memanggil hujan batu magma.
+
+```text
+5–10 Area
+```
+
+Setiap area:
+
+```text
+250% MATK Fire Damage
+Burn Chance 60%
+```
+
+---
+
+## SKILL 04 — Earthquake
+
+```text
+Type      : Physical
+Target    : Entire Raid
+Cooldown  : 30 sec
+```
+
+Ignarok menghantam tanah dan menyebabkan gempa.
+
+Effect:
+
+```text
+200% ATK Damage
+Stun 2 sec
+DEF -10%
+```
+
+---
+
+## SKILL 05 — Flame Breath
+
+```text
+Type      : Fire
+Target    : Large Cone
+Cooldown  : 25 sec
+```
+
+Ignarok menyemburkan api dalam area besar.
+
+Damage:
+
+```text
+450% MATK Fire Damage
+```
+
+Additional:
+
+```text
+Burn
+Healing Reduction 30%
+```
+
+---
+
+# 8. IGNAROK LV.1 — ULTIMATE
+
+## ULTIMATE — APOCALYPSE METEOR
+
+```text
+Activation:
+HP ≤ 50%
+```
+
+Ignarok memanggil meteor api dari langit.
+
+Charge Time:
+
+```text
+10 seconds
+```
+
+Selama charge:
+
+```text
+Boss Damage Reduction +50%
+```
+
+Setelah charge selesai:
+
+```text
+1000% MATK Fire Damage
+```
+
+Target:
+
+```text
+Entire Raid
+```
+
+Additional:
+
+```text
+Burn
+DEF -20%
+MDEF -20%
+```
+
+Jika Master tidak memberikan command khusus:
+
+```text
+Fairy → WARNING
+Master → YES / NO
+```
+
+---
+
+# 9. IGNAROK LV.1 — PHASE SYSTEM
+
+## PHASE 1
+
+```text
+HP 100%–76%
+```
+
+Boss menggunakan:
+
+```text
+Molten Smash
+Burning Roar
+Magma Rain
+```
+
+---
+
+## PHASE 2
+
+```text
+HP 75%–51%
+```
+
+Boss mendapatkan:
+
+```text
+Fire Core Charge
+```
+
+Skill tambahan:
+
+```text
+Earthquake
+Flame Breath
+```
+
+---
+
+## PHASE 3
+
+```text
+HP 50%–31%
+```
+
+Boss mulai menggunakan:
+
+```text
+Apocalypse Meteor
+```
+
+Attack frequency:
+
+```text
++20%
+```
+
+---
+
+## PHASE 4
+
+```text
+HP 30%–0%
+```
+
+Passive:
+
+```text
+Rage of the Ruined World
+```
+
+Boss menjadi bersifat:
+
+```text
+BERSERK
+```
+
+Attack:
+
+```text
++30%
+```
+
+Defense:
+
+```text
+-10%
+```
+
+---
+
+# 10. BOSS RAID LV.2
+
+## BOSS ID
+
+```text
+RAID_BOSS_002
+```
+
+## Boss Name
+
+**VULKARION — THE WORLD EATER**
+
+## Classification
+
+```text
+Type       : Greater Raid Boss
+Element    : Fire / Dark
+Race       : Ancient Dragon
+Role       : Destroyer
+Threat     : SS
+Raid Level : 2
+Unlock     : Floor 50
+```
+
+Vulkarion merupakan makhluk yang jauh lebih kuat dibanding Ignarok.
+
+Ia tidak hanya menyerang Hero.
+
+Ia mampu memberikan efek kepada seluruh Raid.
+
+---
+
+# 11. VULKARION LV.2 — BASE STATUS
+
+| Status              |      Value |
+| ------------------- | ---------: |
+| Level               |        100 |
+| HP                  | 15,000,000 |
+| MP                  |    150,000 |
+| ATK                 |     22,000 |
+| DEF                 |     14,000 |
+| MATK                |     25,000 |
+| MDEF                |     13,000 |
+| Speed               |        250 |
+| Critical Rate       |        20% |
+| Critical Damage     |       175% |
+| Accuracy            |       100% |
+| Evasion             |        10% |
+| Fire Resistance     |        90% |
+| Dark Resistance     |        70% |
+| Physical Resistance |        35% |
+| Magic Resistance    |        35% |
+| Status Resistance   |        80% |
+
+---
+
+# 12. VULKARION — PASSIVE SKILLS
+
+## PASSIVE 01 — World Eater Core
+
+Setiap kali Vulkarion kehilangan 10% HP:
+
+```text
+Devour Stack +1
+```
+
+Setiap stack:
+
+```text
+ATK +4%
+MATK +4%
+Damage Reduction +2%
+```
+
+Maximum:
+
+```text
+10 Stack
+```
+
+---
+
+## PASSIVE 02 — Ancient Dragon Scale
+
+Effect:
+
+```text
+Physical Damage Taken -35%
+Magic Damage Taken -35%
+Fire Damage Taken -90%
+Dark Damage Taken -70%
+```
+
+---
+
+## PASSIVE 03 — Raid Suppression
+
+Jika jumlah Hero hidup lebih dari 30:
+
+```text
+Boss ATK +20%
+Boss MATK +20%
+```
+
+Jika jumlah Hero hidup lebih dari 40:
+
+```text
+Boss ATK +30%
+Boss MATK +30%
+```
+
+Tujuannya agar 50 Hero tidak membuat Raid terlalu mudah.
+
+---
+
+## PASSIVE 04 — Immortal Dragon
+
+Vulkarion tidak dapat dibunuh sebelum seluruh Phase selesai.
+
+```text
+Phase Lock
+```
+
+Pada HP tertentu:
+
+```text
+90%
+70%
+50%
+30%
+10%
+```
+
+Boss akan memulai transition phase.
+
+---
+
+# 13. VULKARION — ACTIVE SKILLS
+
+## SKILL 01 — Dragon Claw
+
+```text
+Physical
+Single Target
+```
+
+Damage:
+
+```text
+500% ATK
+```
+
+Additional:
+
+```text
+DEF -20%
+Bleed
+```
+
+---
+
+## SKILL 02 — Hellfire Breath
+
+```text
+Fire / Dark
+Large Cone
+```
+
+Damage:
+
+```text
+700% MATK
+```
+
+Additional:
+
+```text
+Burn
+Healing Reduction 50%
+```
+
+---
+
+## SKILL 03 — Dragon Tail
+
+```text
+Physical
+360° Area
+```
+
+Damage:
+
+```text
+450% ATK
+```
+
+Effect:
+
+```text
+Knockback
+Stun 3 sec
+```
+
+---
+
+## SKILL 04 — Abyssal Flame
+
+Vulkarion menciptakan api hitam.
+
+```text
+Dark Fire Damage
+```
+
+Damage:
+
+```text
+600% MATK
+```
+
+Effect:
+
+```text
+Burn
+Dark Curse
+Recovery -50%
+```
+
+---
+
+## SKILL 05 — World Rupture
+
+Vulkarion menghancurkan tanah Raid.
+
+```text
+Entire Raid
+```
+
+Damage:
+
+```text
+500% ATK
+```
+
+Effect:
+
+```text
+Stun 2 sec
+DEF -25%
+MDEF -25%
+```
+
+---
+
+## SKILL 06 — Dragon Meteor
+
+Vulkarion memanggil meteor dalam jumlah besar.
+
+```text
+10–20 Meteor
+```
+
+Setiap meteor:
+
+```text
+350% MATK
+```
+
+Target:
+
+```text
+Random Party
+```
+
+---
+
+# 14. VULKARION — RAID MECHANIC
+
+## DRAGON HEART
+
+Pada HP:
+
+```text
+90%
+70%
+50%
+30%
+10%
+```
+
+Vulkarion memasuki Dragon Heart Phase.
+
+Boss berhenti menyerang selama:
+
+```text
+8 seconds
+```
+
+Kemudian muncul:
+
+```text
+DRAGON HEART CRYSTAL
+```
+
+Raid harus menghancurkan Crystal.
+
+Jika Crystal hancur:
+
+```text
+Boss Phase berhasil
+```
+
+Jika Crystal tidak hancur:
+
+```text
+Boss Damage +50%
+Raid Damage Taken +25%
+```
+
+selama 30 detik.
+
+---
+
+# 15. VULKARION — ULTIMATE
+
+## ULTIMATE — WORLD ENDING
+
+Activation:
+
+```text
+HP ≤ 10%
+```
+
+Vulkarion mulai mengumpulkan seluruh energi inti.
+
+Charge:
+
+```text
+15 seconds
+```
+
+Fairy:
+
+```text
+WARNING
+WARNING
+WARNING
+```
+
+Master mendapatkan keputusan:
+
+```text
+[YES] Continue Assault
+[NO] Defensive Formation
+```
+
+Jika Master memilih:
+
+```text
+YES
+```
+
+Semua Party mempertahankan serangan.
+
+Jika Master memilih:
+
+```text
+NO
+```
+
+Party menerima:
+
+```text
+Damage Taken -40%
+```
+
+tetapi:
+
+```text
+Damage Output -30%
+```
+
+Setelah charge selesai:
+
+```text
+2000% MATK
+```
+
+kepada seluruh Raid.
+
+Jika Ultimate berhasil membunuh seluruh Hero:
+
+```text
+RAID FAILURE
+```
+
+---
+
+# 16. PARTY ROLE SYSTEM
+
+Setiap Party dapat mempunyai fungsi berbeda.
+
+```text
+PARTY 1
+Main DPS
+
+PARTY 2
+Tank / Frontline
+
+PARTY 3
+Healer / Support
+
+PARTY 4
+Magic DPS
+
+PARTY 5
+Utility / Control
+```
+
+Untuk Raid Lv.2:
+
+```text
+PARTY 1  → Main DPS
+PARTY 2  → Tank
+PARTY 3  → Healer
+PARTY 4  → Magic DPS
+PARTY 5  → Physical DPS
+PARTY 6  → Support
+PARTY 7  → Control
+PARTY 8  → Secondary DPS
+PARTY 9  → Recovery
+PARTY 10 → Reserve / Utility
+```
+
+Pembagian tersebut merupakan rekomendasi AI Fairy dan tetap dapat berubah berdasarkan komposisi Hero.
+
+---
+
+# 17. RAID COMBAT SYSTEM
+
+Boss memiliki satu HP pool.
+
+```text
+PARTY 1 ─┐
+PARTY 2 ─┤
+PARTY 3 ─┤
+PARTY 4 ─┼──→ BOSS HP
+PARTY 5 ─┤
+PARTY 6 ─┤
+PARTY 7 ─┤
+PARTY 8 ─┤
+PARTY 9 ─┤
+PARTY 10─┘
+```
+
+Semua damage dari Party masuk ke Boss HP yang sama.
+
+---
+
+# 18. HERO DEATH
+
+Jika Hero mati:
+
+```text
+Hero HP = 0
+Status = DEAD
+```
+
+Hero tidak dapat kembali ke Party selama Raid kecuali memiliki skill resurrection yang memang tersedia pada Hero tersebut.
+
+Jika seluruh anggota suatu Party mati:
+
+```text
+PARTY DEFEATED
+```
+
+Party tersebut keluar dari combat.
+
+Raid masih dapat dilanjutkan selama masih ada Hero hidup.
+
+---
+
+# 19. RAID FAILURE
+
+Raid gagal jika:
+
+```text
+SEMUA HERO MATI
+```
+
+atau:
+
+```text
+Raid Time Limit habis
+```
+
+Raid tidak otomatis gagal hanya karena satu Party kalah.
+
+---
+
+# 20. RAID TIME LIMIT
+
+## Lv.1
+
+```text
+30 Minutes
+```
+
+## Lv.2
+
+```text
+45 Minutes
+```
+
+Jika waktu habis:
+
+```text
+RAID FAILED
+```
+
+---
+
+# 21. BOSS TARGET AI
+
+Boss menggunakan AI Target Selection.
+
+Prioritas target:
+
+```text
+1. Taunt / Threat
+2. Highest DPS
+3. Healer
+4. Low HP Target
+5. Random Party
+```
+
+Boss dapat mengganti target berdasarkan kondisi combat.
+
+---
+
+# 22. FAIRY OBSERVATION
+
+Fairy mengamati:
+
+```text
+Boss HP
+Boss Phase
+Boss Skill
+Boss Target
+Party HP
+Hero Death
+DPS
+Healing
+Threat
+Raid Mechanic
+Ultimate Warning
+```
+
+Contoh laporan:
+
+```text
+FAIRY REPORT
+
+Boss HP:
+51%
+
+Phase:
+3
+
+Party Status:
+7 / 10 Active
+
+Warning:
+World Rupture detected.
+
+Recommendation:
+Party 3 should prioritize recovery.
+
+Master Decision Required:
+NO
+```
+
+---
+
+# 23. RAID REWARD
+
+Boss Raid memberikan:
+
+```text
+Gold
+Gem
+Equipment
+Craft Material
+Boss Material
+Rare Item
+Special Ticket
+```
+
+Drop bersifat RNG.
+
+Boss Raid tidak memberikan EXP Hero secara langsung.
+
+Master EXP tetap mengikuti sistem progression Aetheria.
+
+---
+
+# 24. BOSS MATERIAL
+
+## Ignarok
+
+```text
+Ignarok Core
+Ashen Scale
+Magma Fragment
+Ancient Fire Stone
+Colossus Bone
+```
+
+## Vulkarion
+
+```text
+Vulkarion Core
+World Eater Scale
+Dragon Heart Fragment
+Abyss Flame Crystal
+Ancient Dragon Bone
+```
+
+Material Boss digunakan untuk:
+
+```text
+Special Crafting
+Epic Equipment
+Boss Equipment
+Special Upgrade
+Event Equipment
+```
+
+---
+
+# 25. RAID CLEAR STATUS
+
+```text
+UNCLEARED
+     ↓
+BOSS DEFEATED
+     ↓
+CLEARED
+```
+
+Database menyimpan:
+
+```text
+raidId
+raidLevel
+bossId
+clearStatus
+clearCount
+bestTime
+highestDamage
+highestDPS
+highestHealing
+heroDeaths
+partyDeaths
+masterId
+clearDate
+```
+
+---
+
+# 26. RAID DATABASE OBJECT
+
+```text
+BossRaid
+├── Raid_ID
+├── Raid_Level
+├── Unlock_Floor
+├── Boss_ID
+├── Boss_Name
+├── Boss_Level
+├── Boss_HP
+├── Boss_MP
+├── Boss_ATK
+├── Boss_DEF
+├── Boss_MATK
+├── Boss_MDEF
+├── Boss_Speed
+├── Boss_Resistance
+├── Boss_Passive
+├── Boss_Skills
+├── Boss_Ultimate
+├── Phase_System
+├── Max_Party
+├── Max_Hero
+├── Time_Limit
+├── Reward_Table
+├── Clear_Status
+├── Clear_Count
+└── Raid_Record
+```
+
+---
+
+# 27. FINAL RAID STRUCTURE
+
+```text
+FLOOR 25
+   │
+   ▼
+BOSS RAID LV.1
+   │
+   ▼
+IGNAROK
+   │
+   ├── 5 PARTY
+   ├── 25 HERO
+   ├── 2,500,000 HP
+   ├── 4 PHASE
+   └── APOCALYPSE METEOR
+
+
+FLOOR 50
+   │
+   ▼
+BOSS RAID LV.2
+   │
+   ▼
+VULKARION
+   │
+   ├── 10 PARTY
+   ├── 50 HERO
+   ├── 15,000,000 HP
+   ├── 5+ PHASE TRANSITION
+   ├── DRAGON HEART
+   └── WORLD ENDING
+```
+
+---
+
+# 28. DESIGN PURPOSE
+
+Boss Raid dibuat sebagai **uji kemampuan seluruh roster Hero**, bukan hanya satu Party.
+
+```text
+NORMAL DUNGEON
+      ↓
+1–2 PARTY
+      ↓
+FLOOR PROGRESSION
+      ↓
+BOSS RAID
+      ↓
+5–10 PARTY
+      ↓
+MULTI-PARTY COORDINATION
+      ↓
+RAID CLEAR
+      ↓
+SPECIAL REWARD
+      ↓
+MASTER PROGRESSION
+```
+
+Dengan sistem ini, semakin jauh Master mencapai Tower of Rebirth, semakin besar kebutuhan untuk membangun **banyak Party yang memiliki fungsi berbeda**, bukan hanya satu tim utama.
