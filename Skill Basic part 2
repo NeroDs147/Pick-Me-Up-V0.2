@@ -1,0 +1,654 @@
+* **Friendly Greeting**
+
+* **Deskripsi:** Meningkatkan sedikit Happiness karakter lain di Town Square.
+
+
+* **Nilai:** $+5$ Happiness
+
+
+* **ID:** `SKILL-0001`
+
+
+
+* **Cheerful Presence**
+
+* **Deskripsi:** Karakter memberikan aura positif kepada karakter di sekitar.
+
+
+* **Nilai:** $+10\%$ Aura Positif
+
+
+* **ID:** `SKILL-0002`
+
+
+
+* **Friendly Conversation**
+
+* **Deskripsi:** Berinteraksi dengan karakter lain dan meningkatkan Relationship.
+
+
+* **Nilai:** $+15$ Relationship
+
+
+* **ID:** `SKILL-0003`
+
+
+
+* **Storyteller**
+
+* **Deskripsi:** Menceritakan kisah kepada karakter lain.
+
+
+* **Nilai:** $+8$ Mood
+
+
+* **ID:** `SKILL-0004`
+
+
+
+* **Town Performer**
+
+* **Deskripsi:** Melakukan pertunjukan sederhana di Town Square.
+
+
+* **Nilai:** $+12\%$ Hiburan
+
+
+* **ID:** `SKILL-0005`
+
+
+
+* **Friendly Smile**
+
+* **Deskripsi:** Meningkatkan mood karakter di sekitar.
+
+
+* **Nilai:** $+5$ Mood
+
+
+* **ID:** `SKILL-0006`
+
+
+
+* **Quick Repair**
+
+* **Deskripsi:** Membantu memperbaiki fasilitas kecil di Town Square.
+
+
+* **Nilai:** $+10\%$ Kecepatan Perbaikan
+
+
+* **ID:** `SKILL-0007`
+
+
+
+* **Clean Square**
+
+* **Deskripsi:** Membersihkan area Town Square.
+
+
+* **Nilai:** $+5\%$ Kebersihan
+
+
+* **ID:** `SKILL-0008`
+
+
+
+* **Organize Supplies**
+
+* **Deskripsi:** Merapikan resource yang berada di Town Square.
+
+
+* **Nilai:** $+10\%$ Efisiensi Penyimpanan
+
+
+* **ID:** `SKILL-0009`
+
+
+
+* **Merchant Sense**
+
+* **Deskripsi:** Membantu aktivitas perdagangan.
+
+
+* **Nilai:** $+5\%$ Bonus Nilai Jual
+
+
+* **ID:** `SKILL-0010`
+
+
+
+* **Appraise Item**
+
+* **Deskripsi:** Memeriksa nilai dasar sebuah item.
+
+
+* **Nilai:** Akurasi Penilaian $100\%$
+
+* **ID:** `SKILL-0011`
+
+
+
+* **Gather Supplies**
+
+* **Deskripsi:** Menghasilkan sejumlah kecil resource dasar ketika berada di area town.
+
+
+* **Nilai:** $+2$ Resource Dasar
+
+
+* **ID:** `SKILL-0012`
+
+
+
+* **Basic Farming**
+
+* **Deskripsi:** Meningkatkan produksi farming.
+
+
+* **Nilai:** $+10\%$ Hasil Farming
+
+
+* **ID:** `SKILL-0013`
+
+
+
+* **Harvest Helper**
+
+* **Deskripsi:** Mempercepat proses harvesting.
+
+
+* **Nilai:** $+15\%$ Kecepatan Panen
+
+
+* **ID:** `SKILL-0014`
+
+
+
+* **Seed Keeper**
+
+* **Deskripsi:** Mengurangi kemungkinan kehilangan seed.
+
+
+* **Nilai:** $-20\%$ Risiko Kehilangan Benih
+
+
+* **ID:** `SKILL-0015`
+
+
+
+* **Green Thumb**
+
+* **Deskripsi:** Meningkatkan peluang mendapatkan bonus hasil panen.
+
+
+* **Nilai:** $+5\%$ Peluang Bonus Panen
+
+
+* **ID:** `SKILL-0016`
+
+
+
+* **Basic Crafting**
+
+* **Deskripsi:** Meningkatkan efisiensi crafting sederhana.
+
+
+* **Nilai:** $+5\%$ Efisiensi Crafting
+
+
+* **ID:** `SKILL-0017`
+
+
+
+* **Material Saver**
+
+* **Deskripsi:** Ada kemungkinan kecil menghemat material crafting.
+
+
+* **Nilai:** $+3\%$ Peluang Hemat Material
+
+
+* **ID:** `SKILL-0018`
+
+
+
+* **Quick Hands**
+
+* **Deskripsi:** Mempercepat pekerjaan manual.
+
+
+* **Nilai:** $+10\%$ Kecepatan Kerja
+
+
+* **ID:** `SKILL-0019`
+
+
+
+* **Tool Maintenance**
+
+* **Deskripsi:** Mengurangi penggunaan durability tool.
+
+
+* **Nilai:** $-10\%$ Penurunan Durability
+
+
+* **ID:** `SKILL-0020`
+
+
+
+* **Training Partner**
+
+* **Deskripsi:** Membantu karakter lain melakukan latihan.
+
+
+* **Nilai:** $+5$ EXP Training
+
+
+* **ID:** `SKILL-0021`
+
+
+
+* **Basic Coaching**
+
+* **Deskripsi:** Memberikan bonus kecil terhadap training.
+
+
+* **Nilai:** $+5\%$ Efektivitas Training
+
+
+* **ID:** `SKILL-0022`
+
+
+
+* **Practice Together**
+
+* **Deskripsi:** Dua karakter berlatih bersama.
+
+
+* **Nilai:** $+10\%$ Sinergi Latihan
+
+
+* **ID:** `SKILL-0023`
+
+
+
+* **Motivation**
+
+* **Deskripsi:** Meningkatkan motivasi karakter yang sedang training.
+
+
+* **Nilai:** $+10$ Motivasi
+
+
+* **ID:** `SKILL-0024`
+
+
+
+* **Power Strike**
+
+* **Deskripsi:** Serangan fisik sederhana dengan kekuatan lebih besar.
+
+
+* **Nilai:** $120\%$ Physical ATK
+
+
+* **ID:** `SKILL-0025`
+
+
+
+* **Quick Slash**
+
+* **Deskripsi:** Serangan cepat menggunakan weapon.
+
+
+* **Nilai:** $100\%$ ATK, $+10\%$ Attack Speed
+
+
+* **ID:** `SKILL-0026`
+
+
+
+* **Heavy Blow**
+
+* **Deskripsi:** Serangan kuat tetapi lebih lambat.
+
+
+* **Nilai:** $140\%$ Physical ATK
+
+
+* **ID:** `SKILL-0027`
+
+
+
+* **Double Strike**
+
+* **Deskripsi:** Menyerang target dua kali.
+
+
+* **Nilai:** $2 \times 75\%$ ATK
+
+
+* **ID:** `SKILL-0028`
+
+
+
+* **Piercing Strike**
+
+* **Deskripsi:** Serangan yang mengabaikan sebagian Defense musuh.
+
+
+* **Nilai:** Mengabaikan $20\%$ Defense
+
+
+* **ID:** `SKILL-0029`
+
+
+
+* **Crushing Blow**
+
+* **Deskripsi:** Serangan berat yang memiliki peluang memberikan Stagger.
+
+
+* **Nilai:** $+15\%$ Peluang Stagger
+
+
+* **ID:** `SKILL-0030`
+
+
+
+* **Arcane Bolt**
+
+* **Deskripsi:** Menembakkan proyektil magic.
+
+
+* **Nilai:** $110\%$ Magic ATK
+
+
+* **ID:** `SKILL-0031`
+
+
+
+* **Fire Bolt**
+
+* **Deskripsi:** Menembakkan proyektil api.
+
+
+* **Nilai:** $120\%$ Fire Damage
+
+
+* **ID:** `SKILL-0032`
+
+
+
+* **Ice Shard**
+
+* **Deskripsi:** Menembakkan pecahan es.
+
+
+* **Nilai:** $115\%$ Water/Ice Damage
+
+
+* **ID:** `SKILL-0033`
+
+
+
+* **Wind Cutter**
+
+* **Deskripsi:** Membentuk bilah angin.
+
+
+* **Nilai:** $110\%$ Wind Damage
+
+
+* **ID:** `SKILL-0034`
+
+
+
+* **Earth Spike**
+
+* **Deskripsi:** Memunculkan duri tanah dari bawah target.
+
+
+* **Nilai:** $125\%$ Earth Damage
+
+
+* **ID:** `SKILL-0035`
+
+
+
+* **Water Shot**
+
+* **Deskripsi:** Menembakkan proyektil air.
+
+
+* **Nilai:** $110\%$ Water Damage
+
+
+* **ID:** `SKILL-0036`
+
+
+
+* **Precise Shot**
+
+* **Deskripsi:** Serangan jarak jauh dengan akurasi tinggi.
+
+
+* **Nilai:** $+20\%$ Accuracy
+
+
+* **ID:** `SKILL-0037`
+
+
+
+* **Rapid Shot**
+
+* **Deskripsi:** Menembakkan projectile dengan cepat.
+
+
+* **Nilai:** $2 \times 60\%$ Ranged ATK
+
+
+* **ID:** `SKILL-0038`
+
+
+
+* **Heavy Arrow**
+
+* **Deskripsi:** Tembakan kuat yang memberikan damage tinggi.
+
+
+* **Nilai:** $135\%$ Ranged ATK
+
+
+* **ID:** `SKILL-0039`
+
+
+
+* **Piercing Arrow**
+
+* **Deskripsi:** Projectile menembus target.
+
+
+* **Nilai:** Menembus 1 Target
+
+
+* **ID:** `SKILL-0040`
+
+
+
+* **Guard**
+
+* **Deskripsi:** Mengurangi damage yang diterima.
+
+
+* **Nilai:** Mengurangi damage sebesar $30\%$
+
+* **ID:** `SKILL-0041`
+
+
+
+* **Shield Bash**
+
+* **Deskripsi:** Menyerang menggunakan shield.
+
+
+* **Nilai:** $90\%$ Shield ATK
+
+
+* **ID:** `SKILL-0042`
+
+
+
+* **Defensive Stance**
+
+* **Deskripsi:** Meningkatkan Defense sementara.
+
+
+* **Nilai:** $+25\%$ Defense
+
+
+* **ID:** `SKILL-0043`
+
+
+
+* **Iron Guard**
+
+* **Deskripsi:** Mengurangi physical damage.
+
+
+* **Nilai:** Mengurangi physical damage sebesar $40\%$
+
+* **ID:** `SKILL-0044`
+
+
+
+* **Minor Heal**
+
+* **Deskripsi:** Memulihkan HP satu target.
+
+
+* **Nilai:** Memulihkan $15\%$ Max HP
+
+
+* **ID:** `SKILL-0045`
+
+
+
+* **Healing Touch**
+
+* **Deskripsi:** Memulihkan HP dengan magic sederhana.
+
+
+* **Nilai:** Memulihkan $20\%$ Max HP
+
+
+* **ID:** `SKILL-0046`
+
+
+
+* **Encouragement**
+
+* **Deskripsi:** Meningkatkan ATK ally.
+
+
+* **Nilai:** $+10\%$ ATK Buff
+
+
+* **ID:** `SKILL-0047`
+
+
+
+* **Focus**
+
+* **Deskripsi:** Meningkatkan Accuracy dan Critical Rate.
+
+
+* **Nilai:** $+10\%$ Accuracy & Crit Rate
+
+
+* **ID:** `SKILL-0048`
+
+
+
+* **Quick Step**
+
+* **Deskripsi:** Meningkatkan movement speed.
+
+
+* **Nilai:** $+15\%$ Movement Speed
+
+
+* **ID:** `SKILL-0049`
+
+
+
+* **Mana Flow**
+
+* **Deskripsi:** Memulihkan sebagian MP.
+
+
+* **Nilai:** Memulihkan $20\%$ Max MP
+
+
+* **ID:** `SKILL-0050`
+
+
+
+* **Taunt**
+
+* **Deskripsi:** Meningkatkan kemungkinan musuh menyerang caster.
+
+
+* **Nilai:** $+50\%$ Aggro / Threat
+
+
+* **ID:** `SKILL-0051`
+
+
+
+* **Mark Target**
+
+* **Deskripsi:** Menandai satu musuh.
+
+
+* **Nilai:** $+10\%$ Damage Taken pada Target
+
+
+* **ID:** `SKILL-0052`
+
+
+
+* **Weakening Strike**
+
+* **Deskripsi:** Mengurangi ATK target.
+
+
+* **Nilai:** Mengurangi $10\%$ ATK Musuh
+
+
+* **ID:** `SKILL-0053`
+
+
+
+* **Slow Strike**
+
+* **Deskripsi:** Mengurangi movement speed musuh.
+
+
+* **Nilai:** Mengurangi $15\%$ Movement Speed Musuh
+
+
+* **ID:** `SKILL-0054`
+
+
+
+* **Disrupt**
+
+* **Deskripsi:** Memberikan peluang kecil mengganggu skill musuh.
+
+
+* **Nilai:** $10\%$ Peluang Interrupt
+
+
+* **ID:** `SKILL-0055`
